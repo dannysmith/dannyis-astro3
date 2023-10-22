@@ -1,4 +1,96 @@
 :root {
+		--color-black: #191919
+		--color-true-black: #000000
+
+    --color--pink--300: #f5b8d9;
+    --color--pink--400: #f29bca;
+    --color--pink--500: #ef7dbb;
+    --color--pink--600: #eb60ad;
+    --color--pink--700: #e8439e;
+    --color--pink--800: #e52790;
+
+    --color--red--300: #f5a4a4;
+    --color--red--400: #f27e7e;
+    --color--red--500: #ef5858;
+    --color--red--600: #eb3232;
+    --color--red--700: #e70c0c;
+    --color--red--800: #e30000;
+
+    --color--orange--300: #f5c8a4;
+    --color--orange--400: #f2aa7e;
+    --color--orange--500: #ef8c58;
+    --color--orange--600: #eb6e32;
+    --color--orange--700: #e7500c;
+    --color--orange--800: #e34400;
+
+    --color--purple--300: #d5a4f5;
+    --color--purple--400: #b27ef2;
+    --color--purple--500: #8f58ef;
+    --color--purple--600: #6c32eb;
+    --color--purple--700: #490ce7;
+    --color--purple--800: #2c00e3;
+
+    --color--yellow--300: #f5f0a4;
+    --color--yellow--400: #f2e87e;
+    --color--yellow--500: #efe058;
+    --color--yellow--600: #ebd832;
+    --color--yellow--700: #e7d00c;
+    --color--yellow--800: #e3c800;
+
+    --color--green--300: #a4f5b8;
+    --color--green--400: #7ef29b;
+    --color--green--500: #58ef7d;
+    --color--green--600: #32eb60;
+    --color--green--700: #0ce743;
+    --color--green--800: #00e327;
+
+    --color--blue--300: #a4d1f5;
+    --color--blue--400: #7ebbf2;
+    --color--blue--500: #58a5ef;
+    --color--blue--600: #3289eb;
+    --color--blue--700: #0c6ce7;
+    --color--blue--800: #0050e3;
+
+    --color--brown--300: #dab5a4;
+    --color--brown--400: #bc937e;
+    --color--brown--500: #9e7158;
+    --color--brown--600: #804f32;
+    --color--brown--700: #622d0c;
+    --color--brown--800: #441100;
+
+    --color--grey--300: #d0d0d0;
+    --color--grey--400: #b0b0b0;
+    --color--grey--500: #909090;
+    --color--grey--600: #707070;
+    --color--grey--700: #505050;
+    --color--grey--800: #303030;
+
+    /* Backgrounds */
+    --color-bg-light-100: #ffffff;
+    --color-bg-light-200: #f1f1f1;
+    --color-bg-light-300: #e4e4e4;
+    --color-bg-light-400: #d4d4d4;
+    --color-bg-light-500: #b4b4b4;
+    --color-bg-light-600: #949494;
+    --color-bg-light-700: #747474;
+    --color-bg-light-800: #545454;
+
+    --color-bg-dark-100: #545454;
+    --color-bg-dark-200: #747474;
+    --color-bg-dark-300: #949494;
+    --color-bg-dark-400: #b4b4b4;
+    --color-bg-dark-500: #d4d4d4;
+    --color-bg-dark-600: #e4e4e4;
+    --color-bg-dark-700: #f1f1f1;
+    --color-bg-dark-800: #ffffff;
+
+    /* Brand colours */
+    --c-brand-red: var(--color--red--500);
+    --c-brand-grey: var(--color-bg-light-700);
+    --c-brand-dark-grey: var(--color-bg-light-800);
+    --c-true-white: #ffffff;
+    --c-generic-black: var(--color-black);
+    --c-absolute-black: var(--color-true-black);
 }
 
 /* Box sizing rules */
@@ -25,7 +117,7 @@ html {
 
   /* Set color scheme */
   color-scheme: light;
-  accent-color: var(--accent--ui);
+  accent-color: var(--c-brand-red);
 }
 
 /* Remove default margin in favour of better control in authored CSS */
