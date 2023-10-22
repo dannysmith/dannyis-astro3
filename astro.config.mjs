@@ -12,5 +12,17 @@ export default defineConfig({
     '/meeting':
       'https://dannysmith.notion.site/Book-a-Meeting-with-Danny-e39fc8def5514b67b559b2e5a51934ae?pvs=4',
     '/tools': 'https://betterat.work/toolbox',
+    '/linkedin': 'https://www.linkedin.com/in/dannyasmith/',
+    '/cv': '/cv-danny-smith.pdf',
+    '/working': 'https://betterat.work',
+    '/remote':
+      'https://dannysmith.notion.site/Remote-Working-Tips-821f025d73cb4d93a661abc93822fb14',
+    '/rtotd':
+      'https://dannysmith.notion.site/Remote-Working-Tips-821f025d73cb4d93a661abc93822fb14',
+    '/using':
+      'https://www.notion.so/dannysmith/Danny-Uses-72544bdecd144ca5ab3864d92dcd119b',
+    '/music': 'https://youtube.com/dannysmithblues',
+    '/singing': 'https://youtube.com/dannysmithblues',
+    '/youtube': 'https://www.youtube.com/channel/UCp0vO-4tetByUhsVijyt2jA',
   },
 })
