@@ -1,3 +1,4 @@
+
 :root {
 		--color-black: #191919
 		--color-true-black: #000000
@@ -91,6 +92,11 @@
     --c-true-white: #ffffff;
     --c-generic-black: var(--color-black);
     --c-absolute-black: var(--color-true-black);
+
+   /*  Fonts */
+  --font-ui: 'Jost Variable', 'Jost', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-prose: 'Literata Variable', 'Literata', Georgia, 'Times New Roman', serif;
+  --font-code: 'Fira Code Variable', 'Fira Code', 'Inconsolata', monospace;
 }
 
 /* Box sizing rules */
@@ -118,6 +124,9 @@ html {
   /* Set color scheme */
   color-scheme: light;
   accent-color: var(--c-brand-red);
+
+	/* Set the typeface */
+	font-family: var(--font-ui);
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -229,4 +238,9 @@ textarea:not([rows]) {
   to ensure they are clearly in view */
 :focus {
   scroll-padding-block-end: 8vh;
+}
+
+/* Set basic styles for code */
+code, pre, kbd {
+	font-family: var(--font-code);
 }
