@@ -11,7 +11,7 @@ const result = await unfurl(href)
 const { title, favicon, description } = result
 let faviconExists = false
 let coverExists = false
-let faviconURL: string
+let faviconURL: string | undefined
 
 const coverURL = result.open_graph.images?.[0]?.url
 

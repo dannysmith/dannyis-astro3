@@ -10,7 +10,7 @@ const href = Astro.props.href
 const result = await unfurl(href)
 const { title, favicon } = result
 let faviconExists = false
-let faviconURL: string
+let faviconURL: string | undefined
 
 if (favicon) {
   const faviconResponse = await fetch(favicon)
