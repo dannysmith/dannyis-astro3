@@ -2,68 +2,219 @@
 import type { CollectionEntry } from 'astro:content'
 import Spinner from '@components/Spinner.astro'
 import BaseHead from '@components/BaseHead.astro'
-import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import FormattedDate from '@components/FormattedDate.astro'
 
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description, pubDate, updatedDate, heroImage, isDraft, redirectURL, platform } = Astro.props
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  isDraft,
+  redirectURL,
+  platform,
+} = Astro.props
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-		{platform && redirectURL && (
-			<meta http-equiv="refresh" content={'2;url=' + redirectURL} />
-		)}
+    {
+      platform && redirectURL && (
+        <meta http-equiv="refresh" content={'2;url=' + redirectURL} />
+      )
+    }
   </head>
 
   <body>
-		{platform && redirectURL && (
-			<div class="spinner-overlay">
-				<Spinner size="5rem" />
-			</div>
-		)}
-    <main>
-      <article>
-          {
-            heroImage && (
-							<div class="hero-image">
-              	<img width={1020} height={510} src={heroImage} alt="" />
-							</div>
-            )
-          }
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
+    {
+      platform && redirectURL && (
+        <div class="spinner-overlay">
+          <Spinner size="5rem" />
         </div>
-				<slot />
+      )
+    }
+    <main>
+      <article class="blog-article">
+        {
+          heroImage && (
+            <div class="hero-image">
+              <img width={1020} height={510} src={heroImage} alt="" />
+            </div>
+          )
+        }
+        <div class="title">
+          <div class="date">
+            <FormattedDate date={pubDate} />
+            {
+              updatedDate && (
+                <div class="last-updated-on">
+                  Last updated on <FormattedDate date={updatedDate} />
+                </div>
+              )
+            }
+          </div>
+          <h1>{title}</h1>
+        </div>
+        <slot />
       </article>
     </main>
     <Footer />
+    <style>
+      .spinner-overlay {
+        min-height: 100vh;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        background: var(--c-white);
+      }
+    </style>
+
+    <style is:global>
+      .blog-article {
+        --line-height: 1.5; /* Line height for the article. */
+        --side-space: 2rem; /* Space on the left and right of the article on small screens. */
+
+        display: grid;
+        grid-template-columns:
+          1fr
+          min(60ch, calc(100% - calc(var(--side-space) * 2)))
+          1fr;
+        grid-column-gap: var(--side-space);
+        grid-row-gap: calc(var(--line-height) * 1em);
+
+        font-family: var(--font-prose);
+        font-size: clamp(1rem, calc(0.6rem + 1vw), 1.4rem);
+        text-rendering: optimizeLegibility;
+        line-height: var(--line-height);
+      }
+
+      .blog-article > * {
+        grid-column: 2 / 3;
+      }
+
+      .blog-article .full-bleed {
+        width: 100%;
+        grid-column: 1 / 4;
+      }
+
+      /* Headings */
+      .blog-article > :is(h1, h2, h3, h4, h5, h6) {
+        font-variant-ligatures: common-ligatures discretionary-ligatures;
+      }
+
+      .blog-article > h1 {
+        font-size: 2.4em;
+        font-weight: 500;
+        font-variation-settings: 'opsz' 50;
+        line-height: 1.25;
+        margin-top: 1.5em;
+      }
+
+      .blog-article > h2 {
+        font-size: 1.93em;
+        font-weight: 600;
+        margin-top: 1em;
+      }
+
+      .blog-article > h3 {
+        font-size: 1.56em;
+        font-weight: 600;
+        margin-top: 1em;
+        margin-bottom: -0.5em;
+      }
+
+      .blog-article > h4 {
+        font-size: 1.25em;
+        font-weight: 600;
+        text-transform: lowercase;
+        font-variant: small-caps;
+        letter-spacing: 0.05ch;
+        margin-top: 1em;
+        margin-bottom: -0.5em;
+      }
+
+      .blog-article > :is(h5, h6) {
+        font-size: 1em;
+        font-weight: normal;
+        font-style: italic;
+        margin-top: 1em;
+        margin-bottom: -1em;
+      }
+
+      /* Remove top margin from headings that are immediatly preceeded by another heading or an HR */
+      .blog-article
+        > :is(h1, h2, h3, h4, h5, h6, hr)
+        + :is(h1, h2, h3, h4, h5, h6) {
+        margin-top: 0;
+      }
+
+      /* ----------- Paragraphs ----------- */
+
+      .blog-article > p {
+        font-variant-numeric: oldstyle-nums diagonal-fractions;
+        hanging-punctuation: first; /* Safari only */
+
+        -webkit-hyphens: auto;
+        hyphens: auto;
+      }
+
+      /* Use hyphens only on small viewports. */
+      @media (min-width: 42em) {
+        .blog-article > p {
+          -webkit-hyphens: none;
+          hyphens: none;
+        }
+      }
+      .blog-article > p:first-of-type {
+        margin-top: 3em;
+      }
+
+      /* First line of first para*/
+      .blog-article > p:not(.callout):first-of-type::first-line {
+        text-transform: lowercase;
+        -webkit-hyphens: none;
+        hyphens: none;
+        font-variant-caps: small-caps;
+        font-weight: 525;
+      }
+
+      /* End Mark */
+      .blog-article > p:not(.callout):last-of-type:after {
+        display: inline-block;
+        content: ' ';
+        -webkit-mask: url('/end-mark.svg');
+        mask: url('/end-mark.svg');
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        background-color: currentColor;
+        height: 0.65em;
+        width: 1em;
+        line-height: 0.5;
+        margin-left: 0.1em;
+      }
+      /*  Drop Cap */
+      .blog-article > p:not(.callout):first-of-type::first-letter {
+        text-transform: uppercase;
+        float: left;
+        font-size: 4em;
+        line-height: 1;
+        padding-right: 0.4ch;
+      }
+
+      /* Bleeds */
+      .blog-article > .bleed-left {
+        grid-column: 1 / 3;
+      }
+      .blog-article > .bleed-right {
+        grid-column: 2 / 4;
+      }
+      .blog-article > .bleed-full {
+        grid-column: 1 / 4;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-	.spinner-overlay {
-		min-height: 100vh;
-		display: grid;
-		justify-content: center;
-		align-content: center;
-		background: var(--c-white);
-	}
-
-	article {
-		font-family: var(--font-prose)
-	}
-</style>

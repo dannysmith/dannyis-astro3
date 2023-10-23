@@ -11,98 +11,97 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <!-- <Header title={SITE_TITLE} /> -->
     <main>
       <h1>Danny Smith</h1>
-			<ul class="link-list">
-				<li>
-					<a href="/writing"><strong>writing</strong></a>
-				</li>
-				<li>
-					<a href="/notes"><strong>notes</strong></a>
-				</li>
-				<li>
-					<a href="/toolbox"><strong>remote working</strong> toolbox</a>
-				</li>
-				<li>
-					<a href="/youtube"><strong>youtube</strong></a>
-				</li>
-				<li>
-					<a href="/using">stuff I'm <strong>using</strong></a>
-				</li>
-				<li>
-					<a href="/music">my <b>music</b></a>
-				</li>
-				<li>
-					<a href="http://newsletter.danny.is">my <strong>newsletter</strong></a>
-				</li>
-				<li>
-					<a href="https://www.linkedin.com/in/dannyasmith"
-						><strong>linkedin</strong>/dannyasmith</a
-					>
-				</li>
-				<li>
-					<a href="https://medium.com/@dannysmith"
-						><strong>medium</strong>/dannysmith</a
-					>
-				</li>
-				<li>
-					<a href="https://github.com/dannysmith"
-						><strong>github</strong>/dannysmith</a
-					>
-				</li>
-				<li>
-					<a href="https://instagram.com/dannysmith"
-						><strong>instagram</strong>/dannysmith</a
-					>
-				</li>
-				<li>
-					<a href="https://monzo.me/dannyasmith"><strong>monzo</strong>.me</a>
-				</li>
-				<li>
-					<a href="mailto:hi@danny.is"><strong>email</strong></a>
-				</li>
-			</ul>
+      <ul class="link-list">
+        <li>
+          <a href="/writing"><strong>writing</strong></a>
+        </li>
+        <li>
+          <a href="/notes"><strong>notes</strong></a>
+        </li>
+        <li>
+          <a href="/toolbox"><strong>remote working</strong> toolbox</a>
+        </li>
+        <li>
+          <a href="/youtube"><strong>youtube</strong></a>
+        </li>
+        <li>
+          <a href="/using">stuff I'm <strong>using</strong></a>
+        </li>
+        <li>
+          <a href="/music">my <b>music</b></a>
+        </li>
+        <li>
+          <a href="http://newsletter.danny.is">my <strong>newsletter</strong></a
+          >
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/dannyasmith"
+            ><strong>linkedin</strong>/dannyasmith</a
+          >
+        </li>
+        <li>
+          <a href="https://medium.com/@dannysmith"
+            ><strong>medium</strong>/dannysmith</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/dannysmith"
+            ><strong>github</strong>/dannysmith</a
+          >
+        </li>
+        <li>
+          <a href="https://instagram.com/dannysmith"
+            ><strong>instagram</strong>/dannysmith</a
+          >
+        </li>
+        <li>
+          <a href="https://monzo.me/dannyasmith"><strong>monzo</strong>.me</a>
+        </li>
+        <li>
+          <a href="mailto:hi@danny.is"><strong>email</strong></a>
+        </li>
+      </ul>
     </main>
-  </body>
+  </body><style>
+    main {
+      display: grid;
+      grid-template-columns: 1rem auto 1fr;
+    }
+
+    h1 {
+      grid-column: 1 / -1;
+      font-size: 16.8vw;
+      margin-top: -0.08em;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .link-list {
+      grid-column: 2 / 3;
+      padding: 0;
+    }
+
+    .link-list li {
+      text-transform: uppercase;
+      letter-spacing: 0.1ch;
+      list-style-type: none;
+      padding: 0;
+      border-bottom: 5px solid var(--c-primary);
+      line-height: 1.65;
+    }
+
+    .link-list strong {
+      letter-spacing: 0.125ch;
+    }
+
+    .link-list a {
+      text-decoration: none;
+    }
+
+    .link-list a:hover {
+      color: var(--c-primary);
+    }
+  </style>
 </html>
-<style>
-	main {
-    display: grid;
-    grid-template-columns: 1rem auto 1fr;
-  }
-
-	h1 {
-    grid-column: 1 / -1;
-    font-size: 16.8vw;
-    margin-top: -0.08em;
-    pointer-events: none;
-    line-height: 1;
-  }
-
-  .link-list {
-    grid-column: 2 / 3;
-		padding: 0;
-  }
-
-  .link-list li {
-    text-transform: uppercase;
-    letter-spacing: 0.1ch;
-    list-style-type: none;
-    padding: 0;
-    border-bottom: 5px solid var(--c-primary);
-    line-height: 1.65;
-  }
-
-  .link-list strong {
-    letter-spacing: 0.125ch;
-  }
-
-  .link-list a {
-    text-decoration: none;
-  }
-
-  .link-list a:hover {
-    color: var(--c-primary);
-  }
-</style>

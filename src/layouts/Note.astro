@@ -20,20 +20,17 @@ console.log(Astro.props)
     <Header />
     <main>
       <article>
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-            </div>
-            <h1>{title}</h1>
+        <div class="title">
+          <div class="date">
+            <FormattedDate date={pubDate} />
+          </div>
+          <h1>{title}</h1>
         </div>
         {sourceURL && <a href={sourceURL}>{sourceURL}</a>}
-				<slot />
+        <slot />
       </article>
     </main>
     <Footer />
+    <style></style>
   </body>
 </html>
-
-<style>
-
-</style>
