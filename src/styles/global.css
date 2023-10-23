@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'Literata';
+  src: url('/fonts/Literata-self-compiled-Mar2019.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Literata';
+  src: url('/fonts/Literata-italic-self-compiled-Mar2019.woff2') format('woff2');
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/Jost.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-black: #191919;
   --color-true-black: #000000;
@@ -104,10 +123,8 @@
   --shadow-xxlarge: drop-shadow(0px 25px 50px rgba(16, 24, 40, 0.25));
 
   /*  Fonts */
-  --font-ui: 'Jost Variable', 'Jost', 'Inter', 'Helvetica Neue', Helvetica,
-    Arial, sans-serif;
-  --font-prose: 'Literata Variable', 'Literata', Georgia, 'Times New Roman',
-    serif;
+  --font-ui: 'Jost', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-prose: 'Literata', Georgia, 'Times New Roman', serif;
   --font-code: 'Fira Code Variable', 'Fira Code', 'Inconsolata', monospace;
 }
 
@@ -116,6 +133,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 html {
@@ -214,6 +233,8 @@ img,
 picture {
   max-width: 100%;
   display: block;
+  height: auto;
+  width: auto;
 }
 
 /* Inherit fonts for inputs and buttons */
