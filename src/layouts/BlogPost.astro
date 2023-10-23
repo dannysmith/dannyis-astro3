@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import Spinner from '../components/Spinner.astro'
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import FormattedDate from '../components/FormattedDate.astro'
+import Spinner from '@components/Spinner.astro'
+import BaseHead from '@components/BaseHead.astro'
+import Header from '@components/Header.astro'
+import Footer from '@components/Footer.astro'
+import FormattedDate from '@components/FormattedDate.astro'
 
 type Props = CollectionEntry<'blog'>['data']
 
@@ -25,7 +25,6 @@ const { title, description, pubDate, updatedDate, heroImage, isDraft, redirectUR
 				<Spinner size="5rem" />
 			</div>
 		)}
-    <Header />
     <main>
       <article>
           {
@@ -62,5 +61,9 @@ const { title, description, pubDate, updatedDate, heroImage, isDraft, redirectUR
 		justify-content: center;
 		align-content: center;
 		background: var(--c-white);
+	}
+
+	article {
+		font-family: var(--font-prose)
 	}
 </style>
