@@ -1,101 +1,113 @@
-
 :root {
-		--color-black: #191919
-		--color-true-black: #000000
+  --color-black: #191919;
+  --color-true-black: #000000;
 
-    --color--pink--300: #f5b8d9;
-    --color--pink--400: #f29bca;
-    --color--pink--500: #ef7dbb;
-    --color--pink--600: #eb60ad;
-    --color--pink--700: #e8439e;
-    --color--pink--800: #e52790;
+  --color--pink--300: #f4dfeb;
+  --color--pink--400: #fac8e4;
+  --color--pink--500: #e255a1;
+  --color--pink--600: #ad1a72;
+  --color--pink--700: #602d51;
+  --color--pink--800: #533b4c;
 
-    --color--red--300: #f5a4a4;
-    --color--red--400: #f27e7e;
-    --color--red--500: #ef5858;
-    --color--red--600: #eb3232;
-    --color--red--700: #e70c0c;
-    --color--red--800: #e30000;
+  --color--red--300: #fbe4e4;
+  --color--red--400: #ffd4d4;
+  --color--red--500: #ff7369;
+  --color--red--600: #e03e3e;
+  --color--red--700: #b84848;
+  --color--red--800: #594141;
 
-    --color--orange--300: #f5c8a4;
-    --color--orange--400: #f2aa7e;
-    --color--orange--500: #ef8c58;
-    --color--orange--600: #eb6e32;
-    --color--orange--700: #e7500c;
-    --color--orange--800: #e34400;
+  --color--orange--300: #faebdd;
+  --color--orange--400: #fed9b7;
+  --color--orange--500: #ffa344;
+  --color--orange--600: #d9730d;
+  --color--orange--700: #765839;
+  --color--orange--800: #594a3a;
 
-    --color--purple--300: #d5a4f5;
-    --color--purple--400: #b27ef2;
-    --color--purple--500: #8f58ef;
-    --color--purple--600: #6c32eb;
-    --color--purple--700: #490ce7;
-    --color--purple--800: #2c00e3;
+  --color--purple--300: #eae4f2;
+  --color--purple--400: #e6d7f9;
+  --color--purple--500: #9a6dd7;
+  --color--purple--600: #6940a5;
+  --color--purple--700: #6f6695;
+  --color--purple--800: #443f57;
 
-    --color--yellow--300: #f5f0a4;
-    --color--yellow--400: #f2e87e;
-    --color--yellow--500: #efe058;
-    --color--yellow--600: #ebd832;
-    --color--yellow--700: #e7d00c;
-    --color--yellow--800: #e3c800;
+  --color--yellow--300: #fbf3db;
+  --color--yellow--400: #feeebe;
+  --color--yellow--500: #ffdc49;
+  --color--yellow--600: #dfab01;
+  --color--yellow--700: #645e26;
+  --color--yellow--800: #59563b;
 
-    --color--green--300: #a4f5b8;
-    --color--green--400: #7ef29b;
-    --color--green--500: #58ef7d;
-    --color--green--600: #32eb60;
-    --color--green--700: #0ce743;
-    --color--green--800: #00e327;
+  --color--green--300: #ddedea;
+  --color--green--400: #c8eae3;
+  --color--green--500: #4dab9a;
+  --color--green--600: #0f7b6c;
+  --color--green--700: #2c5c5a;
+  --color--green--800: #354c4b;
 
-    --color--blue--300: #a4d1f5;
-    --color--blue--400: #7ebbf2;
-    --color--blue--500: #58a5ef;
-    --color--blue--600: #3289eb;
-    --color--blue--700: #0c6ce7;
-    --color--blue--800: #0050e3;
+  --color--blue--300: #ddebf1;
+  --color--blue--400: #c4e4f2;
+  --color--blue--500: #529cca;
+  --color--blue--600: #0b6e99;
+  --color--blue--700: #254e66;
+  --color--blue--800: #364954;
 
-    --color--brown--300: #dab5a4;
-    --color--brown--400: #bc937e;
-    --color--brown--500: #9e7158;
-    --color--brown--600: #804f32;
-    --color--brown--700: #622d0c;
-    --color--brown--800: #441100;
+  --color--brown--300: #e9e5e3;
+  --color--brown--400: #f1e0d8;
+  --color--brown--500: #937264;
+  --color--brown--600: #64473a;
+  --color--brown--700: #534343;
+  --color--brown--800: #434040;
 
-    --color--grey--300: #d0d0d0;
-    --color--grey--400: #b0b0b0;
-    --color--grey--500: #909090;
-    --color--grey--600: #707070;
-    --color--grey--700: #505050;
-    --color--grey--800: #303030;
+  --color--grey--300: #ebeced;
+  --color--grey--400: #ebeced;
+  --color--grey--500: #979a9bf2;
+  --color--grey--600: #9b9a97;
+  --color--grey--700: #596063;
+  --color--grey--800: #454b4e;
 
-    /* Backgrounds */
-    --color-bg-light-100: #ffffff;
-    --color-bg-light-200: #f1f1f1;
-    --color-bg-light-300: #e4e4e4;
-    --color-bg-light-400: #d4d4d4;
-    --color-bg-light-500: #b4b4b4;
-    --color-bg-light-600: #949494;
-    --color-bg-light-700: #747474;
-    --color-bg-light-800: #545454;
+  /* Backgrounds */
+  --color-bg-light-100: #ffffff;
+  --color-bg-light-200: #f3f6f7;
+  --color-bg-light-300: #e3e6e8;
+  --color-bg-light-400: #9a9fa1;
+  --color-bg-light-500: #6c7173;
+  --color-bg-light-600: #4d5254;
+  --color-bg-light-700: #2f3437;
+  --color-bg-light-800: #191919;
 
-    --color-bg-dark-100: #545454;
-    --color-bg-dark-200: #747474;
-    --color-bg-dark-300: #949494;
-    --color-bg-dark-400: #b4b4b4;
-    --color-bg-dark-500: #d4d4d4;
-    --color-bg-dark-600: #e4e4e4;
-    --color-bg-dark-700: #f1f1f1;
-    --color-bg-dark-800: #ffffff;
+  --color-bg-dark-100: #191919;
+  --color-bg-dark-200: #202020;
+  --color-bg-dark-300: #2c2c2c;
+  --color-bg-dark-400: #363636;
+  --color-bg-dark-500: #898989;
+  --color-bg-dark-600: #9b9b9b;
+  --color-bg-dark-700: #d5d5d5;
+  --color-bg-dark-800: #ffffff;
 
-    /* Brand colours */
-    --c-brand-red: var(--color--red--500);
-    --c-brand-grey: var(--color-bg-light-700);
-    --c-brand-dark-grey: var(--color-bg-light-800);
-    --c-true-white: #ffffff;
-    --c-generic-black: var(--color-black);
-    --c-absolute-black: var(--color-true-black);
+  /* Brand colours */
+  --c-primary: var(--color--red--500);
+  --c-brand-grey: var(--color-bg-light-700);
+  --c-brand-dark-grey: var(--color-bg-light-800);
+  --c-white: #ffffff;
+  --c-black: var(--color-black);
 
-   /*  Fonts */
-  --font-ui: 'Jost Variable', 'Jost', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-prose: 'Literata Variable', 'Literata', Georgia, 'Times New Roman', serif;
+  /* Shadows */
+  --shadow-xmall: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
+  --shadow-small: drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.1))
+    drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.1));
+  --shadow-medium: drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.1))
+    drop-shadow(0px 4px 6px rgba(16, 24, 40, 0.1));
+  --shadow-large: drop-shadow(0px 10px 15px rgba(16, 24, 40, 0.1))
+    drop-shadow(0px 4px 6px rgba(16, 24, 40, 0.1));
+  --shadow-xlarge: drop-shadow(0px 20px 25px rgba(16, 24, 40, 0.1))
+    drop-shadow(0px 8px 10px rgba(16, 24, 40, 0.1));
+  --shadow-xxlarge: drop-shadow(0px 25px 50px rgba(16, 24, 40, 0.25));
+
+  /*  Fonts */
+  --font-ui: 'Jost Variable', 'Jost', 'Inter', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  --font-prose: 'Literata Variable', 'Literata', Georgia, 'Times New Roman',
+    serif;
   --font-code: 'Fira Code Variable', 'Fira Code', 'Inconsolata', monospace;
 }
 
@@ -115,6 +127,9 @@ html {
   /* Ensure Common ligs are always on */
   font-variant-ligatures: common-ligatures;
 
+  /* Turn on single-storey `a` characters on Jost */
+  font-feature-settings: 'ss01' on;
+
   /* Smooth Scrolling */
   scroll-behavior: smooth;
 
@@ -123,10 +138,11 @@ html {
 
   /* Set color scheme */
   color-scheme: light;
-  accent-color: var(--c-brand-red);
+  accent-color: var(--c-primary);
+  color: var(--c-black);
 
-	/* Set the typeface */
-	font-family: var(--font-ui);
+  /* Set the typeface */
+  font-family: var(--font-ui);
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -135,6 +151,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p,
 figure,
 blockquote,
@@ -166,6 +183,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 button,
 input,
 label {
@@ -176,7 +194,8 @@ label {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   text-wrap: balance;
 }
 
@@ -241,6 +260,8 @@ textarea:not([rows]) {
 }
 
 /* Set basic styles for code */
-code, pre, kbd {
-	font-family: var(--font-code);
+code,
+pre,
+kbd {
+  font-family: var(--font-code);
 }

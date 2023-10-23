@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
+import Spinner from '../components/Spinner.astro'
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
@@ -7,26 +8,33 @@ import FormattedDate from '../components/FormattedDate.astro'
 
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const { title, description, pubDate, updatedDate, heroImage, isDraft, redirectURL, platform } = Astro.props
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+		{platform && redirectURL && (
+			<meta http-equiv="refresh" content={'2;url=' + redirectURL} />
+		)}
   </head>
 
   <body>
+		{platform && redirectURL && (
+			<div class="spinner-overlay">
+				<Spinner size="5rem" />
+			</div>
+		)}
     <Header />
     <main>
       <article>
-        <div class="hero-image">
           {
             heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
+							<div class="hero-image">
+              	<img width={1020} height={510} src={heroImage} alt="" />
+							</div>
             )
           }
-        </div>
-        <div class="prose">
           <div class="title">
             <div class="date">
               <FormattedDate date={pubDate} />
@@ -39,12 +47,20 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
               }
             </div>
             <h1>{title}</h1>
-            <hr />
-          </div>
-          <slot />
         </div>
+				<slot />
       </article>
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+	.spinner-overlay {
+		min-height: 100vh;
+		display: grid;
+		justify-content: center;
+		align-content: center;
+		background: var(--c-white);
+	}
+</style>
