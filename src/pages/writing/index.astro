@@ -18,6 +18,7 @@ const posts = (
   </head>
   <body>
     <main>
+      <h1>Writing</h1>
       <section>
         <ul>
           {
@@ -31,7 +32,7 @@ const posts = (
                   {post.data.platform && (
                     <p class="platform">{post.data.platform}</p>
                   )}
-                  {post.data.draft && <p class="draft">🚧</p>}
+                  {post.data.draft && <p class="draft-marker">🚧</p>}
                 </a>
               </li>
             ))
@@ -39,5 +40,30 @@ const posts = (
         </ul>
       </section>
     </main>
+    <style>
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 1rem;
+        background: pink;
+      }
+
+      a {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        text-decoration: none;
+      }
+
+      .draft-marker {
+        background: var(--color-bg-dark-200);
+        border-radius: 5px;
+        padding: 0 5px;
+      }
+    </style>
   </body>
 </html>
