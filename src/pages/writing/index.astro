@@ -1,24 +1,22 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
-import Header from '@components/Header.astro'
-import Footer from '@components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
 import { getCollection } from 'astro:content'
 import FormattedDate from '@components/FormattedDate.astro'
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-)
+const posts = (
+  await await getCollection('blog', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true
+  })
+).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style></style>
   </head>
   <body>
-    <Header />
     <main>
       <section>
         <ul>
@@ -30,6 +28,10 @@ const posts = (await getCollection('blog')).sort(
                   <p class="date">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
+                  {post.data.platform && (
+                    <p class="platform">{post.data.platform}</p>
+                  )}
+                  {post.data.draft && <p class="draft">🚧</p>}
                 </a>
               </li>
             ))
@@ -37,6 +39,5 @@ const posts = (await getCollection('blog')).sort(
         </ul>
       </section>
     </main>
-    <Footer />
   </body>
 </html>

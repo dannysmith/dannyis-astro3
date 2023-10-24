@@ -1,6 +1,6 @@
 ---
 draft: true
-title: Temporary-new-note
+title: Temporary new note
 slug: temporary-new-note
 pubDate: 2023-10-23
 ---
