@@ -1,13 +1,39 @@
-<div>This is the content</div>
+---
+export interface Props {
+  imageSrc?: string
+}
+
+const imageSrc = Astro.props.imageSrc
+---
+
+<div class="card">
+  {imageSrc && <img class="coverimage" src={imageSrc} />}
+  <div class="content">
+    <slot />
+  </div>
+</div>
 <style>
-  div {
-    padding: 1rem;
-    background-color: var(--c-primary);
+  .card {
+    display: grid;
+    background-color: rgba(var(--color--blue--300), 0.6);
+    box-shadow: 1px 1px 20px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+    overflow: hidden;
   }
 
-  @container (width < 400px) {
-    div {
-      background-color: green;
+  .coverimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  @container (width > 500px) {
+    .card {
+      grid-template-columns: 1fr 3fr;
     }
   }
 </style>
