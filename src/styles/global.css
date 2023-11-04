@@ -110,7 +110,8 @@
   --c-white: #ffffff;
   --c-black: var(--color-black);
 
-  /* Shadows */
+  /* Shadows - should be used like filter:var(--shadow-xsmall)*/
+
   --shadow-xmall: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
   --shadow-small: drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.1))
     drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.1));
@@ -133,8 +134,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 html {
@@ -224,7 +223,7 @@ blockquote {
   text-wrap: pretty;
 }
 
-/* A elements that don't have a class get default styles */
+/* A elements that don't have a class get nicer default link styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
   color: currentColor;
@@ -241,14 +240,6 @@ picture {
   display: block;
   height: auto;
   width: auto;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
 }
 
 /* Inherit fonts for inputs and buttons */
