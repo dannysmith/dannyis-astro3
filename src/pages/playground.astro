@@ -1,0 +1,28 @@
+---
+import BaseHead from '@components/BaseHead.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import TestComponent from '@components/TestComponent.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main>
+      <div class="cq">
+        <TestComponent />
+      </div>
+      <div class="cq">
+        <TestComponent />
+      </div>
+    </main>
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+      }
+    </style>
+  </body>
+</html>

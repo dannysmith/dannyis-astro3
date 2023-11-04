@@ -3,6 +3,7 @@ import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import TestComponent from '@components/TestComponent.astro'
 ---
 
 <!doctype html>
@@ -11,6 +12,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <div class="cq" style="width:300px">
+      <TestComponent />
+    </div>
+    <div class="cq" style="width:800px">
+      <TestComponent />
+    </div>
     <main>
       <h1>Danny Smith</h1>
       <ul class="link-list">
@@ -64,44 +71,45 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
         </li>
       </ul>
     </main>
-  </body><style>
-    main {
-      display: grid;
-      grid-template-columns: 1rem auto 1fr;
-    }
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: 1rem auto 1fr;
+      }
 
-    h1 {
-      grid-column: 1 / -1;
-      font-size: 16.8vw;
-      margin-top: -0.08em;
-      pointer-events: none;
-      line-height: 1;
-    }
+      h1 {
+        grid-column: 1 / -1;
+        font-size: 16.8vw;
+        margin-top: -0.08em;
+        pointer-events: none;
+        line-height: 1;
+      }
 
-    .link-list {
-      grid-column: 2 / 3;
-      padding: 0;
-    }
+      .link-list {
+        grid-column: 2 / 3;
+        padding: 0;
+      }
 
-    .link-list li {
-      text-transform: uppercase;
-      letter-spacing: 0.1ch;
-      list-style-type: none;
-      padding: 0;
-      border-bottom: 5px solid var(--c-primary);
-      line-height: 1.65;
-    }
+      .link-list li {
+        text-transform: uppercase;
+        letter-spacing: 0.1ch;
+        list-style-type: none;
+        padding: 0;
+        border-bottom: 5px solid var(--c-primary);
+        line-height: 1.65;
+      }
 
-    .link-list strong {
-      letter-spacing: 0.125ch;
-    }
+      .link-list strong {
+        letter-spacing: 0.125ch;
+      }
 
-    .link-list a {
-      text-decoration: none;
-    }
+      .link-list a {
+        text-decoration: none;
+      }
 
-    .link-list a:hover {
-      color: var(--c-primary);
-    }
-  </style>
+      .link-list a:hover {
+        color: var(--c-primary);
+      }
+    </style>
+  </body>
 </html>

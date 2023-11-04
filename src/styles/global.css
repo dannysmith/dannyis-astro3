@@ -283,3 +283,8 @@ pre,
 kbd {
   font-family: var(--font-code);
 }
+
+/* Utility class for making the element a container, so container queries will work */
+.cq {
+  container-type: inline-size;
+}
