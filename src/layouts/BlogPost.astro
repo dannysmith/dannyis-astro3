@@ -71,7 +71,7 @@ const {
     <style>
       body {
         background: var(--background-color);
-        color: var(--color--grey--900);
+        color: var(--color--grey--800);
       }
       .spinner-overlay {
         min-height: 100vh;
@@ -83,7 +83,7 @@ const {
 
       .metadata {
         font-size: 0.7em;
-        color: var(--color--grey--600);
+        color: var(--color--red--500);
         font-family: var(--font-code);
         margin-top: 1rem;
       }
@@ -110,7 +110,7 @@ const {
 
     <style is:global>
       :root {
-        --background-color: var(--color--blue--300);
+        --background-color: var(--color--yellow--300);
       }
 
       .blog-article {
@@ -139,6 +139,7 @@ const {
 
       .blog-article > :is(h1, h2, h3, h4, h5, h6) {
         font-variant-ligatures: common-ligatures discretionary-ligatures;
+        hanging-punctuation: first allow-end last;
       }
 
       .blog-article h1.title {
@@ -192,7 +193,7 @@ const {
 
       .blog-article > p {
         font-variant-numeric: oldstyle-nums diagonal-fractions;
-        hanging-punctuation: first; /* Safari only */
+        hanging-punctuation: first allow-end last;
       }
 
       /* Use hyphens only on small viewports. */
@@ -240,7 +241,7 @@ const {
       .blog-article a {
         color: inherit;
         text-decoration-color: var(--c-primary);
-        text-decoration-thickness: 0.5px;
+        text-decoration-thickness: 1px;
         border-radius: 0.1em;
       }
 
@@ -262,11 +263,11 @@ const {
       @media (pointer: coarse) {
         .blog-article a {
           text-decoration: none;
-          color: var(--c-primary);
+          color: var(--color--red--600);
         }
 
         .blog-article a:visited {
-          color: var(--color--purple--500);
+          color: var(--color--purple--600);
         }
       }
 
@@ -356,7 +357,7 @@ const {
       }
 
       .blog-article mark {
-        background: var(--color--yellow--500);
+        background: var(--color--yellow--400);
       }
 
       .blog-article :is(del, s) {
@@ -386,7 +387,8 @@ const {
       /* ----------- Blockquotes ----------- */
       .blog-article blockquote {
         font-variant-numeric: oldstyle-nums diagonal-fractions;
-        border-left: 2px solid rgba(0, 0, 0, 0.2);
+        hanging-punctuation: first allow-end last;
+        border-left: 2px solid var(--c-primary);
         padding-left: calc((1em * var(--line-height)) - 2px);
         font-style: italic;
         margin-left: 0;
