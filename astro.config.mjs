@@ -8,11 +8,15 @@ import prefetch from '@astrojs/prefetch'
 export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), prefetch()],
+  // Redirects to external sites are not officially supported. Avoid using a trailing slash.
+  // See here:
+  // - https://github.com/withastro/astro/pull/9287
+  // - https://github.com/withastro/astro/issues/9259#issuecomment-1857973018
   redirects: {
     '/meeting':
-      'https://dannysmith.notion.site/Book-a-Meeting-with-Danny-e39fc8def5514b67b559b2e5a51934ae?pvs=4',
+      'https://dannysmith.notion.site/Book-a-Meeting-with-Danny-e39fc8def5514b67b559b2e5a51934ae',
     '/tools': 'https://betterat.work/toolbox',
-    '/linkedin': 'https://www.linkedin.com/in/dannyasmith/',
+    '/linkedin': 'https://www.linkedin.com/in/dannyasmith',
     '/cv': '/cv-danny-smith.pdf',
     '/working': 'https://betterat.work',
     '/remote':
