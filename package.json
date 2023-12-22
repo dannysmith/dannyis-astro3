@@ -13,9 +13,9 @@
     "@astrojs/mdx": "^1.1.2",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.2",
+    "@astrojs/sitemap": "^3.0.3",
     "@fontsource-variable/fira-code": "^5.0.15",
-    "astro": "^3.3.2",
+    "astro": "^3.6.4",
     "unfurl.js": "^6.3.2"
   }
 }
