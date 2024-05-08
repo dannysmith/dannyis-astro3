@@ -3,5 +3,6 @@
 import Notion from './Notion.astro'
 import NotionBlock from './NotionBlock.astro'
 import Grid from './Grid.astro'
+import URLCard from './URLCard.astro'
 
-export { Notion, NotionBlock, Grid }
+export { Notion, NotionBlock, Grid, URLCard }

@@ -1,0 +1,33 @@
+---
+import { unfurl } from 'unfurl.js'
+
+export interface Props {
+  url: string
+  class: string
+}
+
+const { url } = Astro.props
+const result = await unfurl(url)
+
+const urlData = {
+  title: result.title,
+  image_url: result?.open_graph?.images?.[0]?.url ?? '',
+  url: url,
+}
+---
+
+<div class="url-card">
+  <a href={urlData.url}>
+    <h3>{urlData.title}</h3>
+    {urlData.image_url && <img src={urlData.image_url} alt={urlData.title} />}
+  </a>
+</div>
+
+<style>
+  .url-card {
+    border: 2px solid purple;
+    background: teal;
+    overflow: hidden;
+    padding: 1rem;
+  }
+</style>

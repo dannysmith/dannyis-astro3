@@ -4,11 +4,11 @@ import BaseHead from '@components/BaseHead.astro'
 import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import FormattedDate from '@components/FormattedDate.astro'
+import URLCard from '@components/URLCard.astro'
 
 type Props = CollectionEntry<'notes'>['data']
 
 const { title, pubDate, sourceURL } = Astro.props
-console.log(Astro.props)
 ---
 
 <html lang="en">
@@ -19,18 +19,90 @@ console.log(Astro.props)
   <body>
     <Header />
     <main>
-      <article>
+      <article class="note">
+        <div class="date">
+          <FormattedDate date={pubDate} />
+        </div>
         <div class="title">
-          <div class="date">
-            <FormattedDate date={pubDate} />
-          </div>
           <h1>{title}</h1>
         </div>
-        {sourceURL && <a href={sourceURL}>{sourceURL}</a>}
-        <slot />
+        {
+          sourceURL && (
+            <div class="source-url">
+              <URLCard class="url-card" url={sourceURL} />
+            </div>
+          )
+        }
+        <div class="note-content">
+          <slot />
+        </div>
       </article>
     </main>
     <Footer />
-    <style></style>
+    <style>
+      body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 100%;
+      }
+
+      main {
+        padding: 1em;
+        display: grid;
+        place-items: center;
+      }
+
+      .note {
+        --line-height: calc(1.8 * 1rem);
+
+        background: var(--c-white);
+        border-radius: 2px;
+        max-width: 90ch;
+        padding: var(--line-height);
+
+        background: linear-gradient(
+          to bottom,
+          var(--c-white) calc(var(--line-height) - 1px),
+          var(--color-grey-300) 1px
+        );
+        background-size: 100% var(--line-height);
+
+        box-shadow:
+          0px 0px 3px rgb(0, 0, 0, 0.2),
+          0px 0px 10px rgb(0, 0, 0, 0.1);
+      }
+
+      .source-url {
+        height: calc(var(--line-height) * 8);
+        overflow: hidden;
+      }
+
+      .date {
+        font-size: 0.7rem;
+        line-height: var(--line-height);
+        color: var(--color-grey-600);
+        text-transform: uppercase;
+        letter-spacing: 0.1ch;
+      }
+
+      .title {
+        line-height: calc(var(--line-height) * 2);
+        height: calc(var(--line-height) * 2);
+        margin-bottom: var(--line-height);
+      }
+
+      .title h1 {
+        font-size: calc(var(--line-height) * 2);
+      }
+
+      .note-content {
+        margin-top: var(--line-height);
+        line-height: var(--line-height);
+      }
+
+      .note-content p {
+        margin-bottom: var(--line-height);
+      }
+    </style>
   </body>
 </html>
