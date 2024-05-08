@@ -28,11 +28,13 @@ const posts = (
                   <p class="date">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
-                  <h4 class="post-title">{post.data.title}</h4>
-                  {post.data.platform && (
-                    <p class="platform">{post.data.platform}</p>
-                  )}
-                  {post.data.draft && <p class="draft-marker">🚧</p>}
+                  <h4 class="post-title">
+                    {post.data.title}
+                    {post.data.draft && <span class="draft-marker"> 🚧</span>}
+                    {post.data.platform && (
+                      <span class="platform">{post.data.platform}</span>
+                    )}
+                  </h4>
                 </a>
               </li>
             ))
@@ -41,6 +43,10 @@ const posts = (
       </section>
     </main>
     <style>
+      section {
+        padding: 1rem;
+      }
+
       .title {
         text-transform: uppercase;
         font-size: 14vw;
@@ -56,30 +62,53 @@ const posts = (
       }
 
       li {
-        margin-bottom: 1rem;
-        background: pink;
+        margin-bottom: 2rem;
       }
 
       a {
-        display: flex;
-        align-items: baseline;
-        gap: 1rem;
         text-decoration: none;
       }
-      .date {
-        font-size: 0.8rem;
-        color: var(--color-grey-600);
+
+      a:hover .post-title {
+        color: var(--c-primary);
       }
-      .draft-marker {
-        border: 1px solid var()
-        border-radius: 5px;
-        padding: 0 5px;
+
+      .date {
+        font-size: 0.7rem;
+        color: var(--color-grey-600);
+        text-transform: uppercase;
+        letter-spacing: 0.1ch;
       }
 
       .post-title {
         font-size: 24px;
-        color: green;
-        border-bottom: 10px red solid;
+        line-height: 1.2;
+        font-weight: 500;
+        padding-bottom: 0.2rem;
+        border-bottom: 5px var(--c-primary) solid;
+      }
+
+      .platform {
+        display: inline-block;
+        transform: translateY(-0.3em);
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
+        color: var(--color-green-600);
+        border-radius: 4px;
+        border: 1px solid var(--color-green-600);
+      }
+
+      @media screen and (min-width: 800px) {
+        .date {
+          text-align: right;
+          padding-bottom: calc(0.2rem + 5px);
+        }
+        a {
+          display: grid;
+          gap: 1rem;
+          grid-template-columns: 10% 5fr 1fr;
+          align-items: end;
+        }
       }
     </style>
   </body>
