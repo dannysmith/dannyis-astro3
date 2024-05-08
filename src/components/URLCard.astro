@@ -1,12 +1,13 @@
 ---
 import { unfurl } from 'unfurl.js'
+import ArrowRight from '@astropub/icons/ArrowRight'
 
 export interface Props {
   url: string
-  class: string
+  className?: string
 }
 
-const { url } = Astro.props
+const { url, className } = Astro.props
 const result = await unfurl(url)
 
 const urlData = {
@@ -16,18 +17,102 @@ const urlData = {
 }
 ---
 
-<div class="url-card">
+<div class={`url-card ${className}`}>
   <a href={urlData.url}>
-    <h3>{urlData.title}</h3>
-    {urlData.image_url && <img src={urlData.image_url} alt={urlData.title} />}
+    {
+      urlData.image_url && (
+        <div class="image-wrapper">
+          <img src={urlData.image_url} alt={urlData.title} class="image" />
+        </div>
+      )
+    }
+    <div class="content">
+      <div class="text-wrapper">
+        <h3 class="title">{urlData.title}</h3>
+        <p class="url">{urlData.url}</p>
+      </div>
+      <ArrowRight class="arrow" />
+    </div>
   </a>
 </div>
 
 <style>
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .url-card {
-    border: 2px solid purple;
-    background: teal;
+    border: 1px solid var(--color-red-400);
+    background: white;
     overflow: hidden;
+    filter: var(--shadow-xsmall);
+    border-radius: 2px;
+  }
+
+  .url-card:has(a:active) {
+    border-color: var(--color-red-600);
+  }
+  .url-card:has(a:hover) {
+    background-color: var(--color-red-300);
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text-wrapper {
     padding: 1rem;
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .url {
+    color: var(--color-red-500);
+    opacity: 0.5;
+  }
+
+  .image-wrapper {
+    background-color: var(----color-bg-dark-200);
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 20rem;
+  }
+
+  .arrow {
+    flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: var(--c-primary);
+    height: 2rem;
+    width: 2rem;
+  }
+
+  @container (width > 500px) {
+    .url-card a {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .image-wrapper {
+      width: 30%;
+      flex-shrink: 0;
+    }
+
+    .content {
+      flex-grow: 1;
+    }
   }
 </style>

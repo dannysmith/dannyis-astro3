@@ -28,12 +28,12 @@ const { title, pubDate, sourceURL } = Astro.props
         </div>
         {
           sourceURL && (
-            <div class="source-url">
-              <URLCard class="url-card" url={sourceURL} />
+            <div class="source-url cq">
+              <URLCard url={sourceURL} />
             </div>
           )
         }
-        <div class="note-content">
+        <div class="note-content cq">
           <slot />
         </div>
       </article>
@@ -63,7 +63,7 @@ const { title, pubDate, sourceURL } = Astro.props
         background: linear-gradient(
           to bottom,
           var(--c-white) calc(var(--line-height) - 1px),
-          var(--color-grey-300) 1px
+          var(--color-blue-300) 1px
         );
         background-size: 100% var(--line-height);
 

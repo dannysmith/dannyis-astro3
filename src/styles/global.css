@@ -112,7 +112,7 @@
 
   /* Shadows - should be used like filter:var(--shadow-xsmall)*/
 
-  --shadow-xmall: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
+  --shadow-xsmall: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
   --shadow-small: drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.1))
     drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.1));
   --shadow-medium: drop-shadow(0px 1px 3px rgba(16, 24, 40, 0.1))

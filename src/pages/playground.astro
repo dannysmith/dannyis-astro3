@@ -1,7 +1,7 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import TestComponent from '@components/TestComponent.astro'
+import URLCard from '@components/URLCard.astro'
 ---
 
 <!doctype html>
@@ -10,47 +10,14 @@ import TestComponent from '@components/TestComponent.astro'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main>
-      <div class="cq">
-        <TestComponent
-          imageSrc="https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/808ebe9a-1c9c-432f-a69d-4d8a88a11491/Toolbox_Header_2/w=2048,quality=80"
-        >
-          <h1>Card Header</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-            tenetur, mollitia a placeat tempore repellendus magnam itaque iste.
-            In nobis deserunt doloribus eveniet numquam. Praesentium debitis
-            laboriosam doloribus tempore ab!
-          </p>
-          <button>Click Me</button>
-        </TestComponent>
-      </div>
-      <div class="cq">
-        <TestComponent
-          imageSrc="https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/808ebe9a-1c9c-432f-a69d-4d8a88a11491/Toolbox_Header_2/w=2048,quality=80"
-        >
-          <h1>Card Header</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-            tenetur, mollitia a placeat tempore repellendus magnam itaque iste.
-            In nobis deserunt doloribus eveniet numquam. Praesentium debitis
-            laboriosam doloribus tempore ab!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-            tenetur, mollitia a placeat tempore repellendus magnam itaque iste.
-            In nobis deserunt doloribus eveniet numquam. Praesentium debitis
-            laboriosam doloribus tempore ab!
-          </p>
-          <button>Click Me</button>
-        </TestComponent>
-      </div>
+    <main class="cq">
+      <URLCard url="https://youtu.be/AD5aAd8Oy84?si=SpWmlnsexh0XS4eh" />
+
+      <style>
+        body {
+          padding: 1rem;
+        }
+      </style>
     </main>
-    <style>
-      main {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-      }
-    </style>
   </body>
 </html>
