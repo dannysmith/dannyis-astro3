@@ -43,18 +43,18 @@ const urlData = {
   }
 
   .url-card {
-    border: 1px solid var(--color-red-400);
+    border: 1px solid var(--color-grey-400);
     background: white;
     overflow: hidden;
-    filter: var(--shadow-xsmall);
     border-radius: 2px;
   }
-
-  .url-card:has(a:active) {
-    border-color: var(--color-red-600);
-  }
   .url-card:has(a:hover) {
-    background-color: var(--color-red-300);
+    background-color: var(--color-bg-light-200);
+    border-color: var(--color-red-500);
+  }
+
+  .url-card:has(a:active, a:focus) {
+    border-color: var(--color-red-700);
   }
 
   .content {
@@ -75,7 +75,7 @@ const urlData = {
   }
 
   .url {
-    color: var(--color-red-500);
+    color: var(--color-red-600);
     opacity: 0.5;
   }
 
@@ -94,7 +94,7 @@ const urlData = {
     flex-shrink: 0;
     margin-left: 1rem;
     margin-right: 1rem;
-    color: var(--c-primary);
+    color: var(--color-red-600);
     height: 2rem;
     width: 2rem;
   }

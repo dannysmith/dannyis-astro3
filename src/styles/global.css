@@ -79,7 +79,7 @@
 
   --color-grey-300: #ebeced;
   --color-grey-400: #ebeced;
-  --color-grey-50: #979a9bf2;
+  --color-grey-500: #979a9bf2;
   --color-grey-600: #9b9a97;
   --color-grey-700: #596063;
   --color-grey-800: #454b4e;
@@ -287,4 +287,36 @@ kbd {
 /* Utility class for making the element a container, so container queries will work */
 .cq {
   container-type: inline-size;
+}
+
+.prose {
+  font-size: 1.125rem;
+  line-height: 1.75;
+
+  p,
+  ul,
+  ol,
+  dl,
+  figure,
+  blockquote,
+  pre {
+    margin-block-start: 1.5rem;
+  }
+
+  blockquote {
+    border-left: 0.5rem solid var(--color-red-500);
+    padding-inline-start: 1rem;
+    font-style: italic;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+    border-bottom: 2px solid var(--color-red-500);
+    margin-block-start: 2rem;
+  }
 }

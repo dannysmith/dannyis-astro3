@@ -33,7 +33,7 @@ const { title, pubDate, sourceURL } = Astro.props
             </div>
           )
         }
-        <div class="note-content cq">
+        <div class="note-content cq prose">
           <slot />
         </div>
       </article>
@@ -56,38 +56,28 @@ const { title, pubDate, sourceURL } = Astro.props
         --line-height: calc(1.8 * 1rem);
 
         background: var(--c-white);
-        border-radius: 2px;
-        max-width: 90ch;
+        width: 80ch;
         padding: var(--line-height);
 
-        background: linear-gradient(
-          to bottom,
-          var(--c-white) calc(var(--line-height) - 1px),
-          var(--color-blue-300) 1px
+        background-image: radial-gradient(
+          var(--color-red-500) 0.5px,
+          transparent 0
         );
-        background-size: 100% var(--line-height);
-
-        box-shadow:
-          0px 0px 3px rgb(0, 0, 0, 0.2),
-          0px 0px 10px rgb(0, 0, 0, 0.1);
-      }
-
-      .source-url {
-        height: calc(var(--line-height) * 8);
-        overflow: hidden;
+        background-size: 1rem 1rem;
+        filter: var(--shadow-small);
+        border-top: 1rem solid var(--color-red-600);
       }
 
       .date {
         font-size: 0.7rem;
         line-height: var(--line-height);
-        color: var(--color-grey-600);
+        color: var(--color-grey-700);
         text-transform: uppercase;
         letter-spacing: 0.1ch;
       }
 
       .title {
         line-height: calc(var(--line-height) * 2);
-        height: calc(var(--line-height) * 2);
         margin-bottom: var(--line-height);
       }
 
