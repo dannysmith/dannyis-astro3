@@ -390,8 +390,9 @@ s {
   h5,
   h6 {
     line-height: 1.2;
-    border-bottom: 2px solid var(--color-red-500);
-    margin-block-start: 2rem;
+    border-bottom: 1px solid var(--color-red-500);
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
   }
 
   a {

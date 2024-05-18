@@ -38,7 +38,7 @@ const { title, pubDate, sourceURL } = Astro.props
     padding: var(--line-height);
 
     background-image: radial-gradient(
-      var(--color-red-500) 0.5px,
+      var(--color-red-400) 0.5px,
       transparent 0
     );
     background-size: 1rem 1rem;
@@ -48,7 +48,6 @@ const { title, pubDate, sourceURL } = Astro.props
 
   .date {
     font-size: 0.7rem;
-    line-height: var(--line-height);
     color: var(--color-grey-700);
     text-transform: uppercase;
     letter-spacing: 0.1ch;
@@ -56,19 +55,21 @@ const { title, pubDate, sourceURL } = Astro.props
 
   .title {
     line-height: calc(var(--line-height) * 2);
-    margin-bottom: var(--line-height);
+    margin-top: var(--line-height);
+    padding-bottom: calc(var(--line-height) / 2);
+    border-bottom: 1px solid var(--color-red-500);
   }
 
   .title h1 {
-    font-size: calc(var(--line-height) * 2);
+    font-size: clamp(
+      calc(var(--line-height) * 1),
+      4vw,
+      calc(var(--line-height) * 3)
+    );
   }
 
+  .source-url,
   .note-content {
     margin-top: var(--line-height);
-    line-height: var(--line-height);
-  }
-
-  .note-content p {
-    margin-bottom: var(--line-height);
   }
 </style>
