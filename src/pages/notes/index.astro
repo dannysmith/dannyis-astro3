@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content'
 import FormattedDate from '@components/FormattedDate.astro'
 
 const notes = (await getCollection('notes')).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )
 ---
 
@@ -16,18 +16,19 @@ const notes = (await getCollection('notes')).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
+    <!-- <Header /> -->
     <main>
+      <h1 class="title">Notes</h1>
       <section>
         <ul>
           {
             notes.map((note) => (
               <li>
                 <a href={`/notes/${note.slug}/`}>
-                  <h4 class="title">{note.data.title}</h4>
                   <p class="date">
                     <FormattedDate date={note.data.pubDate} />
                   </p>
+                  <h4 class="note-title">{note.data.title}</h4>
                 </a>
               </li>
             ))
@@ -35,5 +36,64 @@ const notes = (await getCollection('notes')).sort(
         </ul>
       </section>
     </main>
+    <style>
+      section {
+        padding: 1rem;
+      }
+
+      .title {
+        text-transform: uppercase;
+        font-size: 14vw;
+        transform: translateY(-0.3em);
+        text-align: right;
+        pointer-events: none;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 2rem;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover .note-title {
+        color: var(--c-primary);
+      }
+
+      .date {
+        font-size: 0.7rem;
+        color: var(--color-grey-600);
+        text-transform: uppercase;
+        letter-spacing: 0.1ch;
+      }
+
+      .note-title {
+        font-size: 24px;
+        line-height: 1.2;
+        font-weight: 500;
+        padding-bottom: 0.2rem;
+        border-bottom: 5px var(--c-primary) solid;
+      }
+
+      @media screen and (min-width: 800px) {
+        .date {
+          text-align: right;
+          padding-bottom: calc(0.2rem + 5px);
+        }
+        a {
+          display: grid;
+          gap: 1rem;
+          grid-template-columns: 10% 5fr 1fr;
+          align-items: end;
+        }
+      }
+    </style>
   </body>
 </html>
