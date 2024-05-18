@@ -284,11 +284,85 @@ kbd {
   font-family: var(--font-code);
 }
 
+/* ----------- Abrr ----------- */
+
+abbr {
+  text-transform: lowercase;
+  font-variant: small-caps;
+
+  font-variation-settings: 'opsz' 10;
+  font-weight: 380;
+  font-size: 0.95em;
+
+  text-decoration-color: rgba(0, 0, 0, 0.15);
+  text-underline-position: under;
+}
+
+abbr[title] {
+  cursor: help;
+}
+
+/* ----------- Code ----------- */
+
+code {
+  font-size: 0.85em;
+  padding: 0 0.5ch;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  white-space: pre;
+  font-variant-numeric: initial;
+}
+
+pre {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: scroll;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+/* ----------- Tables ----------- */
+
+table {
+  border-collapse: collapse;
+  border: 1px solid rgb(0, 0, 0, 0.05);
+  text-align: left;
+  border-spacing: 0;
+  font-size: 0.8em;
+}
+
+thead {
+  font-weight: 600;
+  background: rgb(0, 0, 0, 0.05);
+}
+
+th,
+td {
+  padding: 0.5em 1em;
+  border: 1px solid rgb(0, 0, 0, 0.05);
+}
+
+mark {
+  background: var(--color-yellow-400);
+}
+
+del,
+s {
+  text-decoration-color: rgba(0, 0, 0, 0.5);
+}
+
 /* Utility class for making the element a container, so container queries will work */
 .cq {
   container-type: inline-size;
 }
 
+/* Utility class to style contents as a prose */
 .prose {
   font-size: 1.125rem;
   line-height: 1.75;
@@ -318,5 +392,26 @@ kbd {
     line-height: 1.2;
     border-bottom: 2px solid var(--color-red-500);
     margin-block-start: 2rem;
+  }
+
+  a {
+    color: var(--color-red-500);
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: var(--color-purple-600);
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:active {
+    color: var(--color-red-600);
+    text-decoration: underline;
+  }
+
+  ul.contains-task-list {
+    list-style-type: none;
+    padding-inline-start: 0;
   }
 }

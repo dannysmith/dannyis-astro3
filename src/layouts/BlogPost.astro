@@ -110,7 +110,7 @@ const {
 
     <style is:global>
       :root {
-        --background-color: var(--color-yellow-300);
+        /* --background-color: var(--color-yellow-300); */
       }
 
       .blog-article {
@@ -356,14 +356,6 @@ const {
         font-weight: 650;
       }
 
-      .blog-article mark {
-        background: var(--color-yellow-400);
-      }
-
-      .blog-article :is(del, s) {
-        text-decoration-color: rgba(0, 0, 0, 0.5);
-      }
-
       /* ----------- HR ----------- */
       .blog-article hr {
         display: flex;
@@ -394,70 +386,6 @@ const {
         margin-left: 0;
       }
 
-      /* ----------- Abrr ----------- */
-
-      .blog-article abbr {
-        text-transform: lowercase;
-        font-variant: small-caps;
-
-        font-variation-settings: 'opsz' 10;
-        font-weight: 380;
-        font-size: 0.95em;
-
-        text-decoration-color: rgba(0, 0, 0, 0.15);
-        text-underline-position: under;
-      }
-
-      .blog-article abbr[title] {
-        cursor: help;
-      }
-
-      /* ----------- Code ----------- */
-
-      .blog-article code {
-        font-size: 0.85em;
-        padding: 0 0.5ch;
-        background-color: rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 1px;
-        white-space: pre;
-        font-variant-numeric: initial;
-      }
-
-      .blog-article pre {
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        padding: calc((1em * var(--line-height)) - 2px);
-        overflow-x: scroll;
-      }
-
-      .blog-article pre code {
-        padding: 0;
-        background-color: transparent;
-        border: none;
-      }
-
-      /* ----------- Tables ----------- */
-
-      .blog-article table {
-        border-collapse: collapse;
-        border: 1px solid rgb(0, 0, 0, 0.05);
-        text-align: left;
-        border-spacing: 0;
-        font-size: 0.8em;
-      }
-
-      .blog-article thead {
-        font-weight: 600;
-        background: rgb(0, 0, 0, 0.05);
-      }
-
-      .blog-article th,
-      td {
-        padding: 0.5em 1em;
-        border: 1px solid rgb(0, 0, 0, 0.05);
-      }
-
       /* ----------- Footnotes ----------- */
 
       .blog-article [data-footnote-ref] {
@@ -471,7 +399,8 @@ const {
         text-decoration: none;
         color: var(--c-primary);
       }
-      /* Bleeds */
+
+      /* ----------- Bleeds for images ----------- */
       .blog-article > .bleed-left {
         grid-column: 1 / 3;
       }
@@ -481,6 +410,9 @@ const {
       .blog-article > .bleed-full {
         width: 100%;
         grid-column: 1 / 4;
+      }
+      .blog-article > .border {
+        filter: var(--shadow-small);
       }
     </style>
   </body>
