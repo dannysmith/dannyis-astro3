@@ -8,7 +8,7 @@ const posts = (
   await await getCollection('blog', ({ data }) => {
     return import.meta.env.PROD ? data.draft !== true : true
   })
-).sort((b, a) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
 ---
 
 <!doctype html>
