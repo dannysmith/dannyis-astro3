@@ -362,6 +362,27 @@ s {
   container-type: inline-size;
 }
 
+/* Links added by rehypeAutolinkHeadings */
+:is(h1, h2, h3, h4, h5, h6):hover,
+.icon-link:hover {
+  .icon-link {
+    display: block;
+  }
+}
+
+.icon-link {
+  position: absolute;
+  transform: translate(-1.5em, 0.4em);
+  font-size: 0.6em;
+  display: none;
+  height: 1em;
+  width: 3em;
+}
+
+.icon-link:before {
+  content: '🔗';
+}
+
 /* Utility class to style contents as a prose */
 .prose {
   font-size: 1.125rem;

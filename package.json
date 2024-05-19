@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^5.1.0",
     "@astrojs/mdx": "^2.3.1",
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/rss": "^4.0.5",
@@ -17,6 +18,7 @@
     "@astropub/icons": "^0.2.0",
     "@fontsource-variable/fira-code": "^5.0.15",
     "astro": "^4.7.1",
+    "rehype-autolink-headings": "^7.1.0",
     "unfurl.js": "^6.3.2"
   }
 }

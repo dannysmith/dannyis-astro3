@@ -3,11 +3,16 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 
 import prefetch from '@astrojs/prefetch'
+import { rehypeHeadingIds } from '@astrojs/markdown-remark'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), prefetch()],
+  markdown: {
+    rehypePlugins: [rehypeHeadingIds, rehypeAutolinkHeadings],
+  },
   // Redirects to external sites are not officially supported. Avoid using a trailing slash.
   // See here:
   // - https://github.com/withastro/astro/pull/9287
