@@ -135,6 +135,10 @@ const {
         grid-column: 2 / 3;
       }
 
+      .blog-article:last-child {
+        margin-bottom: 5em;
+      }
+
       /* Headings */
 
       .blog-article > :is(h1, h2, h3, h4, h5, h6) {
@@ -215,6 +219,7 @@ const {
 
       /* End Mark */
       .blog-article > p:last-of-type:after {
+        color: var(--c-primary);
         display: inline-block;
         content: ' ';
         -webkit-mask: url('/end-mark.svg');
