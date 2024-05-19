@@ -1,0 +1,70 @@
+---
+import BaseHead from '@components/BaseHead.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import Callout from '@components/Callout.astro'
+import Footer from '@components/Footer.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main class="cq">
+      <h1>What I'm doing now</h1>
+      <Callout icon="💡">
+        This is a <a href="https://nownownow.com/about">Now Page</a>. Thanks to
+        Derek Sivers for the <a href="https://sive.rs/nowff">idea</a>.
+      </Callout>
+
+      <div class="content prose">
+        <p>Updated: 17 May 2024</p>
+
+        <ul>
+          <li>
+            Working as COO of <a href="https://polestar-eam.com"
+              >Pole Star EAM.</a
+            >
+          </li>
+          <li>
+            <a href="https://betterat.work">Consulting</a> on leadership, remote
+            working and operations with a few other companies.
+          </li>
+          <li>
+            Adding to my <a href="https://betterat.work/toolbox"
+              >collection of tools and frameworks</a
+            >
+          </li>
+          <li>Playing at Open Mic nights in my local pub.</li>
+          <li>Living in a lovely little mews in Islington, North London.</li>
+        </ul>
+      </div>
+    </main>
+    <Footer />
+    <style>
+      body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 100%;
+      }
+
+      main {
+        padding: 1em;
+        display: grid;
+        place-items: center;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      main > * {
+        margin-top: 3rem;
+      }
+    </style>
+  </body>
+</html>
