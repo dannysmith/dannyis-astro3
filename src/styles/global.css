@@ -381,6 +381,7 @@ s {
 
 .icon-link:before {
   content: '🔗';
+  /* content: url('/link-icon.svg'); */
 }
 
 /* Utility class to style contents as a prose */
