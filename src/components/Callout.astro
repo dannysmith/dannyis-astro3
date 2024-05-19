@@ -4,7 +4,7 @@ export interface Props {
   type?: 'default' | 'red' | 'blue' | 'green' | 'orange' | 'yellow'
   icon?: string
 }
-console.log('Astro.props', Astro.props)
+
 const { title, icon, type = 'default' } = Astro.props
 ---
 
