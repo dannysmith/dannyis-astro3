@@ -4,5 +4,6 @@ import Notion from './Notion.astro'
 import NotionBlock from './NotionBlock.astro'
 import Grid from './Grid.astro'
 import URLCard from './URLCard.astro'
+import Callout from './Callout.astro'
 
-export { Notion, NotionBlock, Grid, URLCard }
+export { Notion, NotionBlock, Grid, URLCard, Callout }

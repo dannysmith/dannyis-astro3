@@ -1,0 +1,80 @@
+---
+export interface Props {
+  title?: string
+  type?: 'default' | 'red' | 'blue' | 'green' | 'orange' | 'yellow'
+  icon?: string
+}
+console.log('Astro.props', Astro.props)
+const { title, icon, type = 'default' } = Astro.props
+---
+
+<aside aria-label={title} class="callout" data-callout-color={type}>
+  {
+    icon && (
+      <div class="icon-wrapper">
+        <div class="icon">{icon}</div>
+      </div>
+    )
+  }
+  <div class="content-wrapper">
+    {title && <h3 class="title">{title}</h3>}
+    <section class="prose content">
+      <slot />
+    </section>
+  </div>
+</aside>
+
+<style>
+  .callout {
+    display: flex;
+    background: var(--color-grey-300);
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  .icon-wrapper {
+    flex-shrink: 0;
+    padding-right: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  .title {
+    line-height: inherit;
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    flex-grow: 1;
+
+    section {
+      margin: 0;
+    }
+  }
+
+  [data-callout-color='red'] {
+    background: var(--color-red-300);
+  }
+
+  [data-callout-color='blue'] {
+    background: var(--color-blue-300);
+  }
+
+  [data-callout-color='green'] {
+    background: var(--color-green-300);
+  }
+
+  [data-callout-color='orange'] {
+    background: var(--color-orange-300);
+  }
+
+  [data-callout-color='yellow'] {
+    background: var(--color-yellow-300);
+  }
+</style>

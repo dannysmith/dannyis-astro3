@@ -1,7 +1,7 @@
 ---
 import BaseHead from '@components/BaseHead.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import URLCard from '@components/URLCard.astro'
+import Callout from '@components/Callout.astro'
 ---
 
 <!doctype html>
@@ -11,7 +11,36 @@ import URLCard from '@components/URLCard.astro'
   </head>
   <body>
     <main class="cq">
-      <URLCard url="https://youtu.be/AD5aAd8Oy84?si=SpWmlnsexh0XS4eh" />
+      <Callout>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum hic a
+          dolorem ipsa labore cum, consequatur nihil voluptatibus tempora in
+          iusto, doloribus magnam! Earum repudiandae quasi molestias beatae
+          tempore saepe.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum hic a
+          dolorem ipsa labore cum, consequatur nihil voluptatibus tempora in
+          iusto, doloribus magnam! Earum repudiandae quasi molestias beatae
+          tempore saepe.
+        </p>
+      </Callout>
+
+      <Callout icon="💡" type="blue">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum hic a
+          dolorem ipsa labore cum.
+        </p>
+      </Callout>
+
+      <Callout title="Security Checklist" icon="1️⃣">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum hic a
+          dolorem ipsa labore cum, consequatur nihil voluptatibus tempora in
+          iusto, doloribus magnam! Earum repudiandae quasi molestias beatae
+          tempore saepe.
+        </p>
+      </Callout>
 
       <style>
         body {

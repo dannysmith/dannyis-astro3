@@ -316,7 +316,7 @@ code {
 
 pre {
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 1rem;
   overflow-x: scroll;
 }
@@ -367,19 +367,13 @@ s {
   font-size: 1.125rem;
   line-height: 1.75;
 
-  p,
-  ul,
-  ol,
-  dl,
-  figure,
-  blockquote,
-  pre {
-    margin-block-start: 1.5rem;
+  &:not(:first-child) {
+    margin-top: 1rem;
   }
 
   blockquote {
     border-left: 0.5rem solid var(--color-red-500);
-    padding-inline-start: 1rem;
+    padding-left: 1rem;
     font-style: italic;
   }
 
@@ -391,7 +385,6 @@ s {
   h6 {
     line-height: 1.2;
     border-bottom: 1px solid var(--color-red-500);
-    margin-top: 2rem;
     padding-bottom: 0.5rem;
   }
 
