@@ -8,7 +8,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://danny.is',
   integrations: [mdx(), sitemap(), prefetch()],
   markdown: {
     rehypePlugins: [rehypeHeadingIds, rehypeAutolinkHeadings],
