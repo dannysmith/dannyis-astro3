@@ -2,6 +2,8 @@
 import BaseHead from '@components/BaseHead.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import Callout from '@components/Callout.astro'
+import Footer from '@components/Footer.astro'
+import MainNavigation from '@components/MainNavigation.astro'
 ---
 
 <!doctype html>
@@ -10,6 +12,7 @@ import Callout from '@components/Callout.astro'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <MainNavigation />
     <main class="cq">
       <Callout>
         <p>
@@ -41,12 +44,16 @@ import Callout from '@components/Callout.astro'
           tempore saepe.
         </p>
       </Callout>
-
-      <style>
-        body {
-          padding: 1rem;
-        }
-      </style>
     </main>
+    <Footer />
+    <style>
+      body {
+        display: grid;
+        grid-template-rows: auto min-content;
+      }
+      main {
+        padding: 1rem;
+      }
+    </style>
   </body>
 </html>

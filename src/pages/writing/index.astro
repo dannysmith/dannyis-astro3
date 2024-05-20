@@ -3,6 +3,8 @@ import BaseHead from '@components/BaseHead.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
 import { getCollection } from 'astro:content'
 import FormattedDate from '@components/FormattedDate.astro'
+import Footer from '@components/Footer.astro'
+import MainNavigation from '@components/MainNavigation.astro'
 
 const posts = (
   await await getCollection('blog', ({ data }) => {
@@ -17,6 +19,7 @@ const posts = (
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <MainNavigation />
     <main>
       <h1 class="title">Writing</h1>
       <section>
@@ -42,7 +45,13 @@ const posts = (
         </ul>
       </section>
     </main>
+    <Footer />
     <style>
+      body {
+        display: grid;
+        grid-template-rows: auto min-content;
+      }
+
       section {
         padding: 1rem;
       }

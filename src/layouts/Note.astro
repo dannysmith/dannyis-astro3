@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import BaseHead from '@components/BaseHead.astro'
-import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import NoteCard from '@components/NoteCard.astro'
+import MainNavigation from '@components/MainNavigation.astro'
 
 type Props = CollectionEntry<'notes'>['data']
 
@@ -16,7 +16,7 @@ const { title, pubDate, sourceURL } = Astro.props
   </head>
 
   <body>
-    <Header />
+    <MainNavigation />
     <main>
       <NoteCard title={title} pubDate={pubDate} sourceURL={sourceURL}>
         <slot />
@@ -29,6 +29,7 @@ const { title, pubDate, sourceURL } = Astro.props
         display: grid;
         grid-template-rows: auto 1fr auto;
         grid-template-columns: 100%;
+        background-color: var(--color-red-500);
       }
 
       main {

@@ -37,24 +37,24 @@ const urlData = {
 </div>
 
 <style>
-  a {
+  a, a:hover, a:visited, a:active, a:focus {
     text-decoration: none;
     color: inherit;
   }
 
   .url-card {
-    border: 1px solid var(--color-grey-400);
-    background: white;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    background: var(--color-bg-dark-200);
+    color: var(--c-white);
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 4px;
   }
-  .url-card:has(a:hover) {
-    background-color: var(--color-bg-light-200);
-    border-color: var(--color-red-500);
-  }
+  .url-card:has(a:hover, a:active, a:focus) {
+    border-color: var(--c-primary);
 
-  .url-card:has(a:active, a:focus) {
-    border-color: var(--color-red-700);
+    .arrow {
+      fill: var(--c-primary);
+    }
   }
 
   .content {
@@ -70,17 +70,18 @@ const urlData = {
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, calc(0.6rem + 1vw), 1.5rem)
     padding-bottom: 0.5rem;
   }
 
   .url {
-    color: var(--color-red-600);
-    opacity: 0.5;
+    color: var(--color-red-500);
+    font-family: var(--font-code);
+    font-size: 0.6em;
   }
 
   .image-wrapper {
-    background-color: var(----color-bg-dark-200);
+    background-color: var(--color-bg-dark-200);
   }
 
   .image {
@@ -94,12 +95,11 @@ const urlData = {
     flex-shrink: 0;
     margin-left: 1rem;
     margin-right: 1rem;
-    color: var(--color-red-600);
     height: 2rem;
     width: 2rem;
   }
 
-  @container (width > 500px) {
+  @container (width > 400px) {
     .url-card a {
       display: flex;
       justify-content: space-between;

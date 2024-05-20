@@ -5,6 +5,8 @@ import Spinner from '@components/Spinner.astro'
 import BaseHead from '@components/BaseHead.astro'
 import Footer from '@components/Footer.astro'
 import FormattedDate from '@components/FormattedDate.astro'
+import Lightbox from '@components/Lightbox.astro'
+import MainNavigation from '@components/MainNavigation.astro'
 
 type Props = CollectionEntry<'blog'>['data']
 
@@ -32,6 +34,7 @@ const {
   </head>
 
   <body>
+    <MainNavigation />
     {
       platform && redirectURL && (
         <div class="spinner-overlay">
@@ -66,8 +69,9 @@ const {
         <slot />
       </article>
     </main>
-    <Footer />
 
+    <Footer />
+    <Lightbox />
     <style>
       body {
         background: var(--background-color);
@@ -325,6 +329,7 @@ const {
         position: relative;
         height: 0.7em;
         width: 0.7em;
+        margin-bottom: 0;
 
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -403,6 +408,18 @@ const {
         letter-spacing: 0.05ch;
         text-decoration: none;
         color: var(--c-primary);
+      }
+
+      .blog-article .footnotes {
+        border-top: 1px solid var(--c-primary);
+        margin-top: 2em;
+        padding-top: 1em;
+        font-size: 0.8em;
+
+        .data-footnote-backref {
+          text-decoration: none;
+          color: var(--c-primary);
+        }
       }
 
       /* ----------- Bleeds for images ----------- */
