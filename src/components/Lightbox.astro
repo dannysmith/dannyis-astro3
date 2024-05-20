@@ -32,22 +32,20 @@
   }
 </style>
 
-<script>
+<script is:inline>
   // Lightbox Script
   document.addEventListener('DOMContentLoaded', function () {
-    const lightbox = document.getElementById('lightbox') as HTMLDivElement
-    const lightboxCanvas = document.getElementById(
-      'lightboxCanvas'
-    ) as HTMLCanvasElement
+    const lightbox = document.getElementById('lightbox')
+    const lightboxCanvas = document.getElementById('lightboxCanvas')
     const ctx = lightboxCanvas.getContext('2d')
-    const closeBtn = document.getElementById('close') as HTMLSpanElement
+    const closeBtn = document.getElementById('close')
 
     document.querySelectorAll('img[data-image-component]').forEach((img) => {
       img.addEventListener('click', function () {
         lightbox.style.display = 'flex'
 
         const image = new Image()
-        image.src = (this as HTMLImageElement).src
+        image.src = this.src
         image.onload = function () {
           lightboxCanvas.width = image.width
           lightboxCanvas.height = image.height
