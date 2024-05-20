@@ -3,6 +3,7 @@ import BaseHead from '@components/BaseHead.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import Callout from '@components/Callout.astro'
 import Footer from '@components/Footer.astro'
+import MainNavigation from '@components/MainNavigation.astro'
 ---
 
 <!doctype html>
@@ -11,6 +12,7 @@ import Footer from '@components/Footer.astro'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <MainNavigation />
     <main class="cq">
       <h1>What I'm doing now</h1>
       <Callout icon="💡">

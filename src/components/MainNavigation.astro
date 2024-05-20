@@ -1,8 +1,13 @@
 ---
 import NavLink from '@components/NavLink.astro'
+import HamburgerMenu from '@astropub/icons/HamburgerMenu'
 ---
 
+<a class="open-nav-link" href="#">
+  <HamburgerMenu />
+</a>
 <nav class="main-navigation">
+  <span class="close">&times;</span>
   <section class="footer-name">
     <div class="circle"></div>
     <div class="name">Danny Smith</div>
@@ -19,17 +24,27 @@ import NavLink from '@components/NavLink.astro'
 </nav>
 
 <style>
+  .open-nav-link {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 1.5em;
+    z-index: 1000;
+    color: var(--c-primary);
+    cursor: pointer;
+  }
+
   .main-navigation {
     display: none;
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
     background-color: var(--color-bg-dark-200);
     color: var(--c-white);
     border-right: 1rem solid var(--c-primary);
     padding: 1em 2em 1em 1em;
     font-size: clamp(0.8rem, calc(0.6rem + 1vw), 1.2rem);
-
-    position: fixed;
-    height: 100vh;
-    z-index: 1000;
   }
 
   ul {
@@ -85,4 +100,21 @@ import NavLink from '@components/NavLink.astro'
       color: var(--c-primary);
     }
   }
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+  }
 </style>
+
+<script>
+  document.querySelector('.close')?.addEventListener('click', () => {
+    document.querySelector('.main-navigation').style.display = 'none'
+  })
+  document.querySelector('.open-nav-link')?.addEventListener('click', () => {
+    document.querySelector('.main-navigation').style.display = 'block'
+  })
+</script>

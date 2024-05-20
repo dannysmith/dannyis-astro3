@@ -4,6 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
 import { getCollection } from 'astro:content'
 import FormattedDate from '@components/FormattedDate.astro'
 import Footer from '@components/Footer.astro'
+import MainNavigation from '@components/MainNavigation.astro'
 
 const notes = (await getCollection('notes')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -16,6 +17,7 @@ const notes = (await getCollection('notes')).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <MainNavigation />
     <main>
       <h1 class="title">Notes</h1>
       <section>
