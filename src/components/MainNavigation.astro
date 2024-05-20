@@ -8,11 +8,11 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu'
 </a>
 <nav class="main-navigation">
   <span class="close">&times;</span>
-  <section class="footer-name">
+  <section class="nav-name">
     <div class="circle"></div>
     <div class="name">Danny Smith</div>
   </section>
-  <section class="footer-nav-links">
+  <section class="nav-nav-links">
     <ul>
       <li><NavLink href="/">Home</NavLink></li>
       <li><NavLink href="/writing">Writing</NavLink></li>
@@ -29,15 +29,19 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu'
     position: fixed;
     top: 1rem;
     left: 1rem;
-    width: 1.5em;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border-radius: 1px;
     z-index: 1000;
     color: var(--c-primary);
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
   }
 
   .main-navigation {
-    display: none;
     position: fixed;
+    left: -100%;
     height: 100vh;
     z-index: 1000;
     background-color: var(--color-bg-dark-200);
@@ -45,6 +49,11 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu'
     border-right: 1rem solid var(--c-primary);
     padding: 1em 2em 1em 1em;
     font-size: clamp(0.8rem, calc(0.6rem + 1vw), 1.2rem);
+    transition: left 0.2s ease-in-out;
+  }
+
+  .main-navigation.open {
+    left: 0;
   }
 
   ul {
@@ -56,7 +65,7 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu'
     list-style-type: none;
   }
 
-  .footer-name {
+  .nav-name {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -76,7 +85,7 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu'
     text-align: left;
   }
 
-  .footer-nav-links {
+  .nav-nav-links {
     margin-top: 1rem;
     padding-left: 2rem;
 
@@ -102,19 +111,25 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu'
   }
   .close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1rem;
+    top: 0.7em;
+    right: 0.7em;
+    font-size: 1em;
     color: white;
     cursor: pointer;
   }
 </style>
 
 <script>
-  document.querySelector('.close')?.addEventListener('click', () => {
-    document.querySelector('.main-navigation').style.display = 'none'
-  })
-  document.querySelector('.open-nav-link')?.addEventListener('click', () => {
-    document.querySelector('.main-navigation').style.display = 'block'
-  })
+  const closeNav = () => {
+    document.querySelector('.main-navigation')?.classList.remove('open')
+  }
+
+  const openNav = () => {
+    document.querySelector('.main-navigation')?.classList.add('open')
+  }
+
+  document.querySelector('.close')?.addEventListener('click', closeNav)
+  document.querySelector('main')?.addEventListener('click', closeNav)
+  document.querySelector('footer')?.addEventListener('click', closeNav)
+  document.querySelector('.open-nav-link')?.addEventListener('click', openNav)
 </script>
