@@ -4,6 +4,7 @@ import Header from '@components/Header.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
 import { getCollection } from 'astro:content'
 import FormattedDate from '@components/FormattedDate.astro'
+import Footer from '@components/Footer.astro'
 
 const notes = (await getCollection('notes')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -36,7 +37,13 @@ const notes = (await getCollection('notes')).sort(
         </ul>
       </section>
     </main>
+    <Footer />
     <style>
+      body {
+        display: grid;
+        grid-template-rows: auto min-content;
+      }
+
       section {
         padding: 1rem;
       }

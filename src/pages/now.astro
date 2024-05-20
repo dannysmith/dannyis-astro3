@@ -45,14 +45,14 @@ import Footer from '@components/Footer.astro'
     <style>
       body {
         display: grid;
-        grid-template-rows: auto 1fr auto;
-        grid-template-columns: 100%;
+        grid-template-rows: auto min-content;
       }
 
       main {
         padding: 1em;
-        display: grid;
-        place-items: center;
+        width: 100%;
+        max-width: 80ch;
+        margin: 0 auto;
       }
 
       h1 {

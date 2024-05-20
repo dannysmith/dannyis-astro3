@@ -1,5 +1,4 @@
 ---
-import {} from '@astropub/icons'
 import RSSIcon from '@components/icons/RSSIcon.astro'
 import LinkedInIcon from '@components/icons/LinkedInIcon.astro'
 import YouTubeIcon from '@components/icons/YouTubeIcon.astro'
@@ -8,42 +7,139 @@ const today = new Date()
 ---
 
 <footer>
-  <div class="footer-nav-links">
+  <section class="footer-name">
+    <div class="circle"></div>
+    <div class="name">Danny Smith</div>
+  </section>
+  <section class="footer-nav-links">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/writing">Writing</a></li>
       <li><a href="/notes">Notes</a></li>
       <li><a href="/now">Now</a></li>
       <li><a href="/working">Work</a></li>
-      <li><a href="/toolbox"><strong>Toolbox</strong></a></li>
+      <li><a href="/toolbox">Toolbox</a></li>
     </ul>
-    <div class="footer-social-links">
-      <ul>
-        <li><a href="/rss.xml" title="RSS Feed"><RSSIcon /></a></li>
-        <li>
-          <a href="/linkedin" title="LinkedIn Profile"><LinkedInIcon /></a>
-        </li>
-        <li><a href="/youtube" title="Youtube Channel"><YouTubeIcon /></a></li>
-        <li>
-          <a href="https://instagram.com/dannysmith" title="Instagram Profile"
-            ><InstagramIcon /></a
-          >
-        </li>
-      </ul>
-    </div>
-    <div class="copyright">
-      &copy; {today.getFullYear()} Danny Smith.
-    </div>
+  </section>
+  <section class="footer-social-links">
+    <ul>
+      <li><a href="/rss.xml" title="RSS Feed"><RSSIcon /></a></li>
+      <li>
+        <a href="/linkedin" title="LinkedIn Profile"><LinkedInIcon /></a>
+      </li>
+      <li><a href="/youtube" title="Youtube Channel"><YouTubeIcon /></a></li>
+      <li>
+        <a href="https://instagram.com/dannysmith" title="Instagram Profile"
+          ><InstagramIcon /></a
+        >
+      </li>
+    </ul>
+  </section>
+  <div class="copyright">
+    &copy; {today.getFullYear()} Danny Smith.
   </div>
-  <style>
-    footer {
-      background-color: var(--c-brand-dark-grey);
-      color: var(--c-white);
-    }
+</footer>
+<style>
+  footer {
+    position: relative;
+    background-color: var(--color-bg-dark-200);
+    color: var(--c-white);
+    border-top: 1rem solid var(--c-primary);
+    padding: 1rem;
+  }
 
-    .copyright {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .footer-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--c-primary);
+    border-radius: 50%;
+  }
+  .name {
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0.05ch;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .footer-nav-links {
+    margin-top: 1rem;
+    padding-left: 2rem;
+
+    li {
       text-transform: uppercase;
       letter-spacing: 0.1ch;
+      list-style-type: none;
+      padding: 0;
+      line-height: 1.65;
     }
-  </style>
-</footer>
+
+    a {
+      padding: 0.5rem;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+      color: var(--c-primary);
+    }
+  }
+
+  .footer-social-links {
+    ul {
+      display: flex;
+      gap: 1rem;
+      justify-content: center; /* Change for wider viewports? */
+    }
+
+    li {
+      width: 2.5rem;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      border-radius: 50%;
+      aspect-ratio: 1;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: var(--c-primary);
+    }
+
+    svg {
+    }
+  }
+
+  .copyright {
+    text-transform: uppercase;
+    letter-spacing: 0.1ch;
+    font-weight: 200;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    writing-mode: vertical-rl;
+  }
+</style>
