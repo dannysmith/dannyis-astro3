@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import BaseHead from '@components/BaseHead.astro'
-import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import NoteCard from '@components/NoteCard.astro'
 
@@ -16,7 +15,6 @@ const { title, pubDate, sourceURL } = Astro.props
   </head>
 
   <body>
-    <Header />
     <main>
       <NoteCard title={title} pubDate={pubDate} sourceURL={sourceURL}>
         <slot />

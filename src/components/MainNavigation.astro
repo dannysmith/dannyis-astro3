@@ -1,0 +1,88 @@
+---
+import NavLink from '@components/NavLink.astro'
+---
+
+<nav class="main-navigation">
+  <section class="footer-name">
+    <div class="circle"></div>
+    <div class="name">Danny Smith</div>
+  </section>
+  <section class="footer-nav-links">
+    <ul>
+      <li><NavLink href="/">Home</NavLink></li>
+      <li><NavLink href="/writing">Writing</NavLink></li>
+      <li><NavLink href="/notes">Notes</NavLink></li>
+      <li><NavLink href="/now">Now</NavLink></li>
+      <li><NavLink href="/playground">Playground</NavLink></li>
+    </ul>
+  </section>
+</nav>
+
+<style>
+  .main-navigation {
+    display: none;
+    background-color: var(--color-bg-dark-200);
+    color: var(--c-white);
+    border-right: 1rem solid var(--c-primary);
+    padding: 1em 2em 1em 1em;
+    font-size: clamp(0.8rem, calc(0.6rem + 1vw), 1.2rem);
+
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .footer-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .circle {
+    width: clamp(1rem, calc(0.8rem + 1vw), 1.5rem);
+    height: clamp(1rem, calc(0.8rem + 1vw), 1.5rem);
+    background-color: var(--c-primary);
+    border-radius: 50%;
+  }
+  .name {
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0.05ch;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .footer-nav-links {
+    margin-top: 1rem;
+    padding-left: 2rem;
+
+    li {
+      text-transform: uppercase;
+      letter-spacing: 0.1ch;
+      list-style-type: none;
+      padding: 0;
+      line-height: 1.65;
+    }
+
+    a {
+      padding: 0.5rem;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:active,
+    a:focus,
+    a.active {
+      color: var(--c-primary);
+    }
+  }
+</style>
