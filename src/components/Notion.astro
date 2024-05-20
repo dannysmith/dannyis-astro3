@@ -25,25 +25,21 @@ if (title?.endsWith('| Notion')) {
 // Get faviconImageURL or emoji
 const faviconURL = result.favicon
 
-if (faviconURL) {
-  if (faviconURL?.includes('amazonaws.com')) {
-    // The favicon is an image URL, we can use it directly
+if (faviconURL && faviconURL.includes('amazonaws.com')) {
+  hasFavicon = true
+  faviconImageURL = faviconURL
+} else {
+  const decodedURL = decodeURIComponent(faviconURL || '')
+
+  // Regex pattern to match most common emojis
+  const emojiRegex =
+    /(\p{Emoji_Presentation}|\p{Emoji}\uFE0F|[\u200D\uFE0E\uFE0F]|\p{Extended_Pictographic})/gu
+
+  const matches = decodedURL.match(emojiRegex) as Array<string>
+
+  if (matches?.length > 0) {
     hasFavicon = true
-    faviconImageURL = faviconURL
-  } else {
-    // The favicon is not an image URL, it is probably an emoji
-    let decodedURL = decodeURIComponent(faviconURL)
-
-    // Regex pattern to match most common emojis
-    const emojiRegex =
-      /(\p{Emoji_Presentation}|\p{Emoji}\uFE0F|[\u200D\uFE0E\uFE0F]|\p{Extended_Pictographic})/gu
-
-    const matches = decodedURL.match(emojiRegex) as Array<string>
-
-    if (matches?.length > 0) {
-      hasFavicon = true
-      emoji = matches[0]
-    }
+    emoji = matches[0]
   }
 }
 ---
