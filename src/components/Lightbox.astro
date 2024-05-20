@@ -1,0 +1,78 @@
+<!-- Lightbox HTML -->
+<div class="lightbox" id="lightbox">
+  <span class="close" id="close">&times;</span>
+  <canvas id="lightboxCanvas"></canvas>
+</div>
+
+<style>
+  /* Lightbox Styles */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .lightbox canvas {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  // Lightbox Script
+  document.addEventListener('DOMContentLoaded', function () {
+    const lightbox = document.getElementById('lightbox') as HTMLDivElement
+    const lightboxCanvas = document.getElementById(
+      'lightboxCanvas'
+    ) as HTMLCanvasElement
+    const ctx = lightboxCanvas.getContext('2d')
+    const closeBtn = document.getElementById('close') as HTMLSpanElement
+
+    document.querySelectorAll('img[data-image-component]').forEach((img) => {
+      img.addEventListener('click', function () {
+        lightbox.style.display = 'flex'
+
+        const image = new Image()
+        image.src = (this as HTMLImageElement).src
+        image.onload = function () {
+          lightboxCanvas.width = image.width
+          lightboxCanvas.height = image.height
+          if (ctx) {
+            ctx.clearRect(0, 0, lightboxCanvas.width, lightboxCanvas.height)
+            ctx.drawImage(
+              image,
+              0,
+              0,
+              lightboxCanvas.width,
+              lightboxCanvas.height
+            )
+          }
+        }
+      })
+    })
+
+    closeBtn.addEventListener('click', function () {
+      lightbox.style.display = 'none'
+    })
+
+    lightbox.addEventListener('click', function (event) {
+      if (event.target !== lightboxCanvas && event.target !== closeBtn) {
+        lightbox.style.display = 'none'
+      }
+    })
+  })
+</script>
