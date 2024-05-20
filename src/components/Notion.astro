@@ -74,8 +74,6 @@ if (faviconURL && faviconURL.includes('amazonaws.com')) {
 <style>
   .notion-link {
     display: inline-block;
-    vertical-align: top;
-    cursor: pointer;
     color: inherit;
     text-decoration: inherit;
     margin-right: 0.2em;
@@ -85,13 +83,17 @@ if (faviconURL && faviconURL.includes('amazonaws.com')) {
   .notion-icon {
     display: inline-block;
     margin-right: 0.3em;
-    width: 1.1em;
+    width: 1em;
     white-space: nowrap;
     position: relative;
+    font-size: 0.8rem;
+  }
+
+  .notion-icon:has(.icon-image) {
+    width: 1.5em;
   }
 
   .icon-image {
-    display: inline-block;
     aspect-ratio: 1/1;
     transform: translateY(0.2em);
   }
@@ -111,7 +113,6 @@ if (faviconURL && faviconURL.includes('amazonaws.com')) {
   }
 
   .title {
-    border-bottom: 0.05em solid var(--notion-underline-color);
-    font-weight: 500;
+    border-bottom: 0.01em solid var(--notion-underline-color);
   }
 </style>
