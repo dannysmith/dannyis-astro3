@@ -1,14 +1,3 @@
-/* PROJECT */
-
-	Site Name:   Perishable Press
-	Site URL:    https://perishablepress.com/
-	Created:     2005/01/01
-	Standards:   HTML5, CSS3
-	Components:  jQuery
-	Software:    WordPress
-	Plugins:     Akismet, XML Sitemaps, Broken Link Checker, et al
-	Web Design:  Jeff Starr @ Monzilla Media
-
 /* AUTHOR */
 
 	Name:        Danny Smith
