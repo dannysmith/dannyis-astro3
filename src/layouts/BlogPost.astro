@@ -413,7 +413,6 @@ const {
 
       .inline-footnote-container {
         font-size: 0.8em;
-        margin-top: 0.5em;
         padding: 1em;
         border-left: 2px solid var(--c-primary);
         background: rgba(0, 0, 0, 0.05);
@@ -464,7 +463,7 @@ const {
         if (footnote) {
           inlineFootNoteContainer.appendChild(footnote[0].cloneNode(true))
         }
-        closestP?.appendChild(inlineFootNoteContainer)
+        closestP?.insertAdjacentElement('afterend', inlineFootNoteContainer)
 
         elm.addEventListener('click', (e) => {
           e.preventDefault()
