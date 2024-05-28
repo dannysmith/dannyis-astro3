@@ -7,7 +7,7 @@ I'm now pretty happy with how the essays on here look, so it's time to turn my a
 
 I didn't feel this at all when designing the essay pages because I had a clear idea of what I was trying to do. I already had content to work with and my only job was to make it as readable and beautiful as possible while keeping things simple. Clear goal. Clear starting point.
 
-But with the rest of the site it's not so clear. In [Part IV]({% post_url 2020-04-07-website-redesign-iv %}) I identified a list of pages I need to design, and I did some high-level pondering on goals and user needs in [Part II]({% post_url 2020-03-17-website-redesign-ii %}). But beyond that, I've basically got no constrains and no starting point. And it's paralysing me.
+But with the rest of the site it's not so clear. In Part IV I identified a list of pages I need to design, and I did some high-level pondering on goals and user needs in Part II. But beyond that, I've basically got no constrains and no starting point. And it's paralysing me.
 
 Back when I made websites for a living, the first thing I'd look at after user goals was a content audit. If the client didn't have any existing content to audit, we'd focus on the content they _thought they were going to have_. So that's just what I'm going to do now.
 
@@ -15,7 +15,7 @@ Back when I made websites for a living, the first thing I'd look at after user g
 
 ![Post-it notes of content audit - unorganised](/uploads/2020-07-11-postit-content-unorganised.png)
 
-I can think of a hundred other things I might want to put here _someday_, but that's all the stuff I'm thinking about putting here **right now**[^1].
+I can think of a hundred other things I might want to put here _someday_, but that's all the stuff I'm thinking about putting here **right now**.
 
 ### Organising the post-its
 
@@ -53,7 +53,7 @@ Perhaps the design should emphasise the important and de-emphasise the less-impo
 
 #### By Permanence
 
-One of the main reasons I'm moving my writing to my own blog is permanence. As I said in [Part I]({% post_url 2020-03-14-website-redesign-i %}), I don't like the fact that Medium controls my content and URLs. I want a more permanent place to put my words. Somewhere they can live forever – **etched in stone**, as it were.
+One of the main reasons I'm moving my writing to my own blog is permanence. I don't like the fact that Medium controls my content and URLs. I want a more permanent place to put my words. Somewhere they can live forever – **etched in stone**, as it were.
 
 The same is not true for other types of content. My tweets are ephemeral, for example: I wouldn't be overly bothered if they all disappeared one day. Perhaps we could try grouping along these lines – stuff that I care about keeping vs stuff that I don't.
 
