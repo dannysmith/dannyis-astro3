@@ -45,7 +45,11 @@ import MainNavigation from '@components/MainNavigation.astro'
     </main>
     <Footer />
     <style>
+      :root {
+        --background-color: var(--c-beige-bg);
+      }
       body {
+        background: var(--background-color);
         display: grid;
         grid-template-rows: auto min-content;
       }

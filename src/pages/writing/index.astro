@@ -48,6 +48,7 @@ const posts = (
     <Footer />
     <style>
       :root {
+        --background-color: var(--c-beige-bg);
         --postlist-title-hover-color: var(--c-primary);
         --postlist-date-color: var(--color-grey-700);
         --postlist-bottom-border-color: var(--c-primary);
@@ -57,6 +58,7 @@ const posts = (
       body {
         display: grid;
         grid-template-rows: auto min-content;
+        background-color: var(--background-color);
       }
 
       section {

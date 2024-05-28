@@ -40,6 +40,7 @@ const notes = (await getCollection('notes')).sort(
     <Footer />
     <style>
       :root {
+        --background-color: var(--c-beige-bg);
         --notelist-title-hover-color: var(--c-primary);
         --notelist-date-color: var(--color-grey-700);
         --notelist-bottom-border-color: var(--c-primary);
@@ -48,6 +49,7 @@ const notes = (await getCollection('notes')).sort(
       body {
         display: grid;
         grid-template-rows: auto min-content;
+        background-color: var(--background-color);
       }
 
       section {

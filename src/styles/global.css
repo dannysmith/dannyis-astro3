@@ -109,6 +109,7 @@
   --c-brand-dark-grey: var(--color-bg-light-800);
   --c-white: #ffffff;
   --c-black: var(--color-black);
+  --c-beige-bg: rgb(246, 243, 234);
 
   /* Shadows - should be used like filter:var(--shadow-xsmall)*/
 
