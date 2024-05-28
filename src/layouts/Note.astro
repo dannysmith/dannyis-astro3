@@ -10,6 +10,7 @@ type Props = CollectionEntry<'notes'>['data']
 const { title, pubDate, sourceURL } = Astro.props
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} />
@@ -25,15 +26,19 @@ const { title, pubDate, sourceURL } = Astro.props
     <Footer />
 
     <style>
+      :root {
+        --notepage-background: var(--color-yellow-300);
+      }
       body {
         display: grid;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: auto min-content;
         grid-template-columns: 100%;
-        background-color: var(--color-red-500);
+        background-color: var(--notepage-background);
       }
 
       main {
         padding: 1em;
+        padding-top: 4em;
         display: grid;
         place-items: center;
 

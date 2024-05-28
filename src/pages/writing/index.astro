@@ -47,6 +47,13 @@ const posts = (
     </main>
     <Footer />
     <style>
+      :root {
+        --postlist-title-hover-color: var(--c-primary);
+        --postlist-date-color: var(--color-grey-700);
+        --postlist-bottom-border-color: var(--c-primary);
+        --platform-marker-color: var(--color-green-600);
+      }
+
       body {
         display: grid;
         grid-template-rows: auto min-content;
@@ -79,12 +86,12 @@ const posts = (
       }
 
       a:hover .post-title {
-        color: var(--c-primary);
+        color: var(--postlist-title-hover-color);
       }
 
       .date {
         font-size: 0.7rem;
-        color: var(--color-grey-600);
+        color: var(--postlist-date-color);
         text-transform: uppercase;
         letter-spacing: 0.1ch;
       }
@@ -94,7 +101,7 @@ const posts = (
         line-height: 1.2;
         font-weight: 500;
         padding-bottom: 0.2rem;
-        border-bottom: 5px var(--c-primary) solid;
+        border-bottom: 5px var(--postlist-bottom-border-color) solid;
       }
 
       .platform {
@@ -102,9 +109,9 @@ const posts = (
         transform: translateY(-0.3em);
         padding: 0 0.5rem;
         font-size: 0.8rem;
-        color: var(--color-green-600);
+        color: var(--platform-marker-color);
         border-radius: 4px;
-        border: 1px solid var(--color-green-600);
+        border: 1px solid var(--platform-marker-color);
       }
 
       @media screen and (min-width: 800px) {

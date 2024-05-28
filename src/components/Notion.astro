@@ -68,6 +68,7 @@ if (faviconURL && faviconURL.includes('amazonaws.com')) {
   :root {
     --notion-arrow-color: rgba(55, 53, 47, 1);
     --notion-underline-color: rgba(55, 53, 47, 0.25);
+    --notion-arrow-stroke-color: var(--c-white);
   }
 </style>
 
@@ -108,7 +109,7 @@ if (faviconURL && faviconURL.includes('amazonaws.com')) {
     position: absolute;
     right: -0.2em;
     bottom: 0;
-    stroke: white;
+    stroke: var(--notion-arrow-stroke-color);
     stroke-width: 1.5;
   }
 

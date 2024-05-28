@@ -39,6 +39,12 @@ const notes = (await getCollection('notes')).sort(
     </main>
     <Footer />
     <style>
+      :root {
+        --notelist-title-hover-color: var(--c-primary);
+        --notelist-date-color: var(--color-grey-700);
+        --notelist-bottom-border-color: var(--c-primary);
+      }
+
       body {
         display: grid;
         grid-template-rows: auto min-content;
@@ -71,12 +77,12 @@ const notes = (await getCollection('notes')).sort(
       }
 
       a:hover .note-title {
-        color: var(--c-primary);
+        color: var(--notelist-title-hover-color);
       }
 
       .date {
         font-size: 0.7rem;
-        color: var(--color-grey-600);
+        color: var(--notelist-date-color);
         text-transform: uppercase;
         letter-spacing: 0.1ch;
       }
@@ -86,7 +92,7 @@ const notes = (await getCollection('notes')).sort(
         line-height: 1.2;
         font-weight: 500;
         padding-bottom: 0.2rem;
-        border-bottom: 5px var(--c-primary) solid;
+        border-bottom: 5px var(--notelist-bottom-border-color) solid;
       }
 
       @media screen and (min-width: 800px) {

@@ -25,9 +25,17 @@ const { title, icon, type = 'default' } = Astro.props
 </aside>
 
 <style>
+  :root {
+    --callout-default-bg: var(--color-grey-300);
+    --callout-red-bg: var(--color-red-300);
+    --callout-blue-bg: var(--color-blue-300);
+    --callout-green-bg: var(--color-green-300);
+    --callout-orange-bg: var(--color-orange-300);
+    --callout-yellow-bg: var(--color-yellow-300);
+  }
   .callout {
     display: flex;
-    background: var(--color-grey-300);
+    background: var(--callout-default-bg);
     padding: 1em;
     border-radius: 4px;
   }
@@ -56,22 +64,22 @@ const { title, icon, type = 'default' } = Astro.props
   }
 
   [data-callout-color='red'] {
-    background: var(--color-red-300);
+    background: var(--callout-red-bg);
   }
 
   [data-callout-color='blue'] {
-    background: var(--color-blue-300);
+    background: var(--callout-blue-bg);
   }
 
   [data-callout-color='green'] {
-    background: var(--color-green-300);
+    background: var(--callout-green-bg);
   }
 
   [data-callout-color='orange'] {
-    background: var(--color-orange-300);
+    background: var(--callout-orange-bg);
   }
 
   [data-callout-color='yellow'] {
-    background: var(--color-yellow-300);
+    background: var(--callout-yellow-bg);
   }
 </style>

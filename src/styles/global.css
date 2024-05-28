@@ -127,6 +127,25 @@
   --font-ui: 'Jost', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-prose: 'Literata', Georgia, 'Times New Roman', serif;
   --font-code: 'Fira Code Variable', 'Fira Code', 'Inconsolata', monospace;
+
+  /* Colours for global stylesheet */
+  --accent-color: var(--c-primary);
+  --foreground-color: var(--c-black);
+
+  --abbr-underline-color: rgba(0, 0, 0, 0.15);
+  --code-background-color: rgba(0, 0, 0, 0.05);
+  --code-border-color: rgba(0, 0, 0, 0.1);
+  --pre-border-color: rgba(0, 0, 0, 0.1);
+
+  --table-border-color: rgba(0, 0, 0, 0.05);
+  --strikethrough-color: rgba(0, 0, 0, 0.5);
+  --mark-background-color: var(--color-yellow-500);
+
+  --prose-blockquote-border-color: var(--color-red-500);
+  --prose-heading-underline-color: var(--color-red-500);
+  --prose-link-color: var(--color-red-500);
+  --prose-link-visited-color: var(--color-purple-600);
+  --prose-link-hover-color: var(--color-red-600);
 }
 
 /* Box sizing rules */
@@ -156,8 +175,8 @@ html {
 
   /* Set color scheme */
   color-scheme: light;
-  accent-color: var(--c-primary);
-  color: var(--c-black);
+  accent-color: var(--accent-color);
+  color: var(--foreground-color);
 
   /* Set the typeface */
   font-family: var(--font-ui);
@@ -294,7 +313,7 @@ abbr {
   font-weight: 380;
   font-size: 0.95em;
 
-  text-decoration-color: rgba(0, 0, 0, 0.15);
+  text-decoration-color: var(--abbr-underline-color);
   text-underline-position: under;
 }
 
@@ -307,15 +326,15 @@ abbr[title] {
 code {
   font-size: 0.85em;
   padding: 0 0.5ch;
-  background-color: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--code-background-color);
+  border: 1px solid var(--code-border-color);
   border-radius: 1px;
   white-space: pre;
   font-variant-numeric: initial;
 }
 
 pre {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--pre-border-color);
   border-radius: 4px;
   padding: 1rem;
   overflow-x: scroll;
@@ -331,7 +350,7 @@ pre code {
 
 table {
   border-collapse: collapse;
-  border: 1px solid rgb(0, 0, 0, 0.05);
+  border: 1px solid var(--table-border-color);
   text-align: left;
   border-spacing: 0;
   font-size: 0.8em;
@@ -339,22 +358,22 @@ table {
 
 thead {
   font-weight: 600;
-  background: rgb(0, 0, 0, 0.05);
+  background: var(--table-border-color);
 }
 
 th,
 td {
   padding: 0.5em 1em;
-  border: 1px solid rgb(0, 0, 0, 0.05);
+  border: 1px solid var(--table-border-color);
 }
 
 mark {
-  background: var(--color-yellow-400);
+  background: var(--mark-background-color);
 }
 
 del,
 s {
-  text-decoration-color: rgba(0, 0, 0, 0.5);
+  text-decoration-color: var(--strikethrough-color);
 }
 
 /* Utility class for making the element a container, so container queries will work */
@@ -394,7 +413,7 @@ s {
   }
 
   blockquote {
-    border-left: 0.5rem solid var(--color-red-500);
+    border-left: 0.5rem solid var(--prose-blockquote-border-color);
     padding-left: 1rem;
     font-style: italic;
   }
@@ -406,7 +425,7 @@ s {
   h5,
   h6 {
     line-height: 1.2;
-    border-bottom: 1px solid var(--color-red-500);
+    border-bottom: 1px solid var(--prose-heading-underline-color);
     padding-bottom: 0.5em;
     margin-top: 1.5em;
   }
@@ -416,18 +435,18 @@ s {
   }
 
   a {
-    color: var(--color-red-500);
+    color: var(--prose-link-color);
     text-decoration: none;
   }
 
   a:visited {
-    color: var(--color-purple-600);
+    color: var(--prose-link-visited-color);
     text-decoration: none;
   }
 
   a:hover,
   a:active {
-    color: var(--color-red-600);
+    color: var(--prose-link-hover-color);
     text-decoration: underline;
   }
 

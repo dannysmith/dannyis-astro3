@@ -13,6 +13,10 @@ const size = Astro.props.size || '5rem'
 </div>
 
 <style define:vars={{ size }}>
+  :root {
+    --spinner-color: var(--c-primary);
+  }
+
   .spinnersvg {
     animation: rotate 2s linear infinite;
     width: var(--size);
@@ -20,7 +24,7 @@ const size = Astro.props.size || '5rem'
   }
 
   .spinnersvg .path {
-    stroke: var(--c-primary);
+    stroke: var(--spinner-color);
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }
