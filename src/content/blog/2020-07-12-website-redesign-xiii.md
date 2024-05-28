@@ -111,8 +111,6 @@ Grouping by **Human/System**, and by the four categories of content feels like a
 
 Simplicity is a the core value of this redesign and working through this process has helped me reach a few decisions about how to simplify things.
 
-{:.spaced-list}
-
 - [x] I've no need for a **coaching** page right now. I can add this in the future.
 - [x] I still want a **hire me** page but it makes much more sense for this to live in notion. I'll forward `https://danny.is/lookingforwork` and `https://danny.is/hireme` to a public Notion page and be done with it.
 - [x] I won't show any actual videos on my site. Instead, I'll present any **video series'** as links to notion pages or YouTube playlists. I already have these set up.

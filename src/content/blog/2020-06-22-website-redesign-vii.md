@@ -117,7 +117,7 @@ Looking through my articles I dont't tend to use H1s very often at all, apart fr
 
 With this in mind, it makes sense to keep things super-simple. Here's what I initially settled on...
 
-![Screenshot of headings](/uploads/2020-06-22-heading-type.png){:.border}
+![Screenshot of headings](/uploads/2020-06-22-heading-type.png)
 
 Aside from H1s, all are set at the same size as the body copy. Five and Six are styled identically in italic with the same weight and margins as paragraphs. Four is set in small-caps with a semibold weight, again with the same margin as paragraphs. Three and Two are both set in bold with a bigger top margin, two being differentiated by being uppercase.
 

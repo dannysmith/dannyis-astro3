@@ -73,7 +73,7 @@ pre {
 }
 ```
 
-![Screenshot of code block](/uploads/2020-06-28-codeblocks-screenshot.png){:.border}
+![Screenshot of code block](/uploads/2020-06-28-codeblocks-screenshot.png)
 
 The final thing to do is add syntax highlighting. Since we're using Jekyll, any fenced code blocks that have a language defined on them will use [Rouge](http://rouge.jneen.net/) to apply syntax-highlighing classes in the same way [Pygments](https://pygments.org/) does. This means we can take an existing theme stylesheet and include it in our bundle. I used [this one](https://github.com/jwarby/jekyll-pygments-themes/blob/master/colorful.css) and tweaked a few of the colours slightly. I'll come back to this once I have a colour palette for the site.
 
@@ -83,7 +83,7 @@ The final thing to do is add syntax highlighting. Since we're using Jekyll, any 
 
 I've always liked the section mark (§) and thought it might be nice to superimpose this on horizontal rules. The code for this is pretty simple – we'll add a psuedo-element containing the mark and use flexbox to position the hr and psuedo element on top of each other. A bit of padding and a background on the psuedo element creates a gap in the line, and a little nudging with `translateY` vertically centres the mark.
 
-![Horizontal Rule](/uploads/2020-06-28-hr.png){:.border}
+![Horizontal Rule](/uploads/2020-06-28-hr.png)
 
 ```scss
 .essay hr {

@@ -74,7 +74,7 @@ Abbreviations like <abbr title="Hyper Text Markup Language">HTML</abbr> nearly a
 
 I'm experimenting with adding drop-cap and small caps for the first line. I'm not yet sure whether I really like this, so will probably revisit later on. I've also added [hanging punctuation](https://css-tricks.com/almanac/properties/h/hanging-punctuation/) for paragraphs (only supported by Safari at the moment)
 
-![Example: Drop Caps](/uploads/2020-06-22-drop-cap.png){:.border}
+![Example: Drop Caps](/uploads/2020-06-22-drop-cap.png)
 
 ```scss
 .essay > p {

@@ -19,13 +19,13 @@ a[class] {
 
 The default clours in most browsers are blue for unvisited links and purple for visited links, so I like the idea of sticking with that since it's alrreasy well-understood by most users. Rather than colouring the whole word, we might be able to get away with colouring just the underline. This makes the links far less intrusive. we can also pick much less saturated colours than the default.
 
-![Links with coloured underlines](/uploads/2020-06-25-links-desktop.png){:.border}
+![Links with coloured underlines](/uploads/2020-06-25-links-desktop.png)
 
-![Visited link with coloured underline](/uploads/2020-06-25-link-visited-desktop.png){:.border}
+![Visited link with coloured underline](/uploads/2020-06-25-link-visited-desktop.png)
 
 The hover styles can afford to be a lot bolder and brighter. Something like...
 
-![Active and Hover style for links](/uploads/2020-06-25-link-activehover.png){:.border}
+![Active and Hover style for links](/uploads/2020-06-25-link-activehover.png)
 
 We can achieve this by setting links to inherit their text colour from their parent and styling the underline with `text-decoration-color`. We'll also add a subtle transition on hover and force the underline width to 1px on browser that support it.
 
@@ -56,9 +56,9 @@ This feels okay on devices with a pointer. Although the underlines are subtle, i
 
 We can alter our code to cremove the underline on touch devices and instead change the text-colour. I'm using a similar blue and purple here, but it's nececarrily much darker and without an alpha channel. I tried to use a colour that didn't affect the typographic colour of the text. If you try squinting and looking at the mobile version the links shouldn't feel lighter or heavier than the rest of the text.
 
-![2020-06-25-links-mobile](/uploads/2020-06-25-links-mobile.png){:.border}
+![2020-06-25-links-mobile](/uploads/2020-06-25-links-mobile.png)
 
-![Squint Test](/uploads/2020-06-25-squint.png){:.border}
+![Squint Test](/uploads/2020-06-25-squint.png)
 
 ```scss
 a:not([class]) {
@@ -83,7 +83,7 @@ a:not([class]) {
 
 Finally, I want to do something about the outline browsers apply when a link is focussed by keyboard. I don't want to do too much with this for accessibility reasosns, so we'll just change it from blue to our brand red using the [focus visible psutedo-selector](https://css-tricks.com/keyboard-only-focus-styles/). I'll revisit keyboard navigation once I have a color palette for the site.
 
-![Outline Example](/uploads/iso-link-focus.png){:.border}
+![Outline Example](/uploads/iso-link-focus.png)
 
 ```css
 a:focus-visible {

@@ -5,7 +5,7 @@ pubDate: 2020-06-20
 
 I love typography, but I'm not that good at it. One day I'll take a typography course at a a design school, but in the meantime I need to choose some typefaces for this website. I'm fairly confident I'll need two rather different typefaces in the end. A **essay face** for setting longer-form writing and a **UI face** for everything else. I like the idea of using a very modernist face for the UI and something more old-fasioned and bookish for the essays. It might be hard to make this work but it seems to chime will with my personality – I've always had a tendancy to mix super-modern with traditional oldy-worldy. Trainers and Tweeds, if you will.
 
-I'll explore this in more detail in a future article, but for the time-being let's revisit the four core values I decided on in [Part I]({% post_url 2020-03-14-website-redesign-i %}): _Simple_, _Beautiful_, _Authentic_ and _Content-first_. Choosing and pairing typefaces is hard, so to keep things simple we'll start by looking for one. And that last value makes a strong case for starting with the content.
+I'll explore this in more detail in a future article, but for the time-being let's revisit the four core values I decided on in Part I: _Simple_, _Beautiful_, _Authentic_ and _Content-first_. Choosing and pairing typefaces is hard, so to keep things simple we'll start by looking for one. And that last value makes a strong case for starting with the content.
 
 ## What do I need from an Essay Typeface
 
@@ -70,7 +70,7 @@ After a lot of exploration, I've settled on five candidates. None hit all the cr
 
 ([Google font page](https://fonts.google.com/specimen/Spectral))
 
-![Type Specimen - Spectral](/uploads/2020-06-19-Spectral.png){:.border}
+![Type Specimen - Spectral](/uploads/2020-06-19-Spectral.png)
 
 Specral was designed in 2017 as a screen-first typeface. [This article](https://design.google/library/spectral-new-screen-first-typeface/) goes into a lot more detail.
 
@@ -90,7 +90,7 @@ If I was setting a book on the web, I'd definitely consider this though.
 
 ([Google font page](https://fonts.google.com/specimen/Lora))
 
-![Type Specimen - Lora](/uploads/2020-06-19-Lora.png){:.border}
+![Type Specimen - Lora](/uploads/2020-06-19-Lora.png)
 
 > Lora is a well-balanced contemporary serif with roots in calligraphy. It is a text typeface with moderate contrast well suited for body text.
 >
@@ -114,11 +114,11 @@ Lora was designed by Olga Karpushina in 2011. It's definitely the least unusual 
 >
 > Not only does Alegreya provide great performance, but also achieves a strong and harmonious text by means of elements designed in an atmosphere of diversity.
 
-![Type Specimen - Alegreya](/uploads/2020-06-19-Alagreya.png){:.border}
+![Type Specimen - Alegreya](/uploads/2020-06-19-Alagreya.png)
 
 I love the fact that Alegreya has a small caps variant and is part of a super family that includes a [sans-serif version](https://fonts.google.com/specimen/Alegreya+Sans) - I was wondering if I could use the sans version for UI copy. But much like Spectral, it almost feels too caligraphic and oldy-worldy-bookish.
 
-![Ligratures in Alegreya](/uploads/2020-06-21-alegreya-ligs.png){:.border}
+![Ligratures in Alegreya](/uploads/2020-06-21-alegreya-ligs.png)
 
 ---
 
@@ -126,7 +126,7 @@ I love the fact that Alegreya has a small caps variant and is part of a super fa
 
 ([Google font page](https://fonts.google.com/specimen/Literata))
 
-![Type Specimen - Literata](/uploads/2020-06-19-Literata.png){:.border}
+![Type Specimen - Literata](/uploads/2020-06-19-Literata.png)
 
 Literata is probably one of my favourites. It feels right for the job, somehow. It's got a huge array of varients plus a variable version and some lovely ligatures. It was commissioned by Google and designed by TypeTogether in 2015 and is the default font family in Google Play Books. I'm not sure I like the idea of using a face that so many folks will associate with Google, but as far as versitility and reading experience goes, this is definitely on the shortlist.
 
@@ -136,7 +136,7 @@ Literata is probably one of my favourites. It feels right for the job, somehow. 
 
 ([Google font page](https://fonts.google.com/specimen/Bitter))
 
-![Type Specimen - Bitter](/uploads/2020-06-19-Bitter.png){:.border}
+![Type Specimen - Bitter](/uploads/2020-06-19-Bitter.png)
 
 > Motivated by my love for the pixel I designed Bitter. A "contemporary" slab serif typeface for text, it is specially designed for comfortably reading on any computer or device. The robust design started from the austerity of the pixel grid, based on rational rather than emotional principles. It combines the large x-heights and legibility of the humanistic tradition with subtle characteristics in the characters that inject a certain rhythm to flowing texts.
 >

@@ -91,7 +91,7 @@ h5 {
 }
 ```
 
-![Screenshot of discretionary ligatures in heading](/uploads/2020-06-19-heading-ligs.png){:.border}
+![Screenshot of discretionary ligatures in heading](/uploads/2020-06-19-heading-ligs.png)
 
 ## So where are we at?
 

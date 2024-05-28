@@ -153,14 +153,7 @@ For now, this feels like an acceptable trade-off, but if I find myself adding mo
 
 ## Full-bleed Images
 
-While we're on the subject of images, I've also added a few utility classes to make my images a little more interesting. Normal images are constrained to the width of the element they appear in, like this:
-
-![Hot air ballon in the sky](/uploads/2020-07-02-hot-air-baloon.jpg)
-
-But sometimes I want full-bleed images that extend out to the edges of the viewport, like this:
-
-{:.full-bleed}
-![Hot air ballon in the sky](/uploads/2020-07-02-hot-air-baloon.jpg)
+While we're on the subject of images, I've also added a few utility classes to make my images a little more interesting. Normal images are constrained to the width of the element they appear in, but sometimes I want full-bleed images that extend out to the edges of the viewport, like this:
 
 We can do this with a utility class and some `calc()` magic.
 
@@ -214,20 +207,6 @@ As well as full bleed, I've also added classes for left and right bleed
   }
 }
 ```
-
-### An image at left-bleed
-
-Donec feugiat sagittis velit non molestie. Nullam mattis erat eget elit faucibus, ac tincidunt ligula bibendum. Suspendisse potenti. Nunc et aliquet nunc.
-
-{:.left-bleed}
-![Hot air ballon in the sky](/uploads/2020-07-02-hot-air-baloon.jpg)
-
-### An image at right-bleed
-
-Donec feugiat sagittis velit non molestie. Nullam mattis erat eget elit faucibus, ac tincidunt ligula bibendum. Suspendisse potenti. Nunc et aliquet nunc.
-
-{:.right-bleed}
-![Hot air ballon in the sky](/uploads/2020-07-02-hot-air-baloon.jpg)
 
 ## Summing up
 

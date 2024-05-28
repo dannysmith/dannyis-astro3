@@ -97,5 +97,4 @@ So here's where we're at so far...
 
 For the most part, I'm happy to write locally in [iA Writer](https://ia.net/writer) or VSCode. For writing on-the-go, [Forestry](https://forestry.io/) seems like the best option. I'd dearly love to find a git-based-jekyll-compatible editor that works like Ghost or Medium, but that can wait.
 
-{:.callout}
 With these decisions made, it took a surprisingly small amount of time to get all this wired up. Less than two hours. That's the value of simplicity, I suppose.
