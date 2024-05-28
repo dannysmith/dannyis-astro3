@@ -37,23 +37,35 @@ const urlData = {
 </div>
 
 <style>
+  :root {
+    --urlcard-background: var(--color-bg-dark-200);
+    --urlcard-foreground: var(--c-white);
+    --urlcard-border: rgba(0, 0, 0, 0.2);
+    --urlcard-border-hover: var(--c-primary);
+    --urlcard-arrow: var(--c-primary);
+    --urlcard-url-color: var(--color-red-500);
+    --url-card-image-bg: var(--color-bg-dark-200);
+
+    --urlcard-border-radius: 4px;
+  }
+
   a, a:hover, a:visited, a:active, a:focus {
     text-decoration: none;
     color: inherit;
   }
 
   .url-card {
-    border: 3px solid rgba(0, 0, 0, 0.2);
-    background: var(--color-bg-dark-200);
-    color: var(--c-white);
+    border: 3px solid var(--urlcard-border);
+    background: var(--urlcard-background);
+    color: var(--urlcard-foreground);
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: var(--urlcard-border-radius);
   }
   .url-card:has(a:hover, a:active, a:focus) {
-    border-color: var(--c-primary);
+    border-color: var(--urlcard-border-hover);
 
     .arrow {
-      fill: var(--c-primary);
+      fill: var(--urlcard-arrow:);
     }
   }
 
@@ -75,13 +87,13 @@ const urlData = {
   }
 
   .url {
-    color: var(--color-red-500);
+    color: var(--urlcard-url-color);
     font-family: var(--font-code);
     font-size: 0.6em;
   }
 
   .image-wrapper {
-    background-color: var(--color-bg-dark-200);
+    background-color: var(--url-card-image-bg);
   }
 
   .image {
@@ -93,6 +105,7 @@ const urlData = {
 
   .arrow {
     flex-shrink: 0;
+    flex-grow: 0;
     margin-left: 1rem;
     margin-right: 1rem;
     height: 2rem;
