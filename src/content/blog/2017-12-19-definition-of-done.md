@@ -1,5 +1,6 @@
 ---
 title: 'The Definition of Done: What does "done" actually mean?'
+slug: definition-of-done
 pubDate: 2017-06-19
 ---
 
