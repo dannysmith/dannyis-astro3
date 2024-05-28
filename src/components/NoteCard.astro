@@ -31,24 +31,31 @@ const { title, pubDate, sourceURL } = Astro.props
 </article>
 
 <style>
+  :root {
+    --note-border-color: var(--color-bg-dark-200);
+    --note-background: var(--c-white;);
+    --dotgrid-color: var(--color-red-400);
+    --date-color: var(--color-grey-700);
+    --title-underline-color: var(--color-red-500);
+  }
   .note {
     --line-height: calc(1.8 * 1rem);
 
-    background: var(--c-white);
+    background: var(--note-background);
     padding: var(--line-height);
 
     background-image: radial-gradient(
-      var(--color-red-400) 0.5px,
+      var(--dotgrid-color) 0.5px,
       transparent 0
     );
     background-size: 1rem 1rem;
     filter: var(--shadow-small);
-    border-top: 1rem solid var(--color-bg-dark-200);
+    border-top: 1rem solid var(--note-border-color);
   }
 
   .date {
     font-size: 0.7rem;
-    color: var(--color-grey-700);
+    color: var(--date-color);
     text-transform: uppercase;
     letter-spacing: 0.1ch;
   }
@@ -57,7 +64,7 @@ const { title, pubDate, sourceURL } = Astro.props
     line-height: calc(var(--line-height) * 2);
     margin-top: var(--line-height);
     padding-bottom: calc(var(--line-height) / 2);
-    border-bottom: 1px solid var(--color-red-500);
+    border-bottom: 1px solid var(--title-underline-color);
   }
 
   .title h1 {
