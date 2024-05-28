@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XV - A typographic system for the rest of this site
+slug: website-redesign-xv
 pubDate: 2020-08-12
 ---
 

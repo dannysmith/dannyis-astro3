@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XIII - Taking Stock of Content
+slug: website-redesign-xiii
 pubDate: 2020-07-12
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part VII - Responsive Typography
+slug: website-redesign-vii
 pubDate: 2020-06-22
 ---
 

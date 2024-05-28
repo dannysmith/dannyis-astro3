@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XIV - Stepping Into Figma
+slug: website-redesign-xiv
 pubDate: 2020-07-12
 ---
 

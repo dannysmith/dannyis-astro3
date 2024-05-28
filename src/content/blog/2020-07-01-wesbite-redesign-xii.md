@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XII - Responsive Images
+slug: website-redesign-xii
 pubDate: 2020-07-01
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part VI - Adding a Typeface for Essays
+slug: website-redesign-vi
 pubDate: 2020-06-21
 ---
 

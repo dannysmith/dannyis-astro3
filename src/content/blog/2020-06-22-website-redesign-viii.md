@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part VIII - Adding some style
+slug: website-redesign-viii
 pubDate: 2020-06-22
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part I - The Tech
+slug: website-redesign-i
 pubDate: 2020-03-14
 ---
 

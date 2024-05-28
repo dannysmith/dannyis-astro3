@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XVI - A Header and Footer for Articles
+slug: website-redesign-xvi
 pubDate: 2020-08-29
 ---
 

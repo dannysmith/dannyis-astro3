@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part V - Choosing a Typeface for Essays
+slug: website-redesign-v
 pubDate: 2020-06-20
 ---
 

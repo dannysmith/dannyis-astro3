@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part IV - Pages and URLs
+slug: website-redesign-iv
 pubDate: 2020-04-07
 ---
 

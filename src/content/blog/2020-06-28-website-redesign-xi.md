@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XI - Code Blocks and Section Rules
+slug: website-redesign-xi
 pubDate: 2020-06-28
 ---
 

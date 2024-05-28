@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part X - Links
+slug: website-redesign-x
 pubDate: 2020-06-25
 ---
 

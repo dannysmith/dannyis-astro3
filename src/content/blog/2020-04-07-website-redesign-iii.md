@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part III - A Base to Start From
+slug: website-redesign-iii
 pubDate: 2020-04-07
 ---
 

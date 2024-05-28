@@ -1,5 +1,6 @@
 ---
 title: Auto Generating Jekyll Posts that Redirect to Medium
+slug: auto-generating-jekyll-posts-from-medium
 pubDate: 2020-08-13
 ---
 

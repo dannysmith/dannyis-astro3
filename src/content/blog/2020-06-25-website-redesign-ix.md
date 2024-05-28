@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part IX - Lists
+slug: website-redesign-xi
 pubDate: 2020-06-25
 ---
 
