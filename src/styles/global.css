@@ -135,11 +135,11 @@
   --abbr-underline-color: rgba(0, 0, 0, 0.15);
   --code-background-color: rgba(0, 0, 0, 0.05);
   --code-border-color: rgba(0, 0, 0, 0.1);
-  --pre-border-color: rgba(0, 0, 0, 0.2);
+  --pre-border-color: rgba(0, 0, 0, 0.1);
 
   --table-border-color: rgba(0, 0, 0, 0.05);
   --strikethrough-color: rgba(0, 0, 0, 0.5);
-  --mark-background-color: var(--color-yellow-400);
+  --mark-background-color: var(--color-yellow-500);
 
   --prose-blockquote-border-color: var(--color-red-500);
   --prose-heading-underline-color: var(--color-red-500);
