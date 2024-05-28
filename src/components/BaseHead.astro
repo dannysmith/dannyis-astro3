@@ -12,7 +12,12 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const { title, description, image = '/default-ogimage.jpg' } = Astro.props
+const { title, image = '/default-ogimage.jpg' } = Astro.props
+
+let description = Astro.props.description
+if (description) {
+  description = description + ' | Danny Smith'
+}
 ---
 
 <!-- Global Metadata -->

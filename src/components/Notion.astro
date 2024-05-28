@@ -49,7 +49,13 @@ if (faviconURL && faviconURL.includes('amazonaws.com')) {
     {!hasFavicon && <NotionIcon />}
     {
       hasFavicon && faviconImageURL && (
-        <img class="icon-image" src={faviconURL} width="100" height="100" />
+        <img
+          class="icon-image"
+          src={faviconURL}
+          width="100"
+          height="100"
+          alt=""
+        />
       )
     }
     {hasFavicon && emoji && <span class="icon-emoji">{emoji}</span>}
