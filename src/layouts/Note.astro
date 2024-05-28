@@ -26,11 +26,14 @@ const { title, pubDate, sourceURL } = Astro.props
     <Footer />
 
     <style>
+      :root {
+        --notepage-background: var(--color-yellow-300);
+      }
       body {
         display: grid;
         grid-template-rows: auto min-content;
         grid-template-columns: 100%;
-        background-color: var(--color-yellow-300);
+        background-color: var(--notepage-background);
       }
 
       main {
