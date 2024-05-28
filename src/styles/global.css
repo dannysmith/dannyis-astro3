@@ -243,6 +243,10 @@ blockquote {
   text-wrap: pretty;
 }
 
+a {
+  transition: all 0.15s;
+}
+
 /* A elements that don't have a class get nicer default link styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
