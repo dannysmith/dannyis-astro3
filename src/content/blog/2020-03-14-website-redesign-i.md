@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part I - The Tech
+pubDate: 2020-03-14
 ---
 
 Over the years, this website has taken many forms. Initially, it was a Wordpress blog. Then is was a hand-rolled Sinatra app that rendered markdown pages. More recently I've blogged on Medium and at the time of writing, my website is a much simpler Sinatra app.

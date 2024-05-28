@@ -1,5 +1,6 @@
 ---
 title: 'Delivering Business Value with Kanban and Validated Learning'
-redirect_to: 'https://medium.com/@dannysmith/delivering-business-value-with-kanban-and-validated-learning-55749daffecc'
+redirectURL: 'https://medium.com/@dannysmith/delivering-business-value-with-kanban-and-validated-learning-55749daffecc'
 platform: medium
+pubDate: 2015-03-17
 ---

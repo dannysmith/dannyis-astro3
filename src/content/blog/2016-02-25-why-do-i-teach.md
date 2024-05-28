@@ -1,5 +1,6 @@
 ---
 title: 'Why do I teach?'
-redirect_to: 'https://medium.com/@dannysmith/why-do-i-teach-c135b437573b'
+redirectURL: 'https://medium.com/@dannysmith/why-do-i-teach-c135b437573b'
 platform: medium
+pubDate: 2016-02-25
 ---

@@ -1,7 +1,6 @@
 ---
 title: Auto Generating Jekyll Posts that Redirect to Medium
-categories: notes
-body-class: no-drop-cap
+pubDate: 2020-08-13
 ---
 
 I'm making quite heavy use of the [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from) plugin. This allows me to create a normal apge or post file with a special frontmatter item and have the page 301 redirect to the specified URL. I'm already using this to forward URLs like <danny.is/using> to Notion, but I also want to use it for blog posts that I've written elsewhere.
@@ -10,7 +9,7 @@ I've recently written an article for [Delocate](https://www.delocate.co/), and I
 
 ```yaml
 title: Not all communication needs a definite purpose
-redirect_to: 'https://www.delocate.co/blog/not-all-communication-needs-a-definite-purpose'
+redirectURL: 'https://www.delocate.co/blog/not-all-communication-needs-a-definite-purpose'
 platform: delocate
 ```
 

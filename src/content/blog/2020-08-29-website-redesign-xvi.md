@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XVI - A Header and Footer for Articles
+pubDate: 2020-08-29
 ---
 
 I pretty much finished designing the article pages back in [Part XI](/writing/website-redesign-xi), and after [deciding on a typeface and some general design rules](/writing/website-redesign-xv) for the rest of the site it's time to finish it off by adding a header and footer to the article pages.
@@ -33,4 +34,4 @@ Here's what I ended up with for the CSS...
 
 <script src="https://gist.github.com/dannysmith/904d92a12f16a67cc3a0a0df47d4bc1e.js"></script>
 
-There's definitely some scope to simplify this, and to add some more "features" to the footer, but this feels like it's enough to call the articles *done* and move on to the rest of the site.
+There's definitely some scope to simplify this, and to add some more "features" to the footer, but this feels like it's enough to call the articles _done_ and move on to the rest of the site.

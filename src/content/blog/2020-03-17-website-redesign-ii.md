@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part II - Principles, Goals and Stuff to Keep
+pubDate: 2020-03-17
 ---
 
 Until now, every time I've redesigned this website it's been because I didn't like how it looked. Every few years, I've looked at it and felt like it doesn't adequately represent me.

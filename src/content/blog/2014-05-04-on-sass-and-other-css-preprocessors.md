@@ -1,5 +1,6 @@
 ---
 title: 'On Sass and Other CSS Preprocessors'
-redirect_to: 'https://medium.com/@dannysmith/'
+redirectURL: 'https://medium.com/@dannysmith/'
 platform: medium
+pubDate: 2014-05-04
 ---

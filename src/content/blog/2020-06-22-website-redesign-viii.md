@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part VIII - Adding some style
+pubDate: 2020-06-22
 ---
 
 The last part focussed on setting up a basic typographic system using margins and heading styles. In this part, I'm going to make a bunch of little tweaks to the typography of these essays. Over the next few months I'll probably make a whole host of little incremental changes like this.

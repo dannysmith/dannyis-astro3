@@ -1,5 +1,6 @@
 ---
 title: 'Evaluating Training and Learning'
-redirect_to: 'https://medium.com/@dannysmith/evaluating-training-and-learning-a19ff80a9eac'
+redirectURL: 'https://medium.com/@dannysmith/evaluating-training-and-learning-a19ff80a9eac'
 platform: medium
+pubDate: 2015-10-26
 ---

@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XIII - Taking Stock of Content
+pubDate: 2020-07-12
 ---
 
 I'm now pretty happy with how the essays on here look, so it's time to turn my attention to the rest of the site. Although I have an idea of the aesthetic I'm after, every time I've opened Figma to have a play I've found myself staring at a blank page wrought with indecision – the dreaded writers block. Or rather, _designers block_.
@@ -111,6 +112,7 @@ Grouping by **Human/System**, and by the four categories of content feels like a
 Simplicity is a the core value of this redesign and working through this process has helped me reach a few decisions about how to simplify things.
 
 {:.spaced-list}
+
 - [x] I've no need for a **coaching** page right now. I can add this in the future.
 - [x] I still want a **hire me** page but it makes much more sense for this to live in notion. I'll forward `https://danny.is/lookingforwork` and `https://danny.is/hireme` to a public Notion page and be done with it.
 - [x] I won't show any actual videos on my site. Instead, I'll present any **video series'** as links to notion pages or YouTube playlists. I already have these set up.

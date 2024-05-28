@@ -1,5 +1,6 @@
 ---
 title: Organisational Health - the silent enabler of success
+pubDate: 2020-02-10
 ---
 
 For a long time I’ve believed that **organisational health** is a hugely undervalued ingredient for success – especially for startups that are scaling fast. **It's the silent enabler of so much else**. Before I give you my take on it, here's a succinct definition of Organisational Health...
@@ -13,9 +14,9 @@ Really healthy organisations tend to feel calm even when they're ploughing throu
 Despite the obvious benefits of a healthy organisation, it’s often neglected – I think for a few reasons...
 
 1. It seems **kinda boring** – we're conditioned to believe the best solutions come from fancy, innovative approaches. Being healthy isn’t complex or innovative... but it does takes sustained **effort**. And there’s none of the adrenaline which usually comes with startup leadership.
-2. It's **very hard to quantify results**. The best measurements of organisational health are whatever we use to measure general success (growth, revenue etc) but this makes it very hard to measure the effect of work. As always, *useful* proxy metrics are hard to find.
+2. It's **very hard to quantify results**. The best measurements of organisational health are whatever we use to measure general success (growth, revenue etc) but this makes it very hard to measure the effect of work. As always, _useful_ proxy metrics are hard to find.
 3. It needs a **holistic approach** - it cuts across leadership, operations and people functions, as well as every other function in a business. Which makes it hard.
-4. Founders are often **unskilled in this domain** – the skills needed to grow a healthy organisation  often feel quite at odds with the other skills required to be a good founder. (Some only realise this when the wheels fall off but I’ve met a lot who realised from the start, felt horribly inadequate as leaders and stuck their heads in the sand.)
+4. Founders are often **unskilled in this domain** – the skills needed to grow a healthy organisation often feel quite at odds with the other skills required to be a good founder. (Some only realise this when the wheels fall off but I’ve met a lot who realised from the start, felt horribly inadequate as leaders and stuck their heads in the sand.)
 
 Remote and distributed companies need to be **much healthier** than office-based firms because co-location allows us to paper over **an awful lot of cracks**. And systemic health problems have a disproportionately large effect on remote teams, which quickly compounds with scale.
 
@@ -24,11 +25,11 @@ Remote and distributed companies need to be **much healthier** than office-based
 These kinds of things...
 
 - **Happy**, autonomous and empowered people (obviously).
-- A unified, coherent senior leadership **team** exhibiting all the traits & behaviours we'd expect of *any other great team*.
+- A unified, coherent senior leadership **team** exhibiting all the traits & behaviours we'd expect of _any other great team_.
 - Common, well-understood **shared** norms, habits, behaviours & ways of working. (We could label this “culture”.)
 - Common, well-understood **values** and **principles** which facilitate aligned independent decision-making at all levels.
-- A clear, *truthful* and well-understood **structure** (org design, teams, career levels, salaries etc).
-- *Excellent* communication everywhere.
+- A clear, _truthful_ and well-understood **structure** (org design, teams, career levels, salaries etc).
+- _Excellent_ communication everywhere.
 - A culture that values **clarity**.
 - A culture of **trust** and psychological **safety**.
 - A culture that cares about **how** we work, and actively tries to make it better.
@@ -53,11 +54,11 @@ If you’re a tiny seed-stage startup scrambling to find product-market fit, you
 
 ## So how do we start getting healthier? 🌱
 
-Firstly, we need to believe it’s *at least* as important as our other business aims. Being healthy is unlikely to be the number one goal but, as with human health, unless we make a strong commitment to it, it’ll always loose out to other more pressing stuff.
+Firstly, we need to believe it’s _at least_ as important as our other business aims. Being healthy is unlikely to be the number one goal but, as with human health, unless we make a strong commitment to it, it’ll always loose out to other more pressing stuff.
 
-Secondly, we need at least one person who’s wholly focussed on keeping our organisation healthy. I’ve seen some amazing small startups where this is the **fundamental** job of the COO. More recently, I’ve seen this owned by a *Head of Remote*.
+Secondly, we need at least one person who’s wholly focussed on keeping our organisation healthy. I’ve seen some amazing small startups where this is the **fundamental** job of the COO. More recently, I’ve seen this owned by a _Head of Remote_.
 
-In larger firms I’ve seen teams called *Workplace Design*, *Office of the COO*, *Remote Operations*, *People Operations*, (plain old) *Operations*, and the like. The one thing these have in common is that they are 100% focussed on making the **company itself** as healthy as possible.
+In larger firms I’ve seen teams called _Workplace Design_, _Office of the COO_, _Remote Operations_, _People Operations_, (plain old) _Operations_, and the like. The one thing these have in common is that they are 100% focussed on making the **company itself** as healthy as possible.
 
 Ultimately, keeping an organisation healthy will always be a joint effort led by people like...
 
@@ -69,7 +70,7 @@ Ultimately, keeping an organisation healthy will always be a joint effort led by
 None of this happens by accident.
 
 {:.callout}
-I nicked the term **Organisational Health** from *[The Advantage by Patrick Lencioni](https://www.tablegroup.com/books/the-advantage/).* The first chapter makes a much fuller argument for it’s importance than I have here.
+I nicked the term **Organisational Health** from _[The Advantage by Patrick Lencioni](https://www.tablegroup.com/books/the-advantage/)._ The first chapter makes a much fuller argument for it’s importance than I have here.
 
 # Guiding Principles 📜
 
@@ -77,7 +78,7 @@ Here are a few loose principles I’ve found useful for helping folks approach o
 
 ### 1️⃣ Have an internal focus
 
-Most functions in a startup are led by external needs & drivers: Product, Engineering, Sales, Marketing, Strategy, etc... all *should* have their eyes set mostly on the outside world.
+Most functions in a startup are led by external needs & drivers: Product, Engineering, Sales, Marketing, Strategy, etc... all _should_ have their eyes set mostly on the outside world.
 
 We need at least one function which has an internal focus, **treats the company like a product**, itself as a product team and its employees as users. And this function needs a good product manager.
 
@@ -97,7 +98,7 @@ Used strategically, this kind of debt is useful because it lets us move faster, 
 
 These are the two fundamental components, and Internal Operations should focus on both:
 
-- **Human** - Relationships, culture, leadership,  human growth, shared mindset, “vibes” etc.
+- **Human** - Relationships, culture, leadership, human growth, shared mindset, “vibes” etc.
 - **System** - Structure, process, policy, tooling, automation etc.
 
 These need to be viewed and tackled together and the highest leverage stuff addresses both human & system concerns at the same time (eg. shared behaviours & habits).
@@ -105,7 +106,7 @@ These need to be viewed and tackled together and the highest leverage stuff addr
 {:.callout}
 A garden needs plants (humans) that take their own path. These need thoughtful nurturing. It also needs pots, trellises, paths (systems) to support the plants. These aren't nurtured, they're engineered. If we want an awesome garden we need to engineer the right systems and nurture the plants right – this will only work if view both together as a whole. 🌱
 
-### 4️⃣ Behaviours & habits *over* processes & tools
+### 4️⃣ Behaviours & habits _over_ processes & tools
 
 While processes and tools are important, the most effective way to improve an organisation’s health is by improving the habits and default behaviours of its people.
 
@@ -147,9 +148,9 @@ Creating clarity & consistency on stuff like this is often much harder than it s
 
 ### 6️⃣ Practice simplicity
 
-Simplicity matters because simple things are easy for people to *fully* understand and reason about. When designing systems we have to consider the **usefulness and accuracy of the mental models folks form about them**.
+Simplicity matters because simple things are easy for people to _fully_ understand and reason about. When designing systems we have to consider the **usefulness and accuracy of the mental models folks form about them**.
 
-It’s much easier to augment folks’ existing *correct* mental models than to fix their incorrect ones.
+It’s much easier to augment folks’ existing _correct_ mental models than to fix their incorrect ones.
 
 > A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system. — **John Gall** (1975, p.71)
 

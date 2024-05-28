@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part X - Links
+pubDate: 2020-06-25
 ---
 
 Hyperlinks are what makes the web special. They allow us move seamlessley from idea to idea at our own pace. While we tend to read books sequentially, websites are more like choose your own adventure books – hyperlinks let us choose how we experience them. And it's that way by **by default**. So links should be pretty prominent on this site. But at the same time, an article peppered with bright blue links is not easy on the eye. Where links are incidental to the text (as many are), they interrupt the flow of reading. I've spent a fair bit of time thinking about how I want links to work and I basically have two requirements.

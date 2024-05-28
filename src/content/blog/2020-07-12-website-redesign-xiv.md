@@ -1,10 +1,11 @@
 ---
 title: Website Redesign Part XIV - Stepping Into Figma
+pubDate: 2020-07-12
 ---
 
 Figma is one of my new favourite tools. I've been an avid fan of Sketch since I first picked it up in 2011. Compared to the other tools available at the time, it was a breath of fresh air. I still remember how excited I felt after I first used it for some actual work.
 
-The first time I used Figma I had a similar feeling. Everything was just **easy**. Coming from Sketch, Figma felt comfortable and a lot of the keyboard shortcuts are the same so no need to reconfigure my finger-memory. Figma has some major advantages over Sketch. It's **web-based** so it runs on any machine with a browser and my files live in the cloud by default. Anything I can do to simplify my laptop's setup is a win for me. It also has great multiplayer – working collaboratively is an absolute joy. And it feels simpler than Sketch. The interface feels more intuitive and the way it handles components feels way more natural. So I'm now using Figma for pretty much all my design work. 
+The first time I used Figma I had a similar feeling. Everything was just **easy**. Coming from Sketch, Figma felt comfortable and a lot of the keyboard shortcuts are the same so no need to reconfigure my finger-memory. Figma has some major advantages over Sketch. It's **web-based** so it runs on any machine with a browser and my files live in the cloud by default. Anything I can do to simplify my laptop's setup is a win for me. It also has great multiplayer – working collaboratively is an absolute joy. And it feels simpler than Sketch. The interface feels more intuitive and the way it handles components feels way more natural. So I'm now using Figma for pretty much all my design work.
 
 Until now, I've been designing this site in the browser and haven't felt the need for a design tool. But now I'm getting to the rest of the site, I know I'll want to experiment with layout and colour faster than CSS allows. I also want to explore Figma's component and shared styles features and this feels like a good excuse.
 
@@ -36,10 +37,10 @@ We can also create a grid that represents one line-height's worth of padding aro
 
 The trick is to create two grids, one **Rows** and one **Columns**, both with the same settings:
 
-* Count: **1**
-* Type: **Stretch**
-* Margin: **24** (your desired padding)
-* Gutter: **0**
+- Count: **1**
+- Type: **Stretch**
+- Margin: **24** (your desired padding)
+- Gutter: **0**
 
 Then we can combine both grids by creating a Grid Style that includes them both. And voila, we have a grid that we can apply to any frame to give us the correct guides for padding.
 

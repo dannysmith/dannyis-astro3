@@ -1,5 +1,6 @@
 ---
 title: Website Redesign Part XII - Responsive Images
+pubDate: 2020-07-01
 ---
 
 The last time I built a content-heavy website, responsive images weren't really a thing. In fact they were a definite problem for most developers. We could control the visual size of an image with percentage widths and media queries, but we had no easy way of controlling the actual image used by the browser. The easiest thing to do was just supply a very big high-res image that would look good on wide viewports and accept that smaller viewport devices would end up downloading a file with more detail than they could use.

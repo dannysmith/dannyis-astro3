@@ -1,5 +1,6 @@
 ---
 title: 'The Definition of Done: What does "done" actually mean?'
+pubDate: 2017-06-19
 ---
 
 Scrum defines the **definition of done** in pretty simple terms: it's the acceptance criteria that are common to every single user story. For scrum teams, it's really important to have a solid definition of what "done" means. They work in sprints, and need some way of deciding whether a user story is actually finished. It's no good ending a sprint with a user story that meets all its acceptance criteria, but had no code review, hasn't been tested and isn't deployable. Such a story is clearly not done. Scrum teams solve this by strictly defining "done". In this case, in addition to meeting the acceptance criteria, the story must also:
@@ -40,7 +41,6 @@ I've made notes in italics, since some of the items need a bit of explanation.
 
 ## Checklist 1: Ready to Merge
 
-{:.spaced-list}
 - **Kickoff done and requirements clear. Kickoff Document stored on Drive.** This is where we define our acceptance criteria and the scope of a new feature. Most non-trivial user stories require this, and the kickoff for an epic may spawn multiple, smaller, inter-dependant user stories. Bugfixes don't normally need a kickoff: it's down to the product manager and engineers to decide whether a work item needs one. The kickoff document is just the record of the discussion, and contains sufficient acceptance criteria to get the thing out.
 - **Implementation Plan written and reviewed.** This is something we're trying out. For non-trivial work items, engineers discuss and plan the technical solution. This usually involves whiteboarding and scribbling on bits of paper. The implementation plan is a summary of that thinking and is available for engineers from other teams to review. We're hoping this will help catch architectural and system design problems early. For technical improvements, this discussion has usually happened on the associated github issue already.
 - **DPIA Form Completed.** Do we need to do a Data Protection Impact Assessment?
@@ -61,7 +61,6 @@ I've made notes in italics, since some of the items need a bit of explanation.
 
 ## Checklist 2: Actually Done
 
-{:.spaced-list}
 - **Merged to master and feature branch deleted (mandatory).** The master branch is automatically deployed to our staging environment. [I wrote about our merge process earlier](https://medium.com/@dannysmith/synchronising-git-merges-with-slack-d905f7cbd55c).
 - **Related GitHub Issues closed or updated.**
 - **Sifter, Appsignal, and #tech-support issues closed 🏁.** We have a slack channel where people can raise technical issues. If a work item resolves or relates to one of these, it should be marked. This mostly applies to tiny bugfixes. Resolved bugs and exceptions should be closed in Sifter and Appsignal, respectively.
