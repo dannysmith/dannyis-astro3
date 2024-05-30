@@ -10,7 +10,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
   </head>
   <body>
     <main class="vcard" itemtype="http://schema.org/Person">
-      <h1 class="fn">
+      <h1 class="fn" itemprop="name">
         <span itemprop="givenName">Danny</span>
         <span itemprop="familyName">Smith</span>
       </h1>
@@ -34,31 +34,36 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
           <a href="/music">my <b>music</b></a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/dannyasmith"
+          <a href="https://www.linkedin.com/in/dannyasmith" rel="me"
             ><strong>linkedin</strong>/dannyasmith</a
           >
         </li>
         <li>
-          <a href="https://medium.com/@dannysmith"
+          <a href="https://medium.com/@dannysmith" rel="me"
             ><strong>medium</strong>/dannysmith</a
           >
         </li>
         <li>
-          <a href="https://github.com/dannysmith"
+          <a href="https://github.com/dannysmith" rel="me"
             ><strong>github</strong>/dannysmith</a
           >
         </li>
         <li>
-          <a href="https://instagram.com/dannysmith"
+          <a href="https://instagram.com/dannysmith" rel="me"
             ><strong>instagram</strong>/dannysmith</a
           >
         </li>
         <li>
-          <a href="https://monzo.me/dannyasmith"><strong>monzo</strong>.me</a>
+          <a href="https://monzo.me/dannyasmith" rel="me"
+            ><strong>monzo</strong>.me</a
+          >
         </li>
         <li>
-          <a itemprop="email" href="mailto:hi@danny.is"
-            ><strong>email</strong></a
+          <a
+            itemprop="email"
+            href="mailto:hi@danny.is"
+            rel="me"
+            itemprop="email"><strong>email</strong></a
           >
         </li>
       </ul>
