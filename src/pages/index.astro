@@ -39,6 +39,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
           >
         </li>
         <li>
+          <a href="https://indieweb.social/@dannysmith" rel="me">
+            <strong>indieweb.social</strong>/@dannyasmith
+          </a>
+        </li>
+        <li>
           <a href="https://medium.com/@dannysmith" rel="me"
             ><strong>medium</strong>/dannysmith</a
           >
@@ -67,56 +72,57 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
           >
         </li>
       </ul>
+
+      <style>
+        :root {
+          --background-color: var(--c-beige-bg);
+          --homepage-linklist-border-color: var(--c-primary);
+          --homepage-linklist-hover-color: var(--c-primary);
+        }
+
+        body {
+          background: var(--background-color);
+        }
+
+        main {
+          display: grid;
+          grid-template-columns: 1rem auto 1fr;
+        }
+
+        h1 {
+          grid-column: 1 / -1;
+          font-size: 16.7vw;
+          margin-top: -0.08em;
+          pointer-events: none;
+          line-height: 1;
+        }
+
+        .link-list {
+          grid-column: 2 / 3;
+          padding: 0;
+        }
+
+        .link-list li {
+          text-transform: uppercase;
+          letter-spacing: 0.1ch;
+          list-style-type: none;
+          padding: 0;
+          border-bottom: 5px solid var(--homepage-linklist-border-color);
+          line-height: 1.65;
+        }
+
+        .link-list strong {
+          letter-spacing: 0.125ch;
+        }
+
+        .link-list a {
+          text-decoration: none;
+        }
+
+        .link-list a:hover {
+          color: var(--homepage-linklist-hover-color);
+        }
+      </style>
     </main>
-    <style>
-      :root {
-        --background-color: var(--c-beige-bg);
-        --homepage-linklist-border-color: var(--c-primary);
-        --homepage-linklist-hover-color: var(--c-primary);
-      }
-
-      body {
-        background: var(--background-color);
-      }
-
-      main {
-        display: grid;
-        grid-template-columns: 1rem auto 1fr;
-      }
-
-      h1 {
-        grid-column: 1 / -1;
-        font-size: 16.7vw;
-        margin-top: -0.08em;
-        pointer-events: none;
-        line-height: 1;
-      }
-
-      .link-list {
-        grid-column: 2 / 3;
-        padding: 0;
-      }
-
-      .link-list li {
-        text-transform: uppercase;
-        letter-spacing: 0.1ch;
-        list-style-type: none;
-        padding: 0;
-        border-bottom: 5px solid var(--homepage-linklist-border-color);
-        line-height: 1.65;
-      }
-
-      .link-list strong {
-        letter-spacing: 0.125ch;
-      }
-
-      .link-list a {
-        text-decoration: none;
-      }
-
-      .link-list a:hover {
-        color: var(--homepage-linklist-hover-color);
-      }
-    </style>
   </body>
 </html>
