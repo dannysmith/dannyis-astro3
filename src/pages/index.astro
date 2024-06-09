@@ -10,7 +10,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
   </head>
   <body>
     <main class="vcard h-card" itemtype="http://schema.org/Person">
-      <link rel="me" href={Astro.site?.href} class="u-url u-uid" />
+      <a
+        rel="me"
+        href={Astro.site?.href}
+        class="u-url u-uid"
+        style="display:none;">Danny Smith</a
+      >
       <h1 class="fn p-name" itemprop="name">
         <span itemprop="givenName">Danny</span>
         <span itemprop="familyName">Smith</span>
