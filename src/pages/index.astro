@@ -8,8 +8,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
-    <main class="vcard h-card" itemtype="http://schema.org/Person">
+  <body itemtype="https://schema.org/ProfilePage" itemscope>
+    <main
+      class="vcard h-card"
+      itemtype="http://schema.org/Person"
+      itemprop="mainEntity"
+      itemscope
+    >
       <a
         rel="me"
         href={Astro.site?.href}
@@ -83,6 +88,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
         alt="Danny Smith Profile Image"
         class="avatar u-photo"
         loading="lazy"
+        itemprop="image"
       />
 
       <style>
