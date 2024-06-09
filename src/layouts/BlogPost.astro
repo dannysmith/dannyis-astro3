@@ -44,7 +44,11 @@ const {
       )
     }
     <main>
-      <article class="blog-article cq h-entry">
+      <article
+        class="blog-article cq h-entry"
+        itemscope
+        itemtype="https://schema.org/Article"
+      >
         {
           cover && coverAlt && (
             <div class="hero-image">
@@ -54,11 +58,12 @@ const {
         }
         <div class="post-header">
           <div class="metadata">
-            <FormattedDate date={pubDate} />
+            <FormattedDate date={pubDate} itemprop="datePublished" />
             {
               updatedDate && (
                 <span class="last-updated-on">
-                  (updated on <FormattedDate date={updatedDate} />)
+                  (updated on{' '}
+                  <FormattedDate date={updatedDate} itemprop="dateModified" />)
                 </span>
               )
             }
