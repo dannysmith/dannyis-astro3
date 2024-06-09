@@ -44,7 +44,7 @@ const {
       )
     }
     <main>
-      <article class="blog-article cq">
+      <article class="blog-article cq h-entry">
         {
           cover && coverAlt && (
             <div class="hero-image">
@@ -66,7 +66,7 @@ const {
             {draft && <span class="draft-notice">🚧 Draft</span>}
           </div>
 
-          <h1 class="title">{title}</h1>
+          <h1 class="title p-name">{title}</h1>
         </div>
         <slot />
       </article>
