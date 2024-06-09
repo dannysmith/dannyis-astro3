@@ -9,8 +9,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main class="vcard" itemtype="http://schema.org/Person">
-      <h1 class="fn" itemprop="name">
+    <main class="vcard h-card" itemtype="http://schema.org/Person">
+      <h1 class="fn p-name" itemprop="name">
         <span itemprop="givenName">Danny</span>
         <span itemprop="familyName">Smith</span>
       </h1>
@@ -65,13 +65,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
         </li>
         <li>
           <a
-            itemprop="email"
+            class="u-email p-email"
             href="mailto:hi@danny.is"
             rel="me"
             itemprop="email"><strong>email</strong></a
           >
         </li>
       </ul>
+      <img
+        src="/icon.jpg"
+        alt="Danny Smith Profile Image"
+        class="avatar u-photo"
+        loading="lazy"
+      />
 
       <style>
         :root {
@@ -117,10 +123,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 
         .link-list a {
           text-decoration: none;
+          color: inherit;
         }
 
         .link-list a:hover {
           color: var(--homepage-linklist-hover-color);
+        }
+
+        .avatar {
+          display: none;
         }
       </style>
     </main>
