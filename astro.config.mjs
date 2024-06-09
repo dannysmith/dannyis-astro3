@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap'
 import prefetch from '@astrojs/prefetch'
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import { remarkReadingTime } from './remark-reading-time.mjs'
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), prefetch()],
   markdown: {
     rehypePlugins: [rehypeHeadingIds, rehypeAutolinkHeadings],
+    remarkPlugins: [remarkReadingTime],
   },
   // Redirects to external sites are not officially supported. Avoid using a trailing slash.
   // See here:
