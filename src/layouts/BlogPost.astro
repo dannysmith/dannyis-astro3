@@ -8,8 +8,7 @@ import FormattedDate from '@components/FormattedDate.astro'
 import Lightbox from '@components/Lightbox.astro'
 import MainNavigation from '@components/MainNavigation.astro'
 
-type Props = CollectionEntry<'blog'>['data']
-
+type Props = CollectionEntry<'blog'>['data'] & { readingTime: string }
 const {
   title,
   description,
@@ -20,6 +19,7 @@ const {
   draft,
   redirectURL,
   platform,
+  readingTime,
 } = Astro.props
 ---
 
@@ -62,6 +62,7 @@ const {
                 </span>
               )
             }
+            {readingTime && <span class="reading-time">· {readingTime}</span>}
             {draft && <span class="draft-notice">🚧 Draft</span>}
           </div>
 
