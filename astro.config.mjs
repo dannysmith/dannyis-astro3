@@ -20,8 +20,7 @@ export default defineConfig({
   // - https://github.com/withastro/astro/pull/9287
   // - https://github.com/withastro/astro/issues/9259#issuecomment-1857973018
   redirects: {
-    '/meeting':
-      'https://dannysmith.notion.site/Book-a-Meeting-with-Danny-e39fc8def5514b67b559b2e5a51934ae',
+    '/meeting': 'https://cal.com/dannysmith',
     '/tools': 'https://betterat.work/toolbox',
     '/linkedin': 'https://www.linkedin.com/in/dannyasmith',
     '/cv': '/cv-danny-smith.pdf',
