@@ -15,10 +15,7 @@ export default defineConfig({
     rehypePlugins: [rehypeHeadingIds, rehypeAutolinkHeadings],
     remarkPlugins: [remarkReadingTime],
   },
-  // Redirects to external sites are not officially supported. Avoid using a trailing slash.
-  // See here:
-  // - https://github.com/withastro/astro/pull/9287
-  // - https://github.com/withastro/astro/issues/9259#issuecomment-1857973018
+  // Avoid using a trailing slash in redirect URLs
   redirects: {
     '/meeting': 'https://cal.com/dannysmith',
     '/tools': 'https://betterat.work/toolbox',
