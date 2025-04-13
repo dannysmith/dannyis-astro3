@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 
-import prefetch from '@astrojs/prefetch'
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { remarkReadingTime } from './remark-reading-time.mjs'
@@ -10,7 +9,8 @@ import { remarkReadingTime } from './remark-reading-time.mjs'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://danny.is',
-  integrations: [mdx(), sitemap(), prefetch()],
+  prefetch: true,
+  integrations: [mdx(), sitemap()],
   markdown: {
     rehypePlugins: [rehypeHeadingIds, rehypeAutolinkHeadings],
     remarkPlugins: [remarkReadingTime],
