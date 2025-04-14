@@ -10,9 +10,15 @@ import { remarkReadingTime } from './remark-reading-time.mjs'
 export default defineConfig({
   site: 'https://danny.is',
   prefetch: true,
+  image: {
+    // Used for all Markdown images; not configurable per-image
+    // Used for all `<Image />` and `<Picture />` components unless overridden with a prop
+    experimentalLayout: 'responsive',
+  },
   experimental: {
     svg: true,
     headingIdCompat: true,
+    responsiveImages: true,
   },
   integrations: [mdx(), sitemap()],
   markdown: {
