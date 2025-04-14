@@ -10,9 +10,16 @@ import { remarkReadingTime } from './remark-reading-time.mjs'
 export default defineConfig({
   site: 'https://danny.is',
   prefetch: true,
+  experimental: {
+    svg: true,
+    headingIdCompat: true,
+  },
   integrations: [mdx(), sitemap()],
   markdown: {
-    rehypePlugins: [rehypeHeadingIds, rehypeAutolinkHeadings],
+    rehypePlugins: [
+      [rehypeHeadingIds, { headingIdCompat: true }],
+      rehypeAutolinkHeadings,
+    ],
     remarkPlugins: [remarkReadingTime],
   },
   // Avoid using a trailing slash in redirect URLs
