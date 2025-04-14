@@ -27,7 +27,7 @@ const posts = (
           {
             posts.map((post) => (
               <li>
-                <a href={`/writing/${post.slug}/`}>
+                <a href={`/writing/${post.id}/`}>
                   <p class="date">
                     <FormattedDate date={post.data.pubDate} />
                   </p>

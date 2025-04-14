@@ -25,7 +25,7 @@ const notes = (await getCollection('notes')).sort(
           {
             notes.map((note) => (
               <li>
-                <a href={`/notes/${note.slug}/`}>
+                <a href={`/notes/${note.id}/`}>
                   <p class="date">
                     <FormattedDate date={note.data.pubDate} />
                   </p>
