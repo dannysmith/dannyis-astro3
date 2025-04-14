@@ -22,9 +22,12 @@ export async function GET(context) {
     items: all.map((post) => ({
       ...post.data,
       link: `/writing/${post.slug}/`,
-      content: sanitizeHtml(parser.render(post.body), {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
-      }),
+      content: sanitizeHtml(
+        parser.render(typeof post.body == 'string' ? post.body : ''),
+        {
+          allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+        }
+      ),
     })),
   })
 }
