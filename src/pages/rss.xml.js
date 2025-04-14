@@ -21,7 +21,7 @@ export async function GET(context) {
     site: context.site,
     items: all.map((post) => ({
       ...post.data,
-      link: `/writing/${post.slug}/`,
+      link: `/writing/${post.id}/`,
       content: sanitizeHtml(
         parser.render(typeof post.body == 'string' ? post.body : ''),
         {
