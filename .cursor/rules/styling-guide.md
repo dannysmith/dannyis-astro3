@@ -1,17 +1,25 @@
 ---
-description:
+description: Guide to visual styling and CSS Architecture
 globs:
 alwaysApply: false
 ---
+
 # Styling Guide
 
+## Visual Design Style
+
+### Color System
+
 ## CSS Organization
+
 - Global styles in `src/styles/`
 - Component-scoped styles in `.astro` files
 - Use CSS modules when needed
 
 ## Component Styling
+
 Example of component-scoped styles:
+
 ```astro
 ---
 // Component logic
@@ -28,7 +36,9 @@ Example of component-scoped styles:
 ```
 
 ## CSS Variables
+
 Define global variables in `src/styles/global.css`:
+
 ```css
 :root {
   --color-primary: #007bff;
@@ -37,8 +47,8 @@ Define global variables in `src/styles/global.css`:
 }
 ```
 
-
 ## Best Practices
+
 1. Use scoped styles when possible
 2. Follow BEM-like naming convention
 3. Use CSS variables for theming
