@@ -6,47 +6,106 @@ alwaysApply: true
 
 # Cursor Rules and Guidelines
 
-This document serves as the main index for all Cursor rules and guidelines in this project.
+This document serves as an index for all cursor rules and guidelines for the personal website project.
 
 ## Available Rules
 
-1. [Project Structure](project-structure.md)
+### Project Structure
 
-   - Guidelines for organizing project files and directories
-   - Architecture patterns and best practices
-   - Technical implementation details
+- **File**: `project-structure.md`
+- **Description**: Defines the organization and architecture of the personal website built with Astro
+- **Key Topics**:
+  - Directory structure
+  - Content organization
+  - Component organization
+  - Technical implementation
+  - Best practices
 
-2. [Styling Guide](styling-guide.md)
+### Component Guidelines
 
-   - Visual design standards
-   - CSS architecture and organization
-   - Component styling guidelines
-   - CSS variables and theming
+- **File**: `component-guidelines.md`
+- **Description**: Guidelines for developing and maintaining Astro components
+- **Key Topics**:
+  - Component types and organization
+  - Development guidelines
+  - Props interface
+  - Styling patterns
+  - Accessibility
+  - Best practices
 
-3. [Task Management](task-list.md)
-   - Guidelines for creating and managing task lists
-   - Task tracking and progress updates
-   - Implementation planning
+### Styling Guide
 
-## How to Use These Rules
+- **File**: `styling-guide.md`
+- **Description**: Guidelines for visual styling and CSS architecture
+- **Key Topics**:
+  - Color system
+  - CSS organization
+  - Component styling
+  - CSS variables
+  - Best practices
 
-1. Each rule file contains specific guidelines for its domain
-2. Rules are applied based on file patterns specified in the `globs` field
-3. Some rules are always applied (`alwaysApply: true`)
-4. Rules can be customized per project by modifying the respective files
+### Content Management
+
+- **File**: `content-management.md`
+- **Description**: Guidelines for managing content in the personal website
+- **Key Topics**:
+  - Content types
+  - Frontmatter
+  - Collections
+  - Image handling
+  - Best practices
+
+### Astro Guidelines
+
+- **File**: `astro-guidelines.md`
+- **Description**: Specific guidelines for working with Astro features
+- **Key Topics**:
+  - Core principles
+  - Component guidelines
+  - Content collections
+  - Image handling
+  - Performance guidelines
+  - SEO guidelines
+  - Error handling
+
+### Task Management
+
+- **File**: `task-list.md`
+- **Description**: Guidelines for creating and managing task lists
+- **Key Topics**:
+  - Task list creation
+  - Task maintenance
+  - AI instructions
+  - Best practices
+
+## How to Use
+
+1. **For Development**:
+
+   - Follow the project structure guidelines when creating new files
+   - Adhere to component guidelines when building new components
+   - Use the styling guide for consistent visual design
+   - Follow content management rules for adding new content
+   - Reference Astro guidelines for framework-specific features
+   - Use task lists to track progress
+
+2. **For AI Assistance**:
+   - AI will use these rules to provide consistent and accurate assistance
+   - Rules help maintain project standards and best practices
+   - Guidelines ensure proper implementation of features
+   - Task lists help track and manage project progress
 
 ## Adding New Rules
 
-To add a new rule:
-
 1. Create a new markdown file in the `.cursor/rules` directory
-2. Include the required frontmatter:
-   ```yaml
-   ---
-   description: Brief description of the rule
-   globs: ['pattern/to/match']
-   alwaysApply: false
-   ---
-   ```
-3. Add the rule to this index file
-4. Document the rule with clear guidelines and examples
+2. Follow the existing format and structure
+3. Update this index to include the new rule
+4. Ensure the rule is properly documented and maintained
+
+## Maintenance
+
+- Keep rules up to date with project changes
+- Review and update guidelines regularly
+- Ensure consistency across all rules
+- Remove outdated or irrelevant rules
+- Add new rules as needed

@@ -14,16 +14,34 @@ Define guidelines for developing and maintaining components in the personal webs
 
 ### Common Components
 
+1. **Navigation**
+
+   - `MainNavigation.astro` - Main site navigation
+   - `NavLink.astro` - Individual navigation link component
+   - `Footer.astro` - Site footer with links and info
+
+2. **Layout**
+
+   - `Grid.astro` - Layout grid component
+   - `BaseHead.astro` - Base head component for SEO and meta tags
+
+3. **Utility**
+   - `FormattedDate.astro` - Date formatting component
+   - `Spinner.astro` - Loading spinner component
+
 ### Feature Components
 
-### UI Components
+1. **Content Display**
 
-1. **Basic Elements**
+   - `NoteCard.astro` - Card component for displaying notes
+   - `URLCard.astro` - Card component for displaying URL previews
+   - `Notion.astro` - Component for Notion page references
+   - `Callout.astro` - Component for highlighting important information
+   - `Lightbox.astro` - Image lightbox component
 
-2. **Layout Components**
-
-3. **Feedback Components**
-   - Spinner
+2. **Icons**
+   - Located in `icons/` directory
+   - Used throughout the site for consistent iconography
 
 ## Development Guidelines
 
@@ -34,7 +52,8 @@ Define guidelines for developing and maintaining components in the personal webs
    ```astro
    components/
    ├── ComponentName.astro
-   └── ComponentName.css (optional, for complex components)
+   └── icons/
+       └── IconName.astro
    ```
 
 2. **Code Structure**
@@ -45,21 +64,34 @@ Define guidelines for developing and maintaining components in the personal webs
    import { Image } from 'astro:assets';
    import type { Props } from './types';
 
-   // 2. Props
+   // 2. Props Interface
+   export interface Props {
+     required: string;
+     optional?: number;
+     withDefault?: boolean;
+   }
+
+   // 3. Props destructuring
    const { prop1, prop2 } = Astro.props;
 
-   // 3. Data fetching (if needed)
+   // 4. Data fetching (if needed)
    const data = await fetchData();
    ---
 
-   <!-- 4. Template -->
+   <!-- 5. Template -->
    <div class="component">
      <!-- Content -->
    </div>
 
-   <!-- 5. Styles -->
+   <!-- 6. Styles -->
    <style>
-     /* Scoped styles */
+     :root {
+       --component-background: var(--color-bg-dark-200);
+       --component-foreground: var(--c-white);
+       /* Other CSS variables */
+     }
+
+     /* Component styles */
    </style>
    ```
 
@@ -84,25 +116,55 @@ Define guidelines for developing and maintaining components in the personal webs
 
 ### Styling
 
-1. **Scoped Styles**
+1. **CSS Variables**
 
-   - Use Astro's scoped styles
-   - Avoid global styles
-   - Use CSS custom properties
-   - Follow BEM naming
+   - Define component-specific variables in `:root`
+   - Use semantic variable names
+   - Reference global theme variables
+   - Example:
+     ```css
+     :root {
+       --component-background: var(--color-bg-dark-200);
+       --component-foreground: var(--c-white);
+     }
+     ```
 
 2. **Responsive Design**
-   - Mobile-first approach
-   - Use relative units
-   - Test all breakpoints
-   - Consider touch targets
+
+   - Use container queries when appropriate
+   - Implement mobile-first layouts
+   - Use clamp() for fluid typography
+   - Example:
+
+     ```css
+     @container (width > 400px) {
+       /* Desktop styles */
+     }
+
+     .title {
+       font-size: clamp(1rem, calc(0.6rem + 1vw), 1.5rem);
+     }
+     ```
+
+3. **Layout Patterns**
+   - Use CSS Grid for complex layouts
+   - Flexbox for alignment and spacing
+   - Container queries for component-level responsiveness
+   - Example:
+     ```css
+     .container {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+     }
+     ```
 
 ### Accessibility
 
 1. **Semantic HTML**
 
-   - Use appropriate elements
-   - Include ARIA attributes
+   - Use appropriate elements (`<article>`, `<section>`, etc.)
+   - Include ARIA attributes when needed
    - Support keyboard navigation
    - Maintain focus management
 
