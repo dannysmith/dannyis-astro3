@@ -113,8 +113,8 @@ responsive_image:
 How we need to create our template. I stole most of this straignt from the docs, but I've added lazy loading and width/height attributes.
 
 ```html
-{% raw %} {% capture srcset %} {% for i in resized %} /{{ i.path }} {{ i.width
-}}w, {% endfor %} {% endcapture %}
+{% raw %} {% capture srcset %} {% for i in resized %} /{{ i.path }} {{ i.width }}w, {% endfor %} {%
+endcapture %}
 <img
   src="/{{ path }}"
   alt="{{ alt }}"

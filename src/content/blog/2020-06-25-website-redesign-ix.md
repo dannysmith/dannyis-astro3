@@ -103,11 +103,7 @@ This will produce the following output and HTML
 ```html
 <ul class="task-list">
   <li class="task-list-item">
-    <input
-      type="checkbox"
-      class="task-list-item-checkbox"
-      disabled="disabled"
-    />Item 1
+    <input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Item 1
   </li>
   <li class="task-list-item">
     <input
@@ -118,18 +114,10 @@ This will produce the following output and HTML
     />Callout inline styles
   </li>
   <li class="task-list-item">
-    <input
-      type="checkbox"
-      class="task-list-item-checkbox"
-      disabled="disabled"
-    />Item 2
+    <input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Item 2
   </li>
   <li class="task-list-item">
-    <input
-      type="checkbox"
-      class="task-list-item-checkbox"
-      disabled="disabled"
-    />Item 3
+    <input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Item 3
   </li>
 </ul>
 ```
