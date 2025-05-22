@@ -1,6 +1,6 @@
 ---
-import BaseHead from '@components/BaseHead.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import BaseHead from '@components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
@@ -9,18 +9,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body itemtype="https://schema.org/ProfilePage" itemscope>
-    <main
-      class="vcard h-card"
-      itemtype="http://schema.org/Person"
-      itemprop="mainEntity"
-      itemscope
-    >
-      <a
-        rel="me"
-        href={Astro.site?.href}
-        class="u-url u-uid"
-        style="display:none;">Danny Smith</a
-      >
+    <main class="vcard h-card" itemtype="http://schema.org/Person" itemprop="mainEntity" itemscope>
+      <a rel="me" href={Astro.site?.href} class="u-url u-uid" style="display:none;">Danny Smith</a>
       <h1 class="fn p-name" itemprop="name">
         <span itemprop="givenName">Danny</span>
         <span itemprop="familyName">Smith</span>
@@ -51,18 +41,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
         </li>
         <li>
           <a href="https://indieweb.social/@dannysmith" rel="me">
-            <strong>indieweb.social</strong>/@dannyasmith
+            <strong>Mastodon</strong>/@dannyasmith
           </a>
         </li>
         <li>
-          <a href="https://medium.com/@dannysmith" rel="me"
-            ><strong>medium</strong>/dannysmith</a
-          >
+          <a href="https://medium.com/@dannysmith" rel="me"><strong>medium</strong>/dannysmith</a>
         </li>
         <li>
-          <a href="https://github.com/dannysmith" rel="me"
-            ><strong>github</strong>/dannysmith</a
-          >
+          <a href="https://github.com/dannysmith" rel="me"><strong>github</strong>/dannysmith</a>
         </li>
         <li>
           <a href="https://instagram.com/dannysmith" rel="me"
@@ -70,16 +56,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
           >
         </li>
         <li>
-          <a href="https://monzo.me/dannyasmith" rel="me"
-            ><strong>monzo</strong>.me</a
-          >
+          <a href="https://monzo.me/dannyasmith" rel="me"><strong>monzo</strong>.me</a>
         </li>
         <li>
-          <a
-            class="u-email p-email"
-            href="mailto:hi@danny.is"
-            rel="me"
-            itemprop="email"><strong>email</strong></a
+          <a class="u-email p-email" href="mailto:hi@danny.is" rel="me" itemprop="email"
+            ><strong>email</strong></a
           >
         </li>
       </ul>
