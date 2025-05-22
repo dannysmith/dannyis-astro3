@@ -1,6 +1,6 @@
 ---
-import NavLink from '@components/NavLink.astro'
-import HamburgerMenu from '@astropub/icons/HamburgerMenu'
+import NavLink from '@components/NavLink.astro';
+import HamburgerMenu from '@astropub/icons/HamburgerMenu';
 ---
 
 <a class="open-nav-link" href="#">
@@ -105,9 +105,12 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu'
       line-height: 1.65;
     }
 
-    a {
+    a,
+    a:link,
+    a:visited {
       padding: 0.5rem;
       text-decoration: none;
+      color: var(--mainnav-foreground);
     }
 
     a:hover,
@@ -129,15 +132,15 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu'
 
 <script>
   const closeNav = () => {
-    document.querySelector('.main-navigation')?.classList.remove('open')
-  }
+    document.querySelector('.main-navigation')?.classList.remove('open');
+  };
 
   const openNav = () => {
-    document.querySelector('.main-navigation')?.classList.add('open')
-  }
+    document.querySelector('.main-navigation')?.classList.add('open');
+  };
 
-  document.querySelector('.close')?.addEventListener('click', closeNav)
-  document.querySelector('main')?.addEventListener('click', closeNav)
-  document.querySelector('footer')?.addEventListener('click', closeNav)
-  document.querySelector('.open-nav-link')?.addEventListener('click', openNav)
+  document.querySelector('.close')?.addEventListener('click', closeNav);
+  document.querySelector('main')?.addEventListener('click', closeNav);
+  document.querySelector('footer')?.addEventListener('click', closeNav);
+  document.querySelector('.open-nav-link')?.addEventListener('click', openNav);
 </script>

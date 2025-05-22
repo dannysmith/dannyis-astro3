@@ -1,9 +1,9 @@
 ---
-import RSSIcon from '@components/icons/RSSIcon.astro'
-import LinkedInIcon from '@components/icons/LinkedInIcon.astro'
-import YouTubeIcon from '@components/icons/YouTubeIcon.astro'
-import InstagramIcon from '@components/icons/InstagramIcon.astro'
-const today = new Date()
+import RSSIcon from '@components/icons/RSSIcon.astro';
+import LinkedInIcon from '@components/icons/LinkedInIcon.astro';
+import YouTubeIcon from '@components/icons/YouTubeIcon.astro';
+import InstagramIcon from '@components/icons/InstagramIcon.astro';
+const today = new Date();
 ---
 
 <footer>
@@ -31,9 +31,7 @@ const today = new Date()
       </li>
       <li><a href="/youtube" title="Youtube Channel"><YouTubeIcon /></a></li>
       <li>
-        <a href="https://instagram.com/dannysmith" title="Instagram Profile"
-          ><InstagramIcon /></a
-        >
+        <a href="https://instagram.com/dannysmith" title="Instagram Profile"><InstagramIcon /></a>
       </li>
     </ul>
   </section>
@@ -100,9 +98,12 @@ const today = new Date()
       line-height: 1.65;
     }
 
-    a {
+    a,
+    a:link,
+    a:visited {
       padding: 0.5rem;
       text-decoration: none;
+      color: var(--footer-foreground);
     }
 
     a:hover,
