@@ -247,8 +247,8 @@ a {
   transition: all 0.15s;
 }
 
-/* A elements that don't have a class get nicer default link styles */
-a:not([class]) {
+/* Default link styles only apply to main content area */
+main a:not([class]) {
   text-decoration-skip-ink: auto;
   color: currentColor;
 
