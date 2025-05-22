@@ -78,6 +78,17 @@ This document serves as an index for all cursor rules and guidelines for the per
   - AI instructions
   - Best practices
 
+### Commit Messages
+
+- **File**: `commit-messages.md`
+- **Description**: Guidelines for writing clear and consistent commit messages
+- **Key Topics**:
+  - Message format
+  - Commit types
+  - Subject and body guidelines
+  - Best practices
+  - Examples
+
 ## How to Use
 
 1. **For Development**:
@@ -88,12 +99,14 @@ This document serves as an index for all cursor rules and guidelines for the per
    - Follow content management rules for adding new content
    - Reference Astro guidelines for framework-specific features
    - Use task lists to track progress
+   - Follow commit message guidelines for version control
 
 2. **For AI Assistance**:
    - AI will use these rules to provide consistent and accurate assistance
    - Rules help maintain project standards and best practices
    - Guidelines ensure proper implementation of features
    - Task lists help track and manage project progress
+   - Commit messages will follow the defined format
 
 ## Adding New Rules
 
