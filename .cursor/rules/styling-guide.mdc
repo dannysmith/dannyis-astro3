@@ -1,0 +1,47 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Styling Guide
+
+## CSS Organization
+- Global styles in `src/styles/`
+- Component-scoped styles in `.astro` files
+- Use CSS modules when needed
+
+## Component Styling
+Example of component-scoped styles:
+```astro
+---
+// Component logic
+---
+<div class="component">
+  <!-- Content -->
+</div>
+
+<style>
+  .component {
+    /* Scoped styles */
+  }
+</style>
+```
+
+## CSS Variables
+Define global variables in `src/styles/global.css`:
+```css
+:root {
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --spacing-unit: 1rem;
+}
+```
+
+
+## Best Practices
+1. Use scoped styles when possible
+2. Follow BEM-like naming convention
+3. Use CSS variables for theming
+4. Keep styles modular
+5. Use responsive design patterns
+6. Optimize for performance
