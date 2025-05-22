@@ -1,24 +1,16 @@
 module.exports = {
-  root: true,
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:astro/recommended',
-    'plugin:prettier/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json',
-  },
-  env: {
-    browser: true,
-    node: true,
-  },
-  rules: {
-    'prettier/prettier': 'error',
   },
   overrides: [
     {
@@ -30,4 +22,12 @@ module.exports = {
       },
     },
   ],
-}
+  env: {
+    browser: true,
+    node: true,
+  },
+  rules: {
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-explicit-any': 'warn',
+  },
+};

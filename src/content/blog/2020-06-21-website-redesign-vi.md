@@ -39,7 +39,8 @@ I [borrowed the Literata font-face declarations](https://github.com/jpamental/mo
   font-family: 'Literata Caption';
   font-style: italic;
   font-weight: 600;
-  src: url('../fonts/literata/woff2/Literata-7ptSemiBoldItalic.woff2') format('woff2'),
+  src:
+    url('../fonts/literata/woff2/Literata-7ptSemiBoldItalic.woff2') format('woff2'),
     url('../fonts/literata/woff/Literata-7ptSemiBoldItalic.woff') format('woff');
   font-display: swap;
 }

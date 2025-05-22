@@ -1,45 +1,45 @@
 ---
-import { unfurl } from 'unfurl.js'
-import NotionIcon from './icons/NotionIcon.astro'
+import { unfurl } from 'unfurl.js';
+import NotionIcon from './icons/NotionIcon.astro';
 
 export interface Props {
-  href: string
+  href: string;
 }
 
-const href = Astro.props.href
+const href = Astro.props.href;
 
 // Fetch the URL data
-const result = await unfurl(href)
+const result = await unfurl(href);
 
 // Variables
-let title = result.title?.trim()
-let hasFavicon = false
-let faviconImageURL = ''
-let emoji = ''
+let title = result.title?.trim();
+let hasFavicon = false;
+let faviconImageURL = '';
+let emoji = '';
 
 // Clean title
 if (title?.endsWith('| Notion')) {
-  title = title.slice(0, title.lastIndexOf('| Notion')).trim()
+  title = title.slice(0, title.lastIndexOf('| Notion')).trim();
 }
 
 // Get faviconImageURL or emoji
-const faviconURL = result.favicon
+const faviconURL = result.favicon;
 
 if (faviconURL && faviconURL.includes('amazonaws.com')) {
-  hasFavicon = true
-  faviconImageURL = faviconURL
+  hasFavicon = true;
+  faviconImageURL = faviconURL;
 } else {
-  const decodedURL = decodeURIComponent(faviconURL || '')
+  const decodedURL = decodeURIComponent(faviconURL || '');
 
   // Regex pattern to match most common emojis
   const emojiRegex =
-    /(\p{Emoji_Presentation}|\p{Emoji}\uFE0F|[\u200D\uFE0E\uFE0F]|\p{Extended_Pictographic})/gu
+    /(\p{Emoji_Presentation}|\p{Emoji}\uFE0F|\u200D|\uFE0E|\uFE0F|\p{Extended_Pictographic})/gu;
 
-  const matches = decodedURL.match(emojiRegex) as Array<string>
+  const matches = decodedURL.match(emojiRegex) as Array<string>;
 
   if (matches?.length > 0) {
-    hasFavicon = true
-    emoji = matches[0]
+    hasFavicon = true;
+    emoji = matches[0];
   }
 }
 ---
@@ -49,13 +49,7 @@ if (faviconURL && faviconURL.includes('amazonaws.com')) {
     {!hasFavicon && <NotionIcon />}
     {
       hasFavicon && faviconImageURL && (
-        <img
-          class="icon-image"
-          src={faviconURL}
-          width="100"
-          height="100"
-          alt=""
-        />
+        <img class="icon-image" src={faviconURL} width="100" height="100" alt="" />
       )
     }
     {hasFavicon && emoji && <span class="icon-emoji">{emoji}</span>}
