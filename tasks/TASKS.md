@@ -4,21 +4,18 @@
 
 ### 1.1 CSS Layers Implementation
 
-- [ ] Create base CSS file structure with layer definitions
-- [ ] Move existing reset styles to `@reset` layer
-- [ ] Extract and organize base typography into `@base` layer
-- [ ] Create `@prose` layer for general content styling
-- [ ] Set up `@articletypography` layer for article-specific styles
-- [ ] Implement theme switching in `@theme` layer
-- [ ] Test layer cascade and specificity
-- [ ] Document layer usage guidelines
+- [x] Move existing reset styles to `@reset` layer
+- [x] Extract and organize base typography into `@base` layer
+- [x] Create base CSS file structure with layer definitions
+- [x] Create `@prose` layer for general content styling
+- [x] Set up `@articletypography` layer for article-specific styles
+- [x] Document layer usage guidelines
 
 ### 1.2 Container Queries Implementation
 
 - [ ] Audit current layout patterns for container query opportunities
 - [ ] Set up container query polyfill if needed
 - [ ] Implement container queries for responsive components
-- [ ] Create CSS variable system for component theming
 - [ ] Test across different viewport sizes
 
 ## 2. NoteCard and Note Pages Enhancement
