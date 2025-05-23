@@ -14,12 +14,6 @@
   font-style: italic;
   font-display: swap;
 }
-@font-face {
-  font-family: 'Jost';
-  src: url('/fonts/Jost.woff2') format('woff2');
-  font-style: normal;
-  font-display: swap;
-}
 
 /* CSS Custom Properties - these need to be outside layers as they're declarations */
 :root {
@@ -164,6 +158,27 @@
     box-sizing: border-box;
   }
 
+  html {
+    /* Prevent font size inflation */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+
+    /* Let the browser decide the best base font size, but make it a little smaller */
+    font-size: 98%;
+  }
+
+  body {
+    /* Use the body as the positioning parent for absolutely positioned elements. */
+    position: relative;
+
+    /* Set the font-size in rems so it's inherited by all elements. */
+    font-size: 1rem;
+
+    /* Remove default padding */
+    padding: 0;
+  }
+
   /* Remove default margin in favour of better control in authored CSS */
   body,
   h1,
@@ -185,25 +200,30 @@
     list-style: none;
   }
 
-  /* Remove default padding */
-  body {
-    padding: 0;
+  /* Basic form element resets */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
   }
 
   /* Remove default border */
   img {
     border: 0;
   }
+
+  /* Basic image handling */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
 }
 
 /* Base Layer */
 @layer base {
   html {
-    /* Prevent font size inflation */
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-
     /* Ensure Common ligs are always on */
     font-variant-ligatures: common-ligatures;
 
@@ -212,9 +232,6 @@
 
     /* Smooth Scrolling */
     scroll-behavior: smooth;
-
-    /* Let the browser decide the best base font size, but make it a little smaller */
-    font-size: 98%;
 
     /* Set color scheme */
     color-scheme: light;
@@ -230,12 +247,6 @@
     /* Set core body defaults */
     min-height: 100vh;
     line-height: 1.5;
-
-    /* Use the body as the positioning parent for absolutely positioned elements. */
-    position: relative;
-
-    /* Set the font-size in rems so it's inherited by all elements. */
-    font-size: 1rem;
   }
 
   /* Set shorter line heights on headings and interactive elements */
@@ -269,19 +280,20 @@
     transition: all 0.15s;
   }
 
-  /* Basic form element resets */
-  input,
-  button,
-  textarea,
-  select {
-    font: inherit;
-  }
+  a {
+    &,
+    &:visited {
+      text-decoration: none;
+      color: var(--foreground-color);
+    }
 
-  /* Basic image handling */
-  img,
-  picture {
-    max-width: 100%;
-    display: block;
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--accent-color);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
   }
 }
 
@@ -289,45 +301,45 @@
 @layer prose {
   .prose {
     max-width: 65ch;
-  }
 
-  .prose > * + * {
-    margin-top: 1.25em;
-  }
+    > * + * {
+      margin-top: 1.25em;
+    }
 
-  .prose blockquote {
-    border-left: 4px solid var(--prose-blockquote-border-color);
-    padding-left: 1em;
-    font-style: italic;
-  }
+    blockquote {
+      border-left: 4px solid var(--prose-blockquote-border-color);
+      padding-left: 1em;
+      font-style: italic;
+    }
 
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5 {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    line-height: 1.2;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin-top: 2em;
+      margin-bottom: 1em;
+      line-height: 1.2;
+    }
 
-  .prose strong {
-    font-weight: 600;
-  }
+    strong {
+      font-weight: 600;
+    }
 
-  .prose a {
-    color: var(--prose-link-color);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-  }
+    a {
+      color: var(--prose-link-color);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
 
-  .prose a:visited {
-    color: var(--prose-link-visited-color);
-  }
+    a:visited {
+      color: var(--prose-link-visited-color);
+    }
 
-  .prose a:hover,
-  .prose a:focus {
-    color: var(--prose-link-hover-color);
+    a:hover,
+    a:focus {
+      color: var(--prose-link-hover-color);
+    }
   }
 }
 
