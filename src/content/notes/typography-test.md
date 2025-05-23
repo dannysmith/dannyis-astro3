@@ -1,6 +1,7 @@
 ---
 title: Typography Test Note
 pubDate: 2024-03-19
+tags: ['typography', 'design', 'testing', 'css']
 ---
 
 # Typography Test Note
