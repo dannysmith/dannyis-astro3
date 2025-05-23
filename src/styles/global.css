@@ -244,6 +244,23 @@
     font-weight: 300;
   }
 
+  /* Code blocks */
+  pre {
+    background: var(--code-background-color);
+    padding: 1em;
+    border-radius: 0.3em;
+    overflow-x: auto;
+    font-family: var(--font-code);
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
   body {
     /* Set core body defaults */
     min-height: 100vh;
@@ -297,18 +314,23 @@
 /* Prose Layer */
 @layer prose {
   .prose {
-    max-width: 65ch;
+    font-family: var(--font-prose);
+    font-size: 1rem;
+    line-height: 1.7;
 
+    /* Consistent spacing between elements */
     > * + * {
       margin-top: 1.25em;
     }
 
+    /* Blockquotes */
     blockquote {
       border-left: 4px solid var(--prose-blockquote-border-color);
       padding-left: 1em;
       font-style: italic;
     }
 
+    /* Headings */
     h1,
     h2,
     h3,
@@ -317,16 +339,42 @@
       margin-top: 2em;
       margin-bottom: 1em;
       line-height: 1.2;
-    }
-
-    strong {
       font-weight: 600;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding-bottom: 0.3em;
     }
 
+    /* Lists */
+    ul,
+    ol {
+      padding-left: 1em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      list-style-type: '◦';
+    }
+
+    li::marker {
+      color: var(--color-red-700);
+    }
+
+    li {
+      margin-top: 0.5em;
+      padding-left: 1em;
+    }
+
+    li:first-child {
+      margin-top: 0;
+    }
+
+    /* Links */
     a {
       color: var(--prose-link-color);
       text-decoration: underline;
       text-underline-offset: 0.2em;
+      transition: color 0.15s;
     }
 
     a:visited {
@@ -336,6 +384,26 @@
     a:hover,
     a:focus {
       color: var(--prose-link-hover-color);
+    }
+
+    /* Inline elements */
+    strong {
+      font-weight: 550;
+    }
+
+    code {
+      font-family: var(--font-code);
+      font-size: 0.9em;
+      background: var(--code-background-color);
+      padding: 0.2em 0.4em;
+      border-radius: 0.2em;
+    }
+
+    /* Images */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.2em;
     }
   }
 }
