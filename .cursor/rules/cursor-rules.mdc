@@ -44,17 +44,6 @@ This document serves as an index for all cursor rules and guidelines for the per
   - CSS variables
   - Best practices
 
-### Content Management
-
-- **File**: `content-management.md`
-- **Description**: Guidelines for managing content in the personal website
-- **Key Topics**:
-  - Content types
-  - Frontmatter
-  - Collections
-  - Image handling
-  - Best practices
-
 ### Astro Guidelines
 
 - **File**: `astro-guidelines.md`

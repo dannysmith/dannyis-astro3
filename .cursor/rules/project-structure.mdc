@@ -14,23 +14,17 @@ Define the organization and architecture of the personal website built with Astr
 
 ```
 src/
-├── components/          # Reusable UI components
-│   ├── common/         # Shared components (Header, Footer, etc.)
-│   ├── articles/       # Article-specific components
-│   ├── notes/         # Note-specific components
-│   └── ui/            # Basic UI components (buttons, cards, etc.)
+├── components/        # Reusable Astro components
+│   ├── icons/         # Icons as SVGs
 ├── content/           # Content collections
-│   ├── articles/      # Blog posts and long-form content
-│   └── notes/         # Short-form content and microblog posts
+│   ├── articles/      # Long-form articles as MDX and md files
+│   └── notes/         # Short-form content as MDX and md files
 ├── layouts/           # Page layouts
-│   ├── Article.astro  # Article page layout
-│   ├── Note.astro     # Note page layout
-│   └── Base.astro     # Base layout with common elements
+│   ├── BlogPost.astro  # Article page layout
+│   └── Note.astro     # Note page layout
 ├── pages/             # Astro pages (routes)
 ├── styles/            # Global styles and CSS
-│   ├── global.css     # Global styles
-│   ├── variables.css  # CSS custom properties
-│   └── typography.css # Typography system
+│   └── global.css     # Global styles
 └── utils/             # Utility functions and helpers
 
 public/              # Static assets
@@ -40,16 +34,18 @@ public/              # Static assets
 .cursor/             # Cursor configuration
 └── rules/           # Project rules and guidelines
 
-tasks/               # Task tracking
-└── TASKS.md        # Main task list
+tasks/               # Task tracking when working with Cursor AI
+└── TASKS.md         # Main task list
+
+docs/                # All Documentation & Notes
 ```
 
 ## Content Organization
 
 ### Articles
 
-- Stored in `src/content/articles/`
-- Use `.mdx` extension
+- Stored in `src/content/blog/`
+- Use `.mdx` or `.md` extension
 - Required frontmatter:
   ```yaml
   title: String
@@ -83,24 +79,6 @@ tasks/               # Task tracking
   ```
 
 ## Component Organization
-
-### Common Components
-
-- Located in `src/components/common/`
-- Include: Header, Footer, Navigation
-- Should be highly reusable and configurable
-
-### Feature Components
-
-- Located in `src/components/articles/` and `src/components/notes/`
-- Specific to content types
-- Include: ArticleCard, NoteCard, etc.
-
-### UI Components
-
-- Located in `src/components/ui/`
-- Basic building blocks
-- Should be atomic and composable
 
 ## Technical Implementation
 

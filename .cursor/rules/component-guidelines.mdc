@@ -101,9 +101,9 @@ Define guidelines for developing and maintaining components in the personal webs
 
    ```typescript
    export interface Props {
-     required: string
-     optional?: number
-     withDefault?: boolean
+     required: string;
+     optional?: number;
+     withDefault?: boolean;
    }
    ```
 
@@ -111,7 +111,7 @@ Define guidelines for developing and maintaining components in the personal webs
    ```typescript
    const defaults = {
      withDefault: true,
-   }
+   };
    ```
 
 ### Styling
@@ -190,14 +190,7 @@ Define guidelines for developing and maintaining components in the personal webs
    - Add prop validation
    - Handle edge cases
 
-3. **Testing**
-
-   - Unit test components
-   - Test accessibility
-   - Verify responsiveness
-   - Check browser support
-
-4. **Documentation**
+3. **Documentation**
    - Purpose and usage
    - Props and types
    - Examples and demos
