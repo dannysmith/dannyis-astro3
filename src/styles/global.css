@@ -217,6 +217,7 @@
   img,
   picture {
     max-width: 100%;
+    height: auto;
     display: block;
   }
 }
@@ -278,9 +279,7 @@
 
   a {
     transition: all 0.15s;
-  }
 
-  a {
     &,
     &:visited {
       text-decoration: none;
@@ -291,8 +290,6 @@
     &:focus,
     &:active {
       color: var(--accent-color);
-      text-decoration: underline;
-      text-underline-offset: 0.2em;
     }
   }
 }
@@ -341,12 +338,6 @@
       color: var(--prose-link-hover-color);
     }
   }
-}
-
-/* Article Typography Layer */
-@layer articletypography {
-  /* Article-specific typography styles will go here */
-  /* These will override prose styles for article content */
 }
 
 /* Theme Layer */

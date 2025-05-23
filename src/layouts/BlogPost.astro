@@ -1,14 +1,14 @@
 ---
-import type { CollectionEntry } from 'astro:content'
-import { Image } from 'astro:assets'
-import Spinner from '@components/Spinner.astro'
-import BaseHead from '@components/BaseHead.astro'
-import Footer from '@components/Footer.astro'
-import FormattedDate from '@components/FormattedDate.astro'
-import Lightbox from '@components/Lightbox.astro'
-import MainNavigation from '@components/MainNavigation.astro'
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Spinner from '@components/Spinner.astro';
+import BaseHead from '@components/BaseHead.astro';
+import Footer from '@components/Footer.astro';
+import FormattedDate from '@components/FormattedDate.astro';
+import Lightbox from '@components/Lightbox.astro';
+import MainNavigation from '@components/MainNavigation.astro';
 
-type Props = CollectionEntry<'blog'>['data'] & { readingTime: string }
+type Props = CollectionEntry<'blog'>['data'] & { readingTime: string };
 const {
   title,
   description,
@@ -20,18 +20,14 @@ const {
   redirectURL,
   platform,
   readingTime,
-} = Astro.props
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    {
-      platform && redirectURL && (
-        <meta http-equiv="refresh" content={'0;url=' + redirectURL} />
-      )
-    }
+    {platform && redirectURL && <meta http-equiv="refresh" content={'0;url=' + redirectURL} />}
   </head>
 
   <body>
@@ -44,11 +40,7 @@ const {
       )
     }
     <main>
-      <article
-        class="blog-article cq h-entry"
-        itemscope
-        itemtype="https://schema.org/Article"
-      >
+      <article class="blog-article cq h-entry" itemscope itemtype="https://schema.org/Article">
         {
           cover && coverAlt && (
             <div class="hero-image">
@@ -62,8 +54,7 @@ const {
             {
               updatedDate && (
                 <span class="last-updated-on">
-                  (updated on{' '}
-                  <FormattedDate date={updatedDate} itemprop="dateModified" />)
+                  (updated on <FormattedDate date={updatedDate} itemprop="dateModified" />)
                 </span>
               )
             }
@@ -148,359 +139,359 @@ const {
     </style>
 
     <style is:global>
-      .blog-article {
-        --line-height: 1.5; /* Line height for the article. */
-        --side-space: 2rem; /* Space on the left and right of the article on small screens. */
+      @layer articletypography {
+        .blog-article {
+          --line-height: 1.5; /* Line height for the article. */
+          --side-space: 2rem; /* Space on the left and right of the article on small screens. */
 
-        display: grid;
-        grid-template-columns:
-          1fr
-          min(60ch, calc(100% - calc(var(--side-space) * 2)))
-          1fr;
-        grid-column-gap: var(--side-space);
-        grid-row-gap: calc(var(--line-height) * 1em);
+          display: grid;
+          grid-template-columns:
+            1fr
+            min(60ch, calc(100% - calc(var(--side-space) * 2)))
+            1fr;
+          grid-column-gap: var(--side-space);
+          grid-row-gap: calc(var(--line-height) * 1em);
 
-        font-family: var(--font-prose);
-        font-size: clamp(1rem, calc(0.6rem + 1vw), 1.4rem);
-        line-height: var(--line-height);
-        text-rendering: optimizeLegibility;
-      }
-
-      .blog-article > * {
-        grid-column: 2 / 3;
-      }
-
-      .blog-article:last-child {
-        margin-bottom: 5em;
-      }
-
-      /* Headings */
-
-      .blog-article > :is(h1, h2, h3, h4, h5, h6) {
-        font-variant-ligatures: common-ligatures discretionary-ligatures;
-        hanging-punctuation: first allow-end last;
-      }
-
-      .blog-article h1.title {
-        font-size: 2.4em;
-        font-weight: 500;
-        font-variation-settings: 'opsz' 50;
-        line-height: 1.25;
-        margin-top: 1.5em;
-      }
-
-      .blog-article > h1 {
-        font-size: 1.93em;
-        font-weight: 600;
-        margin-top: 1em;
-      }
-
-      .blog-article > h2 {
-        font-size: 1.56em;
-        font-weight: 600;
-        margin-top: 1em;
-        margin-bottom: -0.5em;
-      }
-
-      .blog-article > h3 {
-        font-size: 1.25em;
-        font-weight: 600;
-        margin-top: 1em;
-        margin-bottom: -0.5em;
-      }
-
-      .blog-article > :is(h4, h5, h6) {
-        font-size: 1em;
-        font-weight: normal;
-        font-style: italic;
-        margin-top: 1em;
-        margin-bottom: -1em;
-      }
-
-      /* Remove top margin from headings that are immediatly preceeded by another heading or an HR */
-      .blog-article
-        > :is(h1, h2, h3, h4, h5, h6, hr)
-        + :is(h1, h2, h3, h4, h5, h6) {
-        margin-top: 0;
-      }
-
-      /* ----------- Paragraphs ----------- */
-
-      .blog-article > p:first-of-type {
-        margin-top: 3em;
-      }
-
-      .blog-article > p {
-        font-variant-numeric: oldstyle-nums diagonal-fractions;
-        hanging-punctuation: first allow-end last;
-      }
-
-      /* Use hyphens only on small viewports. */
-      @media (max-width: 42em) {
-        .blog-article > p {
-          -webkit-hyphens: auto;
-          hyphens: auto;
+          font-family: var(--font-prose);
+          font-size: clamp(1rem, calc(0.6rem + 1vw), 1.4rem);
+          line-height: var(--line-height);
+          text-rendering: optimizeLegibility;
         }
-      }
 
-      /* First line of first para*/
-      .blog-article > p:first-of-type::first-line {
-        text-transform: lowercase;
-        -webkit-hyphens: none;
-        hyphens: none;
-        font-variant-caps: small-caps;
-        font-weight: 525;
-      }
+        .blog-article > * {
+          grid-column: 2 / 3;
+        }
 
-      /* End Mark */
-      .blog-article > p:last-of-type:after {
-        color: var(--endmark-color);
-        display: inline-block;
-        content: ' ';
-        -webkit-mask: url('/end-mark.svg');
-        mask: url('/end-mark.svg');
-        -webkit-mask-size: cover;
-        mask-size: cover;
-        background-color: currentColor;
-        height: 0.65em;
-        width: 1em;
-        line-height: 0.5;
-        margin-left: 0.1em;
-      }
-      /*  Drop Cap */
-      .blog-article > p:first-of-type::first-letter {
-        text-transform: uppercase;
-        float: left;
-        font-size: 4em;
-        line-height: 1;
-        padding-right: 0.4ch;
-      }
+        .blog-article:last-child {
+          margin-bottom: 5em;
+        }
 
-      /* ----------- Links ----------- */
+        /* Headings */
 
-      .blog-article a {
-        color: inherit;
-        text-decoration-color: var(--link-underline);
-        text-decoration-thickness: 1px;
-        border-radius: 0.1em;
-      }
+        .blog-article > :is(h1, h2, h3, h4, h5, h6) {
+          font-variant-ligatures: common-ligatures discretionary-ligatures;
+          hanging-punctuation: first allow-end last;
+        }
 
-      .blog-article a:visited {
-        text-decoration-color: var(--link-underline-visited);
-      }
+        .blog-article h1.title {
+          font-size: 2.4em;
+          font-weight: 500;
+          font-variation-settings: 'opsz' 50;
+          line-height: 1.25;
+          margin-top: 1.5em;
+        }
 
-      .blog-article a:hover,
-      .blog-article a:active {
-        text-decoration-color: var(--link-hover);
-        color: var(--link-hover);
-      }
+        .blog-article > h1 {
+          font-size: 1.93em;
+          font-weight: 600;
+          margin-top: 1em;
+        }
 
-      .blog-article a:focus-visible {
-        outline: 2px solid var(--link-hover);
-        text-decoration: none;
-      }
+        .blog-article > h2 {
+          font-size: 1.56em;
+          font-weight: 600;
+          margin-top: 1em;
+          margin-bottom: -0.5em;
+        }
 
-      @media (pointer: coarse) {
+        .blog-article > h3 {
+          font-size: 1.25em;
+          font-weight: 600;
+          margin-top: 1em;
+          margin-bottom: -0.5em;
+        }
+
+        .blog-article > :is(h4, h5, h6) {
+          font-size: 1em;
+          font-weight: normal;
+          font-style: italic;
+          margin-top: 1em;
+          margin-bottom: -1em;
+        }
+
+        /* Remove top margin from headings that are immediatly preceeded by another heading or an HR */
+        .blog-article > :is(h1, h2, h3, h4, h5, h6, hr) + :is(h1, h2, h3, h4, h5, h6) {
+          margin-top: 0;
+        }
+
+        /* ----------- Paragraphs ----------- */
+
+        .blog-article > p:first-of-type {
+          margin-top: 3em;
+        }
+
+        .blog-article > p {
+          font-variant-numeric: oldstyle-nums diagonal-fractions;
+          hanging-punctuation: first allow-end last;
+        }
+
+        /* Use hyphens only on small viewports. */
+        @media (max-width: 42em) {
+          .blog-article > p {
+            -webkit-hyphens: auto;
+            hyphens: auto;
+          }
+        }
+
+        /* First line of first para*/
+        .blog-article > p:first-of-type::first-line {
+          text-transform: lowercase;
+          -webkit-hyphens: none;
+          hyphens: none;
+          font-variant-caps: small-caps;
+          font-weight: 525;
+        }
+
+        /* End Mark */
+        .blog-article > p:last-of-type:after {
+          color: var(--endmark-color);
+          display: inline-block;
+          content: ' ';
+          -webkit-mask: url('/end-mark.svg');
+          mask: url('/end-mark.svg');
+          -webkit-mask-size: cover;
+          mask-size: cover;
+          background-color: currentColor;
+          height: 0.65em;
+          width: 1em;
+          line-height: 0.5;
+          margin-left: 0.1em;
+        }
+        /*  Drop Cap */
+        .blog-article > p:first-of-type::first-letter {
+          text-transform: uppercase;
+          float: left;
+          font-size: 4em;
+          line-height: 1;
+          padding-right: 0.4ch;
+        }
+
+        /* ----------- Links ----------- */
+
         .blog-article a {
-          text-decoration: none;
-          color: var(--mobile-link);
+          color: inherit;
+          text-decoration-color: var(--link-underline);
+          text-decoration-thickness: 1px;
+          border-radius: 0.1em;
         }
 
         .blog-article a:visited {
-          color: var(--mobile-link-visited);
+          text-decoration-color: var(--link-underline-visited);
         }
-      }
 
-      .blog-article h1 a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      /* ----------- Lists ----------- */
-
-      .blog-article li {
-        padding-left: 1em;
-        margin-top: 0.5em;
-      }
-      .blog-article li:first-of-type {
-        margin-top: 0;
-      }
-
-      .blog-article :is(ul, ol) {
-        font-variant-numeric: oldstyle-nums diagonal-fractions;
-      }
-
-      .blog-article ul {
-        padding-left: 0.4em;
-        list-style-type: '•';
-      }
-
-      .blog-article ol {
-        padding-left: 0.4em;
-      }
-
-      .blog-article ol ::marker {
-        font-size: 1.4ex;
-        font-variation-settings: 'opsz' 10;
-        font-weight: 500;
-      }
-
-      /* ----------- Task Lists ------------ */
-
-      .blog-article .contains-task-list {
-        list-style-type: none;
-        padding-left: 0;
-      }
-
-      .blog-article .task-list-item {
-        padding-left: 0;
-      }
-
-      .blog-article .task-list-item input {
-        position: relative;
-        height: 0.7em;
-        width: 0.7em;
-        margin-bottom: 0;
-
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        -o-appearance: none;
-        appearance: none;
-        outline: none;
-
-        border-radius: 2px;
-
-        border: 1px solid var(--tasklist-checkbox-border);
-      }
-
-      .blog-article .task-list-item input:checked {
-        color: var(--tasklist-checkbox-check);
-        background: transparent;
-      }
-
-      .blog-article .task-list-item input:checked:before {
-        content: '\2713';
-        position: absolute;
-        top: -0.25em;
-        left: 0.05em;
-        font-size: 0.6em;
-        font-weight: 600;
-      }
-
-      .blog-article .blog-article .task-list-item checinput[disabled] {
-        opacity: 1;
-      }
-
-      /* ----------- Text Styles ----------- */
-
-      .blog-article strong {
-        font-weight: 650;
-      }
-
-      /* ----------- HR ----------- */
-      .blog-article hr {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 0;
-        overflow: visible;
-        margin: 4rem 0;
-
-        border: 1px solid var(--horizontal-rule-color);
-      }
-
-      .blog-article hr:before {
-        content: '§';
-        transform: translateY(-0.15em);
-        background: var(--background-color);
-        padding: 0 0.5em;
-      }
-
-      /* ----------- Blockquotes ----------- */
-      .blog-article blockquote {
-        font-variant-numeric: oldstyle-nums diagonal-fractions;
-        hanging-punctuation: first allow-end last;
-        border-left: 2px solid var(--blockquote-border-color);
-        padding-left: calc((1em * var(--line-height)) - 2px);
-        font-style: italic;
-        margin-left: 0;
-      }
-
-      /* ----------- Footnotes ----------- */
-
-      .blog-article [data-footnote-ref] {
-        display: inline-block;
-        padding-left: 0.5ch;
-        padding-right: 0.5ch;
-        font-size: 0.7em;
-        font-weight: 600;
-        font-variant: small-caps;
-        letter-spacing: 0.05ch;
-        text-decoration: none;
-        color: var(--link-underline);
-      }
-
-      .inline-footnote-container {
-        font-size: 0.8em;
-        padding: 1em;
-        border-left: 2px solid var(--inline-footnote-border-color);
-        background: var(--inline-footnote-background-color);
-
-        .data-footnote-backref {
-          display: none;
+        .blog-article a:hover,
+        .blog-article a:active {
+          text-decoration-color: var(--link-hover);
+          color: var(--link-hover);
         }
-      }
 
-      .blog-article .footnotes {
-        border-top: 1px solid var(--footnote-section-top-border);
-        margin-top: 2em;
-        padding-top: 1em;
-        font-size: 0.8em;
+        .blog-article a:focus-visible {
+          outline: 2px solid var(--link-hover);
+          text-decoration: none;
+        }
 
-        .data-footnote-backref {
+        @media (pointer: coarse) {
+          .blog-article a {
+            text-decoration: none;
+            color: var(--mobile-link);
+          }
+
+          .blog-article a:visited {
+            color: var(--mobile-link-visited);
+          }
+        }
+
+        .blog-article h1 a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        /* ----------- Lists ----------- */
+
+        .blog-article li {
+          padding-left: 1em;
+          margin-top: 0.5em;
+        }
+        .blog-article li:first-of-type {
+          margin-top: 0;
+        }
+
+        .blog-article :is(ul, ol) {
+          font-variant-numeric: oldstyle-nums diagonal-fractions;
+        }
+
+        .blog-article ul {
+          padding-left: 0.4em;
+          list-style-type: '•';
+        }
+
+        .blog-article ol {
+          padding-left: 0.4em;
+        }
+
+        .blog-article ol ::marker {
+          font-size: 1.4ex;
+          font-variation-settings: 'opsz' 10;
+          font-weight: 500;
+        }
+
+        /* ----------- Task Lists ------------ */
+
+        .blog-article .contains-task-list {
+          list-style-type: none;
+          padding-left: 0;
+        }
+
+        .blog-article .task-list-item {
+          padding-left: 0;
+        }
+
+        .blog-article .task-list-item input {
+          position: relative;
+          height: 0.7em;
+          width: 0.7em;
+          margin-bottom: 0;
+
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -o-appearance: none;
+          appearance: none;
+          outline: none;
+
+          border-radius: 2px;
+
+          border: 1px solid var(--tasklist-checkbox-border);
+        }
+
+        .blog-article .task-list-item input:checked {
+          color: var(--tasklist-checkbox-check);
+          background: transparent;
+        }
+
+        .blog-article .task-list-item input:checked:before {
+          content: '\2713';
+          position: absolute;
+          top: -0.25em;
+          left: 0.05em;
+          font-size: 0.6em;
+          font-weight: 600;
+        }
+
+        .blog-article .blog-article .task-list-item checinput[disabled] {
+          opacity: 1;
+        }
+
+        /* ----------- Text Styles ----------- */
+
+        .blog-article strong {
+          font-weight: 650;
+        }
+
+        /* ----------- HR ----------- */
+        .blog-article hr {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 0;
+          overflow: visible;
+          margin: 4rem 0;
+
+          border: 1px solid var(--horizontal-rule-color);
+        }
+
+        .blog-article hr:before {
+          content: '§';
+          transform: translateY(-0.15em);
+          background: var(--background-color);
+          padding: 0 0.5em;
+        }
+
+        /* ----------- Blockquotes ----------- */
+        .blog-article blockquote {
+          font-variant-numeric: oldstyle-nums diagonal-fractions;
+          hanging-punctuation: first allow-end last;
+          border-left: 2px solid var(--blockquote-border-color);
+          padding-left: calc((1em * var(--line-height)) - 2px);
+          font-style: italic;
+          margin-left: 0;
+        }
+
+        /* ----------- Footnotes ----------- */
+
+        .blog-article [data-footnote-ref] {
+          display: inline-block;
+          padding-left: 0.5ch;
+          padding-right: 0.5ch;
+          font-size: 0.7em;
+          font-weight: 600;
+          font-variant: small-caps;
+          letter-spacing: 0.05ch;
           text-decoration: none;
           color: var(--link-underline);
         }
-      }
 
-      /* ----------- Bleeds for images ----------- */
-      .blog-article > .bleed-left {
-        grid-column: 1 / 3;
-      }
-      .blog-article > .bleed-right {
-        grid-column: 2 / 4;
-      }
-      .blog-article > .bleed-full {
-        width: 100%;
-        grid-column: 1 / 4;
-      }
-      .blog-article > .border {
-        filter: var(--shadow-small);
+        .inline-footnote-container {
+          font-size: 0.8em;
+          padding: 1em;
+          border-left: 2px solid var(--inline-footnote-border-color);
+          background: var(--inline-footnote-background-color);
+
+          .data-footnote-backref {
+            display: none;
+          }
+        }
+
+        .blog-article .footnotes {
+          border-top: 1px solid var(--footnote-section-top-border);
+          margin-top: 2em;
+          padding-top: 1em;
+          font-size: 0.8em;
+
+          .data-footnote-backref {
+            text-decoration: none;
+            color: var(--link-underline);
+          }
+        }
+
+        /* ----------- Bleeds for images ----------- */
+        .blog-article > .bleed-left {
+          grid-column: 1 / 3;
+        }
+        .blog-article > .bleed-right {
+          grid-column: 2 / 4;
+        }
+        .blog-article > .bleed-full {
+          width: 100%;
+          grid-column: 1 / 4;
+        }
+        .blog-article > .border {
+          filter: var(--shadow-small);
+        }
       }
     </style>
     <script>
-      document.querySelectorAll('a[data-footnote-ref]').forEach((el) => {
-        const elm = el as HTMLAnchorElement
-        const footnoteId = elm.getAttribute('href')?.slice(1)
-        if (!footnoteId) return
-        const footnote = document.getElementById(footnoteId)?.children
+      document.querySelectorAll('a[data-footnote-ref]').forEach(el => {
+        const elm = el as HTMLAnchorElement;
+        const footnoteId = elm.getAttribute('href')?.slice(1);
+        if (!footnoteId) return;
+        const footnote = document.getElementById(footnoteId)?.children;
 
-        const closestP = elm.closest('p')
-        const inlineFootNoteContainer = document.createElement('div')
-        inlineFootNoteContainer.classList.add('inline-footnote-container')
-        inlineFootNoteContainer.style.display = 'none'
+        const closestP = elm.closest('p');
+        const inlineFootNoteContainer = document.createElement('div');
+        inlineFootNoteContainer.classList.add('inline-footnote-container');
+        inlineFootNoteContainer.style.display = 'none';
         if (footnote) {
-          inlineFootNoteContainer.appendChild(footnote[0].cloneNode(true))
+          inlineFootNoteContainer.appendChild(footnote[0].cloneNode(true));
         }
-        closestP?.insertAdjacentElement('afterend', inlineFootNoteContainer)
+        closestP?.insertAdjacentElement('afterend', inlineFootNoteContainer);
 
-        elm.addEventListener('click', (e) => {
-          e.preventDefault()
+        elm.addEventListener('click', e => {
+          e.preventDefault();
           inlineFootNoteContainer.style.display =
-            inlineFootNoteContainer.style.display === 'none' ? 'block' : 'none'
-        })
-      })
+            inlineFootNoteContainer.style.display === 'none' ? 'block' : 'none';
+        });
+      });
     </script>
   </body>
 </html>
