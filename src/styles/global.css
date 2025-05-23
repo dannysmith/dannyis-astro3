@@ -1,3 +1,7 @@
+/* Define our layers */
+@layer reset, base, prose, articletypography, theme;
+
+/* Font faces - these need to be outside layers as they're declarations */
 @font-face {
   font-family: 'Literata';
   src: url('/fonts/Literata-self-compiled-Mar2019.woff2') format('woff2');
@@ -17,6 +21,7 @@
   font-display: swap;
 }
 
+/* CSS Custom Properties - these need to be outside layers as they're declarations */
 :root {
   --color-black: #191919;
   --color-true-black: #000000;
@@ -150,319 +155,230 @@
   --prose-link-hover-color: var(--color-red-600);
 }
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  /* Prevent font size inflation */
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-
-  /* Ensure Common ligs are always on */
-  font-variant-ligatures: common-ligatures;
-
-  /* Turn on single-storey `a` characters on Jost */
-  font-feature-settings: 'ss01' on;
-
-  /* Smooth Scrolling */
-  scroll-behavior: smooth;
-
-  /* Let the browser decide the best base font size, but make it a little smaller */
-  font-size: 98%;
-
-  /* Set color scheme */
-  color-scheme: light;
-  accent-color: var(--accent-color);
-  color: var(--foreground-color);
-
-  /* Set the typeface */
-  font-family: var(--font-ui);
-  font-weight: 300;
-}
-
-/* Remove default margin in favour of better control in authored CSS */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-body {
-  /* Set core body defaults */
-  min-height: 100vh;
-  line-height: 1.5;
-
-  /* Use the body as the positioning parent for absolutely positioned elements. */
-  position: relative;
-
-  /* Set the font-size in rems so it's inherited by all elements. */
-  font-size: 1rem;
-}
-
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-h5,
-button,
-input,
-label {
-  line-height: 1.1;
-}
-
-/* Balance text wrapping on headings */
-h1,
-h2,
-h3,
-h4,
-h5 {
-  text-wrap: balance;
-}
-
-/* Prevent widows and orphans in body text */
-p,
-blockquote {
-  text-wrap: pretty;
-}
-
-a {
-  transition: all 0.15s;
-}
-
-/* Default link styles only apply to main content area */
-main a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
-
-  /* Relatively sized thickness and offset */
-  text-decoration-thickness: max(0.08em, 1px);
-  text-underline-offset: 0.15em;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-  height: auto;
-  width: auto;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
-}
-
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
-  scroll-padding-block-start: 2rem;
-}
-
-/* Scroll padding allowance below focused elements
-  to ensure they are clearly in view */
-:focus {
-  scroll-padding-block-end: 8vh;
-}
-
-/* Set basic styles for code */
-code,
-pre,
-kbd {
-  font-family: var(--font-code);
-}
-
-strong {
-  font-weight: 600;
-}
-
-/* ----------- Abrr ----------- */
-
-abbr {
-  text-transform: lowercase;
-  font-variant: small-caps;
-
-  font-variation-settings: 'opsz' 10;
-  font-weight: 380;
-  font-size: 0.95em;
-
-  text-decoration-color: var(--abbr-underline-color);
-  text-underline-position: under;
-}
-
-abbr[title] {
-  cursor: help;
-}
-
-/* ----------- Code ----------- */
-
-code {
-  font-size: 0.85em;
-  padding: 0 0.5ch;
-  background-color: var(--code-background-color);
-  border: 1px solid var(--code-border-color);
-  border-radius: 1px;
-  white-space: pre;
-  font-variant-numeric: initial;
-}
-
-pre {
-  border: 1px solid var(--pre-border-color);
-  border-radius: 4px;
-  padding: 1rem;
-  overflow-x: scroll;
-}
-
-pre code {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-}
-
-/* ----------- Tables ----------- */
-
-table {
-  border-collapse: collapse;
-  border: 1px solid var(--table-border-color);
-  text-align: left;
-  border-spacing: 0;
-  font-size: 0.8em;
-}
-
-thead {
-  font-weight: 600;
-  background: var(--table-border-color);
-}
-
-th,
-td {
-  padding: 0.5em 1em;
-  border: 1px solid var(--table-border-color);
-}
-
-mark {
-  background: var(--mark-background-color);
-}
-
-del,
-s {
-  text-decoration-color: var(--strikethrough-color);
-}
-
-/* Utility class for making the element a container, so container queries will work */
-.cq {
-  container-type: inline-size;
-}
-
-/* Links added by rehypeAutolinkHeadings */
-:is(h1, h2, h3, h4, h5, h6):hover,
-.icon-link:hover {
-  .icon-link {
-    display: block;
-  }
-}
-
-.icon-link {
-  position: absolute;
-  transform: translate(-1.5em, 0.4em);
-  font-size: 0.6em;
-  display: none;
-  height: 1em;
-  width: 3em;
-}
-
-.icon-link:before {
-  content: '🔗';
-  /* content: url('/link-icon.svg'); */
-}
-
-/* Utility class to style contents as a prose */
-.prose {
-  font-size: clamp(0.8rem, calc(0.6rem + 1vw), 1.2rem);
-  line-height: 1.4;
-
-  > * + * {
-    margin-top: 1em;
+/* Reset Layer */
+@layer reset {
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
-  blockquote {
-    border-left: 0.5rem solid var(--prose-blockquote-border-color);
-    padding-left: 1rem;
-    font-style: italic;
-  }
-
+  /* Remove default margin in favour of better control in authored CSS */
+  body,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6 {
-    line-height: 1.2;
-    border-bottom: 1px solid var(--prose-heading-underline-color);
-    padding-bottom: 0.5em;
-    margin-top: 1.5em;
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
   }
 
-  strong {
-    font-weight: 575;
+  /* Remove list styles on ul, ol elements with a list role */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+
+  /* Remove default padding */
+  body {
+    padding: 0;
+  }
+
+  /* Remove default border */
+  img {
+    border: 0;
+  }
+}
+
+/* Base Layer */
+@layer base {
+  html {
+    /* Prevent font size inflation */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+
+    /* Ensure Common ligs are always on */
+    font-variant-ligatures: common-ligatures;
+
+    /* Turn on single-storey `a` characters on Jost */
+    font-feature-settings: 'ss01' on;
+
+    /* Smooth Scrolling */
+    scroll-behavior: smooth;
+
+    /* Let the browser decide the best base font size, but make it a little smaller */
+    font-size: 98%;
+
+    /* Set color scheme */
+    color-scheme: light;
+    accent-color: var(--accent-color);
+    color: var(--foreground-color);
+
+    /* Set the typeface */
+    font-family: var(--font-ui);
+    font-weight: 300;
+  }
+
+  body {
+    /* Set core body defaults */
+    min-height: 100vh;
+    line-height: 1.5;
+
+    /* Use the body as the positioning parent for absolutely positioned elements. */
+    position: relative;
+
+    /* Set the font-size in rems so it's inherited by all elements. */
+    font-size: 1rem;
+  }
+
+  /* Set shorter line heights on headings and interactive elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  /* Balance text wrapping on headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-wrap: balance;
+  }
+
+  /* Prevent widows and orphans in body text */
+  p,
+  blockquote {
+    text-wrap: pretty;
   }
 
   a {
+    transition: all 0.15s;
+  }
+
+  /* Basic form element resets */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* Basic image handling */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+/* Prose Layer */
+@layer prose {
+  .prose {
+    max-width: 65ch;
+  }
+
+  .prose > * + * {
+    margin-top: 1.25em;
+  }
+
+  .prose blockquote {
+    border-left: 4px solid var(--prose-blockquote-border-color);
+    padding-left: 1em;
+    font-style: italic;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.2;
+  }
+
+  .prose strong {
+    font-weight: 600;
+  }
+
+  .prose a {
     color: var(--prose-link-color);
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: var(--prose-link-visited-color);
-    text-decoration: none;
-  }
-
-  a:hover,
-  a:active {
-    color: var(--prose-link-hover-color);
     text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 
-  ul.contains-task-list {
-    list-style-type: none;
-    padding-inline-start: 0;
+  .prose a:visited {
+    color: var(--prose-link-visited-color);
   }
+
+  .prose a:hover,
+  .prose a:focus {
+    color: var(--prose-link-hover-color);
+  }
+}
+
+/* Article Typography Layer */
+@layer articletypography {
+  /* Article-specific typography styles will go here */
+  /* These will override prose styles for article content */
+}
+
+/* Theme Layer */
+@layer theme {
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Dark mode styles will go here */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* Add dark mode color overrides here */
+    }
+  }
+}
+
+/* Utility classes that need to be outside layers */
+.cq {
+  container-type: inline-size;
+}
+
+/* Icon link styles */
+:is(h1, h2, h3, h4, h5, h6):hover,
+.icon-link {
+  position: relative;
+}
+
+.icon-link {
+  position: absolute;
+  top: 0;
+  left: -1.5em;
+  width: 1em;
+  height: 1em;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.icon-link:before {
+  content: '#';
+  display: block;
 }
