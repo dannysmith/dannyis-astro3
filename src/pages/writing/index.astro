@@ -1,16 +1,17 @@
 ---
-import BaseHead from '@components/BaseHead.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
-import { getCollection } from 'astro:content'
-import FormattedDate from '@components/FormattedDate.astro'
-import Footer from '@components/Footer.astro'
-import MainNavigation from '@components/MainNavigation.astro'
+import BaseHead from '@components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '@components/FormattedDate.astro';
+import Footer from '@components/Footer.astro';
+import MainNavigation from '@components/MainNavigation.astro';
+import Pill from '@components/Pill.astro';
 
 const posts = (
   await await getCollection('blog', ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true
+    return import.meta.env.PROD ? data.draft !== true : true;
   })
-).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
 <!doctype html>
@@ -25,7 +26,7 @@ const posts = (
       <section>
         <ul>
           {
-            posts.map((post) => (
+            posts.map(post => (
               <li>
                 <a href={`/writing/${post.id}/`}>
                   <p class="date">
@@ -35,7 +36,7 @@ const posts = (
                     {post.data.title}
                     {post.data.draft && <span class="draft-marker"> 🚧</span>}
                     {post.data.platform && (
-                      <span class="platform">{post.data.platform}</span>
+                      <Pill text={post.data.platform} color="var(--platform-marker-color)" />
                     )}
                   </h4>
                 </a>
@@ -107,14 +108,14 @@ const posts = (
         transition: all 0.15s;
       }
 
-      .platform {
-        display: inline-block;
-        transform: translateY(-0.3em);
-        padding: 0 0.5rem;
-        font-size: 0.8rem;
-        color: var(--platform-marker-color);
-        border-radius: 4px;
-        border: 1px solid var(--platform-marker-color);
+      .post-title :global(.pill) {
+        transform: translateY(-0.2em);
+        opacity: 0.7;
+        transition: opacity 0.15s;
+      }
+
+      a:hover .post-title :global(.pill) {
+        opacity: 1;
       }
 
       @media screen and (min-width: 800px) {
