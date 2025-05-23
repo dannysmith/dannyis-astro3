@@ -23,6 +23,7 @@ const notes = defineCollection({
     title: z.string(),
     pubDate: z.coerce.date(),
     sourceURL: z.string().url().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 

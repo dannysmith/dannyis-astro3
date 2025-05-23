@@ -1,13 +1,13 @@
 ---
-import type { CollectionEntry } from 'astro:content'
-import BaseHead from '@components/BaseHead.astro'
-import Footer from '@components/Footer.astro'
-import NoteCard from '@components/NoteCard.astro'
-import MainNavigation from '@components/MainNavigation.astro'
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '@components/BaseHead.astro';
+import Footer from '@components/Footer.astro';
+import NoteCard from '@components/NoteCard.astro';
+import MainNavigation from '@components/MainNavigation.astro';
 
-type Props = CollectionEntry<'notes'>['data']
+type Props = CollectionEntry<'notes'>['data'];
 
-const { title, pubDate, sourceURL } = Astro.props
+const { title, pubDate, sourceURL, tags } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,7 +19,7 @@ const { title, pubDate, sourceURL } = Astro.props
   <body>
     <MainNavigation />
     <main>
-      <NoteCard title={title} pubDate={pubDate} sourceURL={sourceURL}>
+      <NoteCard title={title} pubDate={pubDate} sourceURL={sourceURL} tags={tags}>
         <slot />
       </NoteCard>
     </main>

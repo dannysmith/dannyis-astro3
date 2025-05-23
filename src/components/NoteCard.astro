@@ -6,18 +6,28 @@ export interface Props {
   title: string;
   pubDate: Date;
   sourceURL?: string;
+  tags?: string[];
 }
 
-const { title, pubDate, sourceURL } = Astro.props;
+const { title, pubDate, sourceURL, tags = [] } = Astro.props;
 ---
 
 <article class="note h-entry cq">
-  <div class="date">
-    <FormattedDate date={pubDate} />
-  </div>
-  <div class="title">
+  <header class="note-header">
+    <time class="date" datetime={pubDate.toISOString()}>
+      <FormattedDate date={pubDate} />
+    </time>
     <h1 class="p-name">{title}</h1>
-  </div>
+    {
+      tags.length > 0 && (
+        <div class="tags">
+          {tags.map(tag => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )
+    }
+  </header>
   {
     sourceURL && (
       <div class="source-url">
@@ -37,18 +47,26 @@ const { title, pubDate, sourceURL } = Astro.props;
     --dotgrid-color: var(--color-red-400);
     --date-color: var(--color-grey-700);
     --title-underline-color: var(--color-red-500);
+    --tag-bg: var(--color-red-300);
+    --tag-color: var(--color-red-700);
   }
+
   .note {
     --line-height: calc(1.8 * 1rem);
     width: 100%;
-
     background: var(--note-background);
     padding: var(--line-height);
-
     background-image: radial-gradient(var(--dotgrid-color) 0.5px, transparent 0);
     background-size: 1rem 1rem;
-    filter: var(--shadow-small);
+    filter: var(--shadow-medium);
     border-top: 1rem solid var(--note-border-color);
+    border-radius: 0.2rem;
+  }
+
+  .note-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .date {
@@ -58,18 +76,35 @@ const { title, pubDate, sourceURL } = Astro.props;
     letter-spacing: 0.1ch;
   }
 
-  .title {
-    line-height: calc(var(--line-height) * 2);
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--title-underline-color);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .source-url {
     margin-top: var(--line-height);
-    padding-bottom: calc(var(--line-height) / 2);
-    border-bottom: 1px solid var(--title-underline-color);
   }
 
-  .title h1 {
-    font-size: clamp(calc(var(--line-height) * 1), 4vw, calc(var(--line-height) * 3));
-  }
-
-  .source-url,
   .note-content {
     margin-top: var(--line-height);
   }
@@ -81,8 +116,8 @@ const { title, pubDate, sourceURL } = Astro.props;
       padding: calc(var(--line-height) * 1.5);
     }
 
-    .title h1 {
-      font-size: clamp(calc(var(--line-height) * 1.5), 5vw, calc(var(--line-height) * 3));
+    .date {
+      font-size: 0.8rem;
     }
   }
 
@@ -90,10 +125,6 @@ const { title, pubDate, sourceURL } = Astro.props;
     .note {
       --line-height: calc(2.2 * 1rem);
       padding: calc(var(--line-height) * 2);
-    }
-
-    .date {
-      font-size: 0.8rem;
     }
   }
 </style>
