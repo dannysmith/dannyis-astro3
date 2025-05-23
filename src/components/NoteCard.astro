@@ -1,17 +1,17 @@
 ---
-import FormattedDate from '@components/FormattedDate.astro'
-import URLCard from '@components/URLCard.astro'
+import FormattedDate from '@components/FormattedDate.astro';
+import URLCard from '@components/URLCard.astro';
 
 export interface Props {
-  title: string
-  pubDate: Date
-  sourceURL?: string
+  title: string;
+  pubDate: Date;
+  sourceURL?: string;
 }
 
-const { title, pubDate, sourceURL } = Astro.props
+const { title, pubDate, sourceURL } = Astro.props;
 ---
 
-<article class="note h-entry">
+<article class="note h-entry cq">
   <div class="date">
     <FormattedDate date={pubDate} />
   </div>
@@ -20,12 +20,12 @@ const { title, pubDate, sourceURL } = Astro.props
   </div>
   {
     sourceURL && (
-      <div class="source-url cq">
+      <div class="source-url">
         <URLCard url={sourceURL} />
       </div>
     )
   }
-  <div class="note-content cq prose p-content">
+  <div class="note-content prose p-content">
     <slot />
   </div>
 </article>
@@ -44,10 +44,7 @@ const { title, pubDate, sourceURL } = Astro.props
     background: var(--note-background);
     padding: var(--line-height);
 
-    background-image: radial-gradient(
-      var(--dotgrid-color) 0.5px,
-      transparent 0
-    );
+    background-image: radial-gradient(var(--dotgrid-color) 0.5px, transparent 0);
     background-size: 1rem 1rem;
     filter: var(--shadow-small);
     border-top: 1rem solid var(--note-border-color);
@@ -68,15 +65,34 @@ const { title, pubDate, sourceURL } = Astro.props
   }
 
   .title h1 {
-    font-size: clamp(
-      calc(var(--line-height) * 1),
-      4vw,
-      calc(var(--line-height) * 3)
-    );
+    font-size: clamp(calc(var(--line-height) * 1), 4vw, calc(var(--line-height) * 3));
   }
 
   .source-url,
   .note-content {
     margin-top: var(--line-height);
+  }
+
+  /* Container query styles */
+  @container (width > 600px) {
+    .note {
+      --line-height: calc(2 * 1rem);
+      padding: calc(var(--line-height) * 1.5);
+    }
+
+    .title h1 {
+      font-size: clamp(calc(var(--line-height) * 1.5), 5vw, calc(var(--line-height) * 3));
+    }
+  }
+
+  @container (width > 800px) {
+    .note {
+      --line-height: calc(2.2 * 1rem);
+      padding: calc(var(--line-height) * 2);
+    }
+
+    .date {
+      font-size: 0.8rem;
+    }
   }
 </style>

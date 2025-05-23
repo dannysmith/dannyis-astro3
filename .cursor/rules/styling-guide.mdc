@@ -17,6 +17,66 @@ alwaysApply: false
 - Global styles in `src/styles/`
 - Component-scoped styles in `.astro` files
 
+## CSS Layers
+
+Our CSS is organized into layers to manage specificity and cascade order. The layers are defined in order of increasing specificity:
+
+1. **Reset Layer** (`@layer reset`)
+
+   - Basic resets and normalizations
+   - Box model, margins, paddings
+   - Default element behaviors
+   - Located in `src/styles/global.css`
+
+2. **Base Layer** (`@layer base`)
+
+   - Default element styles
+   - Typography fundamentals
+   - Basic layout patterns
+   - Located in `src/styles/global.css`
+
+3. **Prose Layer** (`@layer prose`)
+
+   - Content styling for non-Articles
+   - Mainly typography
+   - Located in `src/styles/global.css`
+
+4. **Article Layer** (`@layer articletypography`)
+
+   - Content styling Articles
+   - Mainly typography
+   - Located as a globally-scoped style in `src/layouts/BlogPost.astro`
+
+5. **Theme Layer** (`@layer theme`)
+   - Color scheme preferences
+   - Dark/light mode overrides
+   - Located in `src/styles/global.css`
+
+### Layer Usage Guidelines
+
+1. Keep styles in their appropriate layer
+2. Use later layers to override earlier ones
+3. Avoid using `!important` - use layers instead
+4. Component-scoped styles are outside layers
+5. Custom properties (CSS variables) should be defined outside layers
+
+Example of layer usage:
+
+```css
+@layer base {
+  a {
+    color: var(--prose-link-color);
+  }
+}
+
+@layer prose {
+  .prose a {
+    color: var(--prose-link-color);
+    text-decoration: underline;
+  }
+}
+```
+
 ## Component Styling
 
 Example of component-scoped styles:
