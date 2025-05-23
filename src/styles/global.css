@@ -126,6 +126,7 @@
 
   /*  Fonts */
   --font-ui: 'Jost', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-ui: 'League Spartan';
   --font-prose: 'Literata', Georgia, 'Times New Roman', serif;
   --font-code: 'Fira Code Variable', 'Fira Code', 'Inconsolata', monospace;
 
@@ -181,7 +182,7 @@ html {
 
   /* Set the typeface */
   font-family: var(--font-ui);
-  font-weight: 200;
+  font-weight: 300;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
