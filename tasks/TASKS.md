@@ -20,13 +20,13 @@
 
 ### 2.1 Typography System
 
-- [ ] Audit current typography usage in notes
-- [ ] Design new typography scale for notes
-- [ ] Implement new typography styles
-- [ ] Create consistent link styles
-- [ ] Design and implement list styles
-- [ ] Add proper spacing and rhythm
-- [ ] Test typography across different content types
+- [x] Audit current typography usage in notes
+- [x] Design new typography scale for notes if needed
+- [x] Implement new typography styles in notes
+- [x] Create consistent link styles in notes
+- [x] Design and implement list styles in notes
+- [x] Add proper spacing and rhythm in notes
+- [x] Test typography across different content types in notes
 
 ### 2.2 NoteCard Component
 
@@ -35,13 +35,13 @@
 - [ ] Add hover and interaction states
 - [ ] Create consistent image handling
 - [ ] Implement metadata display
-- [ ] Add loading states
 - [ ] Test across different content lengths
 
 ## 3. Enhanced Embedding System
 
 ### 3.1 BookmarkCard Component (formerly URLCard)
 
+- [ ] Rename to BookmarkCard
 - [ ] Research and select metadata fetching solution
 - [ ] Design new card layout
 - [ ] Implement metadata extraction
@@ -50,6 +50,7 @@
 - [ ] Implement responsive image handling
 - [ ] Add hover and interaction states
 - [ ] Test with various URL types
+- [ ] Add documentation to cursor files
 
 ### 3.2 Universal Embed Component
 
@@ -61,29 +62,3 @@
 - [ ] Create error handling
 - [ ] Test with various embed types
 - [ ] Document usage in MDX
-
-### 3.3 MDX Integration
-
-- [ ] Create MDX component for embeds
-- [ ] Add syntax highlighting
-- [ ] Implement error boundaries
-- [ ] Create documentation
-- [ ] Add examples
-
-## 4. Testing and Documentation
-
-### 4.1 Testing
-
-- [ ] Create visual regression tests
-- [ ] Test responsive behavior
-- [ ] Test dark/light mode
-- [ ] Test accessibility
-- [ ] Performance testing
-
-### 4.2 Documentation
-
-- [ ] Document CSS architecture
-- [ ] Create component usage guidelines
-- [ ] Add code examples
-- [ ] Document MDX usage
-- [ ] Create contribution guidelines

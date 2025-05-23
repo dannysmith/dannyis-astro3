@@ -1,0 +1,135 @@
+---
+title: Typography Test Note
+pubDate: 2024-03-19
+---
+
+# Typography Test Note
+
+This is a test note to showcase our new typography system. Let's go through all the elements we've styled.
+
+## Headings
+
+We have different levels of headings, each with their own styling:
+
+### Level 3 Heading
+
+#### Level 4 Heading
+
+##### Level 5 Heading
+
+## Text Styles
+
+Here's some **bold text** and _italic text_. We can also have `inline code` and [links](https://example.com).
+
+## Lists
+
+### Unordered List
+
+- First item
+- Second item with a [link](https://example.com)
+- Third item with **bold text**
+- Fourth item with `code`
+
+### Ordered List
+
+1. First item
+2. Second item with a [link](https://example.com)
+3. Third item with **bold text**
+4. Fourth item with `code`
+
+## Blockquotes
+
+> This is a blockquote. It should have a nice left border and italic styling.
+>
+> It can span multiple lines and include [links](https://example.com) and **bold text**.
+
+## Code
+
+Here's some inline code: `const x = 1`
+
+And here's a code block:
+
+```javascript
+function hello() {
+  console.log('Hello, world!');
+}
+```
+
+## Images
+
+![Test Image](https://picsum.photos/800/400)
+
+## Links
+
+Here are some links:
+
+- [Regular link](https://example.com)
+- [Visited link](https://example.com) (you'll need to click it to see the visited state)
+- [Link with hover state](https://example.com) (hover over this to see the effect)
+
+## Mixed Content
+
+Here's a paragraph with **bold text**, _italic text_, `code`, and a [link](https://example.com). We can also have:
+
+- Lists with **bold text**
+- Lists with _italic text_
+- Lists with `code`
+- Lists with [links](https://example.com)
+
+> And blockquotes with **bold text**, _italic text_, `code`, and [links](https://example.com).
+
+## Long Form Content
+
+### The Art of Typography
+
+Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing (leading), and letter-spacing (tracking), and adjusting the space between pairs of letters (kerning).
+
+The term typography is also applied to the style, arrangement, and appearance of the letters, numbers, and symbols created by the process. Type design is a closely related craft, sometimes considered part of typography; most typographers do not design typefaces, and some type designers do not consider themselves typographers.
+
+### The Importance of Readability
+
+Readability is the ease with which a reader can understand a written text. In natural language, the readability of text depends on its content (the complexity of its vocabulary and syntax) and its presentation (such as typographic aspects like font size, line height, and line length). Researchers have used various factors to measure readability, such as:
+
+- The speed of perception
+- The perceptibility at a distance
+- The perceptibility in peripheral vision
+- The visibility
+- The reflex blink technique
+- Rate of work (reading speed)
+- Eye movements
+- Fatigue in reading
+
+### The Role of White Space
+
+White space, also called negative space, is the unmarked space between characters, lines, and paragraphs in a document. It is the space between elements in a composition. In page layout, illustration and sculpture, white space is often referred to as negative space. It is the portion of a page left unmarked: margins, gutters, and space between columns, lines of type, graphics, figures, or objects drawn or depicted.
+
+The use of white space is essential to the balance of a page. It can be used to:
+
+1. Create a visual hierarchy
+2. Improve readability
+3. Create a sense of elegance
+4. Draw attention to specific elements
+5. Create a sense of organization
+
+### The Psychology of Typography
+
+Typography can have a significant impact on how readers perceive and process information. Different typefaces can evoke different emotions and associations. For example:
+
+- Serif fonts are often associated with tradition, respect, and authority
+- Sans-serif fonts are typically seen as modern, clean, and minimal
+- Script fonts can convey elegance, creativity, and personality
+- Monospace fonts suggest technical precision and code-like structure
+
+The choice of typography can significantly affect how a message is received and understood. It's not just about making text readable; it's about creating an emotional connection with the reader and reinforcing the message being conveyed.
+
+### The Future of Typography
+
+As technology continues to evolve, so does typography. Variable fonts, responsive typography, and new rendering technologies are changing how we think about and implement type on the web. The future of typography lies in:
+
+- More flexible and adaptable type systems
+- Better support for different languages and writing systems
+- Improved accessibility and readability
+- Integration with new technologies like AR and VR
+- Continued innovation in type design and implementation
+
+The key to successful typography in the future will be maintaining the balance between technological innovation and the fundamental principles of readability and communication that have guided typography for centuries.
