@@ -6,61 +6,39 @@ alwaysApply: false
 
 # Styling Guide
 
-## Visual Design Style
+## Core Principles
 
-### Color System
-
-### Typography
+1. Use scoped styles when possible
+2. Follow BEM-like naming conventions
+3. Use CSS variables for theming
+4. Keep styles modular
+5. Use fluid/responsive design patterns
+6. Use modern CSS features
+7. Prefer CSS Grid over Flexbox unless flexbox is obviously simpler
+8. Think like a designer when writing CSS
 
 ## CSS Organization
 
 - Global styles in `src/styles/`
 - Component-scoped styles in `.astro` files
+- CSS variables defined in `:root` in `global.css`
 
 ## CSS Layers
 
-Our CSS is organized into layers to manage specificity and cascade order. The layers are defined in order of increasing specificity:
+Our CSS is organized into layers (in order of increasing specificity):
 
-1. **Reset Layer** (`@layer reset`)
+1. **Reset** (`@layer reset`): Basic resets, box model, margins
+2. **Base** (`@layer base`): Default element styles, typography
+3. **Prose** (`@layer prose`): Article and content styling
+4. **Theme** (`@layer theme`): Color schemes, dark/light mode
 
-   - Basic resets and normalizations
-   - Box model, margins, paddings
-   - Default element behaviors
-   - Located in `src/styles/global.css`
+### Layer Guidelines
 
-2. **Base Layer** (`@layer base`)
-
-   - Default element styles
-   - Typography fundamentals
-   - Basic layout patterns
-   - Located in `src/styles/global.css`
-
-3. **Prose Layer** (`@layer prose`)
-
-   - Content styling for non-Articles
-   - Mainly typography
-   - Located in `src/styles/global.css`
-
-4. **Article Layer** (`@layer articletypography`)
-
-   - Content styling Articles
-   - Mainly typography
-   - Located as a globally-scoped style in `src/layouts/BlogPost.astro`
-
-5. **Theme Layer** (`@layer theme`)
-   - Color scheme preferences
-   - Dark/light mode overrides
-   - Located in `src/styles/global.css`
-
-### Layer Usage Guidelines
-
-1. Keep styles in their appropriate layer
-2. Use later layers to override earlier ones
-3. Avoid using `!important` - use layers instead
-4. Component-scoped styles are outside layers
-5. Custom properties (CSS variables) should be defined outside layers
-
-Example of layer usage:
+- Keep styles in appropriate layers
+- Use later layers to override earlier ones
+- Avoid `!important` - use layers instead
+- Component styles live outside layers
+- CSS variables defined outside layers
 
 ```css
 @layer base {
@@ -68,23 +46,46 @@ Example of layer usage:
     color: var(--prose-link-color);
   }
 }
-
 @layer prose {
   .prose a {
-    color: var(--prose-link-color);
     text-decoration: underline;
   }
 }
 ```
 
+## Container Queries
+
+Use container queries for component-level responsiveness (vs media queries for page-level layout).
+
+### Quick Start
+
+```html
+<div class="cq">
+  <!-- or container-type: inline-size -->
+  <div class="component">
+    <!-- Content -->
+  </div>
+</div>
+
+<style>
+  @container (width > 400px) {
+    .component {
+      /* Wider container styles */
+    }
+  }
+</style>
+```
+
+### Best Practices
+
+1. Use for component-level responsiveness
+2. Set meaningful breakpoints (400px, 800px common)
+3. Use relative units (rem, em) for breakpoints
+4. Test in various container sizes
+
 ## Component Styling
 
-Example of component-scoped styles:
-
 ```astro
----
-// Component logic
----
 <div class="component">
   <!-- Content -->
 </div>
@@ -98,25 +99,13 @@ Example of component-scoped styles:
 
 ## CSS Variables
 
-Define all global variables in `src/styles/global.css`:
-
 ```css
 :root {
   --color-primary: #007bff;
-  --color-secondary: #6c757d;
   --spacing-unit: 1rem;
 }
 ```
 
-Variables used by a single component should be defined there. If they are likeley to be updated globally by the browser (eg flipping a dark-mode switch), define them on `:root` in the global scope.
-
-## Best Practices
-
-1. Use scoped styles when possible
-2. Follow BEM-like naming conventions
-3. Use CSS variables for theming
-4. Keep styles modular
-5. Use fluid/responsive design patterns
-6. Use modern CSS
-7. Prefer CSS Grid over Flexbox unless flexbox is obviously simpler.
-8. Think like a designer and CSS expert when writing CSS.
+- Global variables in `global.css`
+- Component-specific variables in component
+- Theme variables on `:root` for browser updates
