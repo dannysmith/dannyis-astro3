@@ -1,6 +1,7 @@
 ---
 import FormattedDate from '@components/FormattedDate.astro';
 import URLCard from '@components/URLCard.astro';
+import Pill from '@components/Pill.astro';
 
 export interface Props {
   title: string;
@@ -22,7 +23,7 @@ const { title, pubDate, sourceURL, tags = [] } = Astro.props;
       tags.length > 0 && (
         <div class="tags">
           {tags.map(tag => (
-            <span class="tag">{tag}</span>
+            <Pill text={tag} color="var(--color-grey-300)" textColor="var(--color-grey-700)" />
           ))}
         </div>
       )
@@ -90,21 +91,6 @@ const { title, pubDate, sourceURL, tags = [] } = Astro.props;
     flex-wrap: wrap;
     gap: 0.5rem;
     line-height: 1;
-  }
-
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.4em 0.7em 0.15em 0.7em;
-    border-radius: 0.18rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    background: var(--tag-bg);
-    color: var(--tag-color);
   }
 
   .source-url {
