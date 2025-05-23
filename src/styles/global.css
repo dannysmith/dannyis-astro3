@@ -181,6 +181,7 @@ html {
 
   /* Set the typeface */
   font-family: var(--font-ui);
+  font-weight: 200;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -306,6 +307,10 @@ code,
 pre,
 kbd {
   font-family: var(--font-code);
+}
+
+strong {
+  font-weight: 600;
 }
 
 /* ----------- Abrr ----------- */

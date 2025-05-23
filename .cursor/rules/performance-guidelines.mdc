@@ -56,21 +56,6 @@ alwaysApply: true
    - Minimize third-party dependencies
    - Implement proper error handling
 
-## Build Optimization
-
-1. **Static Generation**
-
-   - Use static generation by default
-   - Implement proper caching strategies
-   - Optimize build output
-   - Minimize bundle size
-
-2. **Asset Optimization**
-   - Optimize images during build
-   - Minify CSS and JavaScript
-   - Implement proper caching headers
-   - Use content hashing for cache busting
-
 ## Loading Performance
 
 1. **Critical CSS**
@@ -78,55 +63,9 @@ alwaysApply: true
    - Inline critical CSS
    - Defer non-critical CSS
    - Use proper loading strategies
-   - Implement proper caching
 
 2. **Resource Loading**
    - Use proper preload directives
    - Implement proper lazy loading
    - Use appropriate loading strategies
    - Optimize resource loading order
-
-## Caching Strategy
-
-1. **Static Assets**
-
-   - Implement proper cache headers
-   - Use content hashing
-   - Implement proper cache busting
-   - Use appropriate cache durations
-
-2. **Dynamic Content**
-   - Implement proper cache invalidation
-   - Use appropriate cache durations
-   - Implement proper cache headers
-   - Use appropriate cache strategies
-
-## Monitoring
-
-1. **Performance Monitoring**
-
-   - Implement proper analytics
-   - Monitor Core Web Vitals
-   - Track performance metrics
-   - Implement proper error tracking
-
-2. **Error Tracking**
-   - Implement proper error logging
-   - Track performance errors
-   - Monitor resource loading
-   - Track user experience
-
-## Testing
-
-1. **Performance Testing**
-
-   - Test on multiple devices
-   - Test on multiple networks
-   - Test on multiple browsers
-   - Implement proper performance budgets
-
-2. **Load Testing**
-   - Test under load
-   - Test under stress
-   - Test under failure
-   - Implement proper monitoring

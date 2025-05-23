@@ -10,11 +10,12 @@ alwaysApply: false
 
 ### Color System
 
+### Typography
+
 ## CSS Organization
 
 - Global styles in `src/styles/`
 - Component-scoped styles in `.astro` files
-- Use CSS modules when needed
 
 ## Component Styling
 
@@ -37,7 +38,7 @@ Example of component-scoped styles:
 
 ## CSS Variables
 
-Define global variables in `src/styles/global.css`:
+Define all global variables in `src/styles/global.css`:
 
 ```css
 :root {
@@ -47,11 +48,15 @@ Define global variables in `src/styles/global.css`:
 }
 ```
 
+Variables used by a single component should be defined there. If they are likeley to be updated globally by the browser (eg flipping a dark-mode switch), define them on `:root` in the global scope.
+
 ## Best Practices
 
 1. Use scoped styles when possible
-2. Follow BEM-like naming convention
+2. Follow BEM-like naming conventions
 3. Use CSS variables for theming
 4. Keep styles modular
-5. Use responsive design patterns
-6. Optimize for performance
+5. Use fluid/responsive design patterns
+6. Use modern CSS
+7. Prefer CSS Grid over Flexbox unless flexbox is obviously simpler.
+8. Think like a designer and CSS expert when writing CSS.
