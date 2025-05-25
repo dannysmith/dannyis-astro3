@@ -147,6 +147,58 @@ Define guidelines for developing and maintaining components in the personal webs
   <Pill text="Draft" color="var(--color-yellow-500)" textColor="var(--c-black)" />
   ```
 
+### Callout.astro
+
+- **Purpose:**
+
+  - Simple callout component for highlighting important information.
+  - Uses existing color system from global.css for consistency.
+  - Clean, minimal design that fits with the site's aesthetic.
+
+- **Props:**
+
+  - `title?: string` (optional) — The callout title/heading.
+  - `type?: 'default' | 'red' | 'blue' | 'green' | 'orange' | 'yellow' | 'purple'` (optional) — Color variant. Defaults to 'default'.
+  - `icon?: string` (optional) — Emoji or icon to display.
+
+- **Design & Usage:**
+
+  - Use `<Callout>content</Callout>` for basic callouts.
+  - Add `icon` prop for visual emphasis (emojis work well).
+  - Add `title` prop for structured callouts with headings.
+  - Choose appropriate `type` for semantic meaning.
+  - Uses existing color variables from global.css (--color-{type}-300).
+  - Simple, clean design without excessive styling.
+
+- **Color Variants:**
+
+  - `default` — Gray (--color-grey-300)
+  - `blue` — Blue (--color-blue-300)
+  - `green` — Green (--color-green-300)
+  - `yellow` — Yellow (--color-yellow-300)
+  - `red` — Red (--color-red-300)
+  - `orange` — Orange (--color-orange-300)
+  - `purple` — Purple (--color-purple-300)
+
+- **Examples:**
+
+  ```astro
+  <!-- Basic callout -->
+  <Callout type="blue">
+    This is a simple blue callout.
+  </Callout>
+
+  <!-- Callout with icon and title -->
+  <Callout icon="💡" type="blue" title="Tip">
+    This callout has an icon and title.
+  </Callout>
+
+  <!-- Error callout -->
+  <Callout icon="❌" type="red" title="Error">
+    Something went wrong.
+  </Callout>
+  ```
+
 ## Development Guidelines
 
 ### Component Structure

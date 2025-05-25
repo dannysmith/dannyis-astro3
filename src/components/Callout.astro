@@ -1,11 +1,11 @@
 ---
 export interface Props {
-  title?: string
-  type?: 'default' | 'red' | 'blue' | 'green' | 'orange' | 'yellow'
-  icon?: string
+  title?: string;
+  type?: 'default' | 'red' | 'blue' | 'green' | 'orange' | 'yellow' | 'purple';
+  icon?: string;
 }
 
-const { title, icon, type = 'default' } = Astro.props
+const { title, icon, type = 'default' } = Astro.props;
 ---
 
 <aside aria-label={title} class="callout" data-callout-color={type}>
@@ -18,9 +18,9 @@ const { title, icon, type = 'default' } = Astro.props
   }
   <div class="content-wrapper">
     {title && <h3 class="title">{title}</h3>}
-    <section class="prose content">
+    <div class="prose content">
       <slot />
-    </section>
+    </div>
   </div>
 </aside>
 
@@ -36,33 +36,49 @@ const { title, icon, type = 'default' } = Astro.props
   .callout {
     display: flex;
     background: var(--callout-default-bg);
-    padding: 1em;
+    padding: 1rem;
     border-radius: 4px;
+    margin: 1rem 0;
   }
 
   .icon-wrapper {
     flex-shrink: 0;
-    padding-right: 0.75em;
-  }
-
-  .title {
-    line-height: inherit;
+    margin-right: 0.75rem;
   }
 
   .icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 0.875rem;
+    line-height: 1;
+    margin-top: 0.35rem;
   }
 
   .content-wrapper {
     flex-grow: 1;
-
-    section {
-      margin: 0;
-    }
   }
 
+  .title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .content {
+    margin: 0;
+  }
+
+  .content > :first-child {
+    margin-top: 0;
+  }
+
+  .content > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* Color variants using existing color system */
   [data-callout-color='red'] {
     background: var(--callout-red-bg);
   }
