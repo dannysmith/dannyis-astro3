@@ -78,28 +78,19 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
         --background-color: var(--c-beige-bg);
         --text-color: var(--color-grey-800);
         --spinner-overlay-color: var(--c-white);
-        --metadata-color: var(--c-primary);
-        --draft-notice-highlight: var(--c-primary);
 
-        --link-underline: var(--c-primary);
+        /* Primary color used throughout */
+        --article-primary-color: var(--c-primary);
+
+        /* Link colors */
         --link-underline-visited: var(--color-purple-500);
-        --link-hover: var(--c-primary);
-
         --mobile-link: var(--color-red-600);
         --mobile-link-visited: var(--color-purple-600);
 
+        /* UI element colors */
         --tasklist-checkbox-border: rgba(0, 0, 0, 0.4);
-        --tasklist-checkbox-check: var(--c-primary);
-
         --horizontal-rule-color: rgba(0, 0, 0, 0.1);
-        --blockquote-border-color: var(--c-primary);
-
-        --inline-footnote-border-color: var(--c-primary);
         --inline-footnote-background-color: rgba(0, 0, 0, 0.05);
-
-        --footnote-section-top-border: var(--c-primary);
-
-        --endmark-color: var(--c-primary);
       }
 
       body {
@@ -116,7 +107,7 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
 
       .metadata {
         font-size: 0.7em;
-        color: var(--metadata-color);
+        color: var(--article-primary-color);
         font-family: var(--font-code);
         margin-top: 1rem;
       }
@@ -132,8 +123,8 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
       }
 
       .draft-notice {
-        border: 2px solid var();
-        color: var(--draft-notice-highlight);
+        border: 2px solid var(--article-primary-color);
+        color: var(--article-primary-color);
         font-family: var(--font-ui);
         padding: 8px 16px;
         border-radius: 4px;
@@ -156,7 +147,7 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
           grid-row-gap: calc(var(--line-height) * 1em);
 
           font-family: var(--font-prose);
-          font-size: clamp(1rem, calc(0.6rem + 1vw), 1.4rem);
+          font-size: clamp(1rem, calc(0.6rem + 1vw), 1.3rem);
           line-height: var(--line-height);
           text-rendering: optimizeLegibility;
         }
@@ -174,6 +165,8 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
         .blog-article > :is(h1, h2, h3, h4, h5, h6) {
           font-variant-ligatures: common-ligatures discretionary-ligatures;
           hanging-punctuation: first allow-end last;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* subtle underline */
+          padding-bottom: 0.6em;
         }
 
         .blog-article h1.title {
@@ -247,7 +240,7 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
 
         /* End Mark */
         .blog-article > p:last-of-type:after {
-          color: var(--endmark-color);
+          color: var(--article-primary-color);
           display: inline-block;
           content: ' ';
           -webkit-mask: url('/end-mark.svg');
@@ -273,8 +266,11 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
 
         .blog-article a {
           color: inherit;
-          text-decoration-color: var(--link-underline);
+          text-decoration: underline;
+          text-decoration-color: var(--article-primary-color);
           text-decoration-thickness: 1px;
+          text-underline-offset: 0.3em;
+          text-decoration-skip-ink: none;
           border-radius: 0.1em;
         }
 
@@ -284,12 +280,12 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
 
         .blog-article a:hover,
         .blog-article a:active {
-          text-decoration-color: var(--link-hover);
-          color: var(--link-hover);
+          text-decoration-color: var(--article-primary-color);
+          color: var(--article-primary-color);
         }
 
         .blog-article a:focus-visible {
-          outline: 2px solid var(--link-hover);
+          outline: 2px solid var(--article-primary-color);
           text-decoration: none;
         }
 
@@ -314,6 +310,10 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
         .blog-article li {
           padding-left: 1em;
           margin-top: 0.5em;
+          /* Ensure marker color for all lists */
+          &::marker {
+            color: var(--color-red-700);
+          }
         }
         .blog-article li:first-of-type {
           margin-top: 0;
@@ -330,12 +330,14 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
 
         .blog-article ol {
           padding-left: 0.4em;
+          list-style-type: decimal;
         }
 
         .blog-article ol ::marker {
           font-size: 1.4ex;
           font-variation-settings: 'opsz' 10;
           font-weight: 500;
+          color: var(--color-red-700);
         }
 
         /* ----------- Task Lists ------------ */
@@ -354,20 +356,14 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
           height: 0.7em;
           width: 0.7em;
           margin-bottom: 0;
-
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          -o-appearance: none;
           appearance: none;
           outline: none;
-
           border-radius: 2px;
-
           border: 1px solid var(--tasklist-checkbox-border);
         }
 
         .blog-article .task-list-item input:checked {
-          color: var(--tasklist-checkbox-check);
+          color: var(--article-primary-color);
           background: transparent;
         }
 
@@ -380,7 +376,7 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
           font-weight: 600;
         }
 
-        .blog-article .blog-article .task-list-item checinput[disabled] {
+        .blog-article .task-list-item input[disabled] {
           opacity: 1;
         }
 
@@ -388,6 +384,19 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
 
         .blog-article strong {
           font-weight: 650;
+        }
+
+        .blog-article code {
+          font-family: var(--font-code);
+          font-size: 0.9em;
+          background: var(--code-background-color);
+          padding: 0.2em 0.4em;
+          border-radius: 0.2em;
+        }
+        .blog-article pre code {
+          background: none;
+          padding: 0;
+          border-radius: 0;
         }
 
         /* ----------- HR ----------- */
@@ -414,7 +423,7 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
         .blog-article blockquote {
           font-variant-numeric: oldstyle-nums diagonal-fractions;
           hanging-punctuation: first allow-end last;
-          border-left: 2px solid var(--blockquote-border-color);
+          border-left: 2px solid var(--article-primary-color);
           padding-left: calc((1em * var(--line-height)) - 2px);
           font-style: italic;
           margin-left: 0;
@@ -431,13 +440,13 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
           font-variant: small-caps;
           letter-spacing: 0.05ch;
           text-decoration: none;
-          color: var(--link-underline);
+          color: var(--article-primary-color);
         }
 
         .inline-footnote-container {
           font-size: 0.8em;
           padding: 1em;
-          border-left: 2px solid var(--inline-footnote-border-color);
+          border-left: 2px solid var(--article-primary-color);
           background: var(--inline-footnote-background-color);
 
           .data-footnote-backref {
@@ -446,14 +455,14 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
         }
 
         .blog-article .footnotes {
-          border-top: 1px solid var(--footnote-section-top-border);
+          border-top: 1px solid var(--article-primary-color);
           margin-top: 2em;
           padding-top: 1em;
           font-size: 0.8em;
 
           .data-footnote-backref {
             text-decoration: none;
-            color: var(--link-underline);
+            color: var(--article-primary-color);
           }
         }
 

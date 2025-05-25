@@ -294,6 +294,7 @@
     text-wrap: pretty;
   }
 
+  /* Default Links */
   a {
     transition: all 0.15s;
 
@@ -308,6 +309,49 @@
     &:active {
       color: var(--accent-color);
     }
+  }
+
+  /* Abbreviations */
+  abbr {
+    font-variant: all-small-caps;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: var(--color-grey-500);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-skip-ink: none;
+  }
+
+  abbr[title] {
+    cursor: help;
+  }
+
+  /* Superscript and subscript */
+  sup,
+  sub {
+    font-size: 0.6em;
+    line-height: 1;
+  }
+
+  /* Simple, attractive global table styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2em 0;
+    font-size: 1em;
+  }
+
+  th,
+  td {
+    border: 1px solid var(--table-border-color, rgba(0, 0, 0, 0.05));
+    padding: 0.2em 0.5em;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 600;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 
