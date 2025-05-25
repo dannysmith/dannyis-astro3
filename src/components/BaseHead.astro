@@ -7,16 +7,24 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  image?: string;
+  image?: string; // If provided, use as OG image. Otherwise, use default static image.
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, image = '/default-ogimage.jpg' } = Astro.props;
+const { title, image } = Astro.props;
 
 let description = Astro.props.description;
 if (description) {
   description = description + ' | Danny Smith';
+}
+
+// Build the OG image URL
+let ogImageUrl: string;
+if (image) {
+  ogImageUrl = new URL(image, Astro.url).toString();
+} else {
+  ogImageUrl = new URL('/og-default.png', Astro.url).toString();
 }
 ---
 
@@ -50,14 +58,14 @@ if (description) {
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={ogImageUrl} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={ogImageUrl} />
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />

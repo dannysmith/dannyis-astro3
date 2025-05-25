@@ -2,6 +2,8 @@ import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 import { generateOGImage } from '../../../utils/og-image-generator.js';
 
+const SITE_URL = 'https://danny.is';
+
 export async function getStaticPaths() {
   const notes = await getCollection('notes');
 
@@ -14,12 +16,18 @@ export async function getStaticPaths() {
 export const GET: APIRoute = async ({ props }) => {
   const { note } = props as { note: any };
 
+  // Build canonical URL using note.id for the slug
+  const url = `${SITE_URL}/notes/${note.id}`;
+
   try {
     const ogImageBuffer = await generateOGImage(
       {
         title: note.data.title || 'Note',
         site: 'danny.is',
         type: 'note',
+        profileImage: `${SITE_URL}/avatar-circle.png`,
+        authorName: 'Danny Smith',
+        url,
       },
       {
         template: 'note',
