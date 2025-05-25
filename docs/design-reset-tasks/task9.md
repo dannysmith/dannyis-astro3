@@ -1,3 +1,12 @@
-## Task: Better Numbered Lists in Articles
+## Task: Have Astro render some standard markdown using custom components
 
-Make ordered lists in articles render the list numbers in circles, as per https://practicaltypography.com/what-is-good-typography.html
+When I use standard markdown for the following in mdx files, render them using custom Astro components:
+
+- Task list
+- Footnotes
+- Blockquote
+
+More info:
+
+- https://stackoverflow.com/questions/76414686/custom-components-in-markdown-mdx-on-astro
+- https://docs.astro.build/en/guides/integrations-guide/mdx/

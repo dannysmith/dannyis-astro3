@@ -1,12 +1,22 @@
-## Task: Have Astro render some standard markdown using custom components
+## Task: Generate OG Images Dynamically
 
-When I use standard markdown for the following in mdx files, render them using custom Astro components:
+A custom OG image should be generated for all notes, articles and pages using the title etc so that when someone shared a URL to one of my pages it has an OG image.
 
-- Task list
-- Footnotes
-- Blockquote
+Useful URLs re implementation:
 
-More info:
+- https://www.kozhuhds.com/blog/generating-static-open-graph-og-images-in-astro-using-vercel-og
+- https://arne.me/blog/static-og-images-in-astro
+- https://github.com/florian-lefebvre/satori-astro/blob/main/package/README.md
+- https://github.com/JulianCataldo/og-images-generator#astro-integration
 
-- https://stackoverflow.com/questions/76414686/custom-components-in-markdown-mdx-on-astro
-- https://docs.astro.build/en/guides/integrations-guide/mdx/
+See https://medium.com/slack-developer-blog/everything-you-ever-wanted-to-know-about-unfurling-but-were-afraid-to-ask-or-how-to-make-your-e64b4bb9254
+
+Also, see Wes' Netlify function here https://github.com/wesbos/wesbos/blob/master/functions/ogimage/ogimage.js
+
+### Checklist
+
+- [ ] Article (dynamic)
+- [ ] Note (dynamic)
+- [ ] Other pages like home and about (could just be static images if needed)
+- [ ] Static fallback image for all other pages
+- [ ] Add proper OG data to all pages (which obviously uses the images)
