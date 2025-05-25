@@ -3,7 +3,6 @@ description: Main index of Cursor rules and guidelines
 globs: ['**/*']
 alwaysApply: true
 ---
-
 # Cursor Rules and Guidelines
 
 This document serves as an index for all cursor rules and guidelines for the personal website project.
@@ -111,3 +110,41 @@ This document serves as an index for all cursor rules and guidelines for the per
 - Ensure consistency across all rules
 - Remove outdated or irrelevant rules
 - Add new rules as needed
+
+---
+
+## Styleguide/Test Pages
+
+The project includes three styleguide/test pages to ensure visual consistency and comprehensive coverage of all key components, markdown features, and prose styles:
+
+- **Main Styleguide:**
+  - **Location:** `/src/pages/styleguide.astro`
+  - **Purpose:** Exhaustive visual testbed for all reusable components (Astro/MDX).
+  - **Usage:**
+    - When adding a new reusable component, always add a demo/example to this page.
+    - Use realistic content and context for each component.
+    - Routable at `/styleguide` (only linked in dev).
+
+- **Note Styleguide:**
+  - **Location:** `/src/content/notes/note-styleguide.mdx`
+  - **Purpose:** Representative test of all markdown, MDX, and prose features in a "note" context.
+  - **Usage:**
+    - If you add a component or markdown feature likely to be used in notes, add an example here.
+    - Use realistic, long-form content and context.
+
+- **Article Styleguide:**
+  - **Location:** `/src/content/blog/article-styleguide.mdx`
+  - **Purpose:** Representative test of all markdown, MDX, and prose features in an "article" context.
+  - **Usage:**
+    - If you add a component or markdown feature likely to be used in articles, add an example here.
+    - Use realistic, long-form content and context.
+
+**Exclusion from Indexes:**
+All styleguide files use `styleguide: true` in their frontmatter. Content collection queries and RSS feeds are configured to exclude these files from public indexes.
+
+**Best Practices:**
+- Keep styleguides up to date with new components and features.
+- Use realistic, varied content for visual QA.
+- Reference styleguides before launch to ensure visual and typographic consistency.
+- If adding a new markdown/MDX feature, ensure it is demonstrated in both note and article styleguides.
+- The main styleguide should be exhaustive; the note and article styleguides should be representative but realistic.
