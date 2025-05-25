@@ -14,6 +14,7 @@ const blog = defineCollection({
       platform: z.enum(['medium', 'external']).optional(),
       redirectURL: z.string().url().optional(),
       updatedDate: z.coerce.date().optional(),
+      styleguide: z.boolean().optional(),
     }),
 });
 
@@ -24,6 +25,7 @@ const notes = defineCollection({
     pubDate: z.coerce.date(),
     sourceURL: z.string().url().optional(),
     tags: z.array(z.string()).optional(),
+    styleguide: z.boolean().optional(),
   }),
 });
 

@@ -8,8 +8,8 @@ import MainNavigation from '@components/MainNavigation.astro';
 import Pill from '@components/Pill.astro';
 
 const posts = (
-  await await getCollection('blog', ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true;
+  await getCollection('blog', ({ data }) => {
+    return (import.meta.env.PROD ? data.draft !== true : true) && !data.styleguide;
   })
 ).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
