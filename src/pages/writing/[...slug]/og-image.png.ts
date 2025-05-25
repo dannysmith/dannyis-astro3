@@ -2,6 +2,8 @@ import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 import { generateOGImage } from '../../../utils/og-image-generator.js';
 
+const SITE_URL = 'https://danny.is';
+
 export async function getStaticPaths() {
   const articles = await getCollection('blog', ({ data }) => {
     return !data.draft;
@@ -16,6 +18,9 @@ export async function getStaticPaths() {
 export const GET: APIRoute = async ({ props }) => {
   const { article } = props as { article: any };
 
+  // Build canonical URL (adjust if your domain/structure changes)
+  const url = `${SITE_URL}/writing/${article.slug}`;
+
   try {
     const ogImageBuffer = await generateOGImage(
       {
@@ -23,6 +28,9 @@ export const GET: APIRoute = async ({ props }) => {
         description: article.data.description,
         site: 'danny.is',
         type: 'article',
+        profileImage: `${SITE_URL}/avatar-circle.png`,
+        authorName: 'Danny Smith',
+        url,
       },
       {
         template: 'article',
@@ -39,8 +47,6 @@ export const GET: APIRoute = async ({ props }) => {
     });
   } catch (error) {
     console.error('Failed to generate OG image for article:', article.id, error);
-
-    // Return a 500 error if image generation fails
     return new Response('Failed to generate image', {
       status: 500,
     });
