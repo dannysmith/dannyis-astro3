@@ -46,7 +46,7 @@ Define guidelines for developing and maintaining components in the personal webs
 - **Purpose:**
 
   - Universal embed component for rich media and link previews.
-  - Automatically detects and renders YouTube, Tweet, and Vimeo embeds.
+  - Automatically detects and renders YouTube, Tweet, Vimeo, and Loom embeds.
   - Falls back to `BookmarkCard` for all other URLs, ensuring consistent design.
 
 - **Props:**
@@ -58,7 +58,7 @@ Define guidelines for developing and maintaining components in the personal webs
 
   - Use `<Embed url="..." />` anywhere you want to embed a link or media.
   - No client JS required; all logic is server-side.
-  - If the URL is a YouTube, Tweet, or Vimeo link, renders the appropriate embed.
+  - If the URL is a YouTube, Tweet, Vimeo, or Loom link, renders the appropriate embed.
   - For all other URLs, renders a `BookmarkCard` with your custom styling.
   - Responsive and accessible by default.
 
@@ -67,7 +67,33 @@ Define guidelines for developing and maintaining components in the personal webs
   <Embed url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
   <Embed url="https://twitter.com/astro_build/status/1552351234567890123" />
   <Embed url="https://vimeo.com/76979871" />
+  <Embed url="https://www.loom.com/share/e738280dc4464402927315e1fda6b036" />
   <Embed url="https://astro.build" /> <!-- Falls back to BookmarkCard -->
+  ```
+
+### Loom.astro
+
+- **Purpose:**
+
+  - Standalone component for embedding Loom videos.
+  - Provides responsive iframe embedding with proper aspect ratio.
+  - Used internally by `Embed.astro` but can also be used directly.
+
+- **Props:**
+
+  - `id: string` (required) — The Loom video ID (extracted from URL).
+  - `className?: string` (optional) — Additional classes for custom styling.
+
+- **Design & Usage:**
+
+  - Use `<Loom id="..." />` when you have the video ID directly.
+  - Responsive 16:9 aspect ratio container.
+  - No client JS required; server-side rendered iframe.
+  - Supports fullscreen playback.
+
+- **Example:**
+  ```astro
+  <Loom id="e738280dc4464402927315e1fda6b036" />
   ```
 
 ### BookmarkCard.astro
