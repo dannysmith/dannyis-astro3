@@ -8,12 +8,15 @@ import MainNavigation from '@components/MainNavigation.astro';
 type Props = CollectionEntry<'notes'>['data'];
 
 const { title, pubDate, sourceURL, tags } = Astro.props;
+
+// Build OG image path for this note
+const ogImage = `/notes/${Astro.params.slug}/og-image.png`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} />
+    <BaseHead title={title} type="article" image={ogImage} />
   </head>
 
   <body>
