@@ -1,6 +1,8 @@
 ---
 import NavLink from '@components/NavLink.astro';
 import HamburgerMenu from '@astropub/icons/HamburgerMenu';
+// Add isDev flag for development mode
+const isDev = import.meta.env.MODE === 'development';
 ---
 
 <a class="open-nav-link" href="#">
@@ -17,6 +19,13 @@ import HamburgerMenu from '@astropub/icons/HamburgerMenu';
       <li><NavLink href="/">Home</NavLink></li>
       <li><NavLink href="/writing">Writing</NavLink></li>
       <li><NavLink href="/notes">Notes</NavLink></li>
+      {
+        isDev && (
+          <li>
+            <NavLink href="/styleguide">Styleguide</NavLink>
+          </li>
+        )
+      }
     </ul>
   </section>
 </nav>
