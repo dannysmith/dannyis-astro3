@@ -2,7 +2,7 @@
 
 import Notion from './Notion.astro';
 import Grid from './Grid.astro';
-import URLCard from './URLCard.astro';
 import Callout from './Callout.astro';
+import BookmarkCard from './BookmarkCard.astro';
 
-export { Notion, Grid, URLCard, Callout };
+export { Notion, Grid, BookmarkCard, Callout };

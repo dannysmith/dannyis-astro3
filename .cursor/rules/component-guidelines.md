@@ -1,9 +1,3 @@
----
-description: Guidelines for developing and maintaining Astro components
-globs: ['**/*.astro']
-alwaysApply: true
----
-
 # Component Development
 
 ## Purpose
@@ -34,14 +28,69 @@ Define guidelines for developing and maintaining components in the personal webs
 1. **Content Display**
 
    - `NoteCard.astro` - Card component for displaying notes
-   - `BookmarkCard.astro` - Card component for displaying URL previews
+   - `BookmarkCard.astro` - Card component for displaying URL previews/bookmarks
    - `Notion.astro` - Component for Notion page references
    - `Callout.astro` - Component for highlighting important information
    - `Lightbox.astro` - Image lightbox component
+   - `Pill.astro` - Small label/badge component for tags, categories, etc.
 
 2. **Icons**
    - Located in `icons/` directory
    - Used throughout the site for consistent iconography
+
+## Component Documentation
+
+### BookmarkCard.astro
+
+- **Purpose:**
+
+  - Displays a rich preview of a URL/bookmark using Open Graph and metadata.
+  - Used for blogrolls, bookmarks, and as a fallback for universal embeds.
+
+- **Props:**
+
+  - `url: string` (required) — The URL to preview.
+  - `className?: string` (optional) — Additional classes for custom styling.
+
+- **Design & Usage:**
+
+  - Uses `@astro-community/astro-embed-link-preview` under the hood.
+  - Responsive: horizontal layout with image on the right for wide containers, stacked for narrow.
+  - Title uses the primary accent color (`var(--c-primary)`).
+  - Domain is rendered in monospace font (`var(--font-code)`).
+  - All colors and fonts use global CSS variables.
+  - Subtle border radius and box-shadow for modern card look.
+  - Accessible: focus states and semantic markup.
+  - Minimal, DRY CSS with container queries for layout.
+
+- **Example:**
+  ```astro
+  <BookmarkCard url="https://astro.build" />
+  ```
+
+### Pill.astro
+
+- **Purpose:**
+
+  - Renders a small, rounded label or badge for tags, categories, or statuses.
+
+- **Props:**
+
+  - `text: string` (required) — The label text.
+  - `color?: string` (optional) — Background color (CSS variable or value). Defaults to `var(--color-grey-700)`.
+  - `textColor?: string` (optional) — Text color. Defaults to `white`.
+
+- **Design & Usage:**
+
+  - Uses CSS variables for background and text color for easy theming.
+  - Uppercase, bold, and slightly condensed for visual punch.
+  - Subtle border and small border-radius for a modern badge look.
+  - Inline-flex for alignment with text or icons.
+
+- **Example:**
+  ```astro
+  <Pill text="Draft" color="var(--color-yellow-500)" textColor="var(--c-black)" />
+  ```
 
 ## Development Guidelines
 

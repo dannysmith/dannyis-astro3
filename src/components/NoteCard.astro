@@ -1,6 +1,6 @@
 ---
 import FormattedDate from '@components/FormattedDate.astro';
-import URLCard from '@components/URLCard.astro';
+import BookmarkCard from '@components/BookmarkCard.astro';
 import Pill from '@components/Pill.astro';
 
 export interface Props {
@@ -32,7 +32,7 @@ const { title, pubDate, sourceURL, tags = [] } = Astro.props;
   {
     sourceURL && (
       <div class="source-url">
-        <URLCard url={sourceURL} />
+        <BookmarkCard url={sourceURL} />
       </div>
     )
   }
