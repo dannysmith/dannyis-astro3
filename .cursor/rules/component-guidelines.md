@@ -29,6 +29,7 @@ Define guidelines for developing and maintaining components in the personal webs
 
    - `NoteCard.astro` - Card component for displaying notes
    - `BookmarkCard.astro` - Card component for displaying URL previews/bookmarks
+   - `Embed.astro` - Universal embed component for rich media and link previews
    - `Notion.astro` - Component for Notion page references
    - `Callout.astro` - Component for highlighting important information
    - `Lightbox.astro` - Image lightbox component
@@ -39,6 +40,35 @@ Define guidelines for developing and maintaining components in the personal webs
    - Used throughout the site for consistent iconography
 
 ## Component Documentation
+
+### Embed.astro
+
+- **Purpose:**
+
+  - Universal embed component for rich media and link previews.
+  - Automatically detects and renders YouTube, Tweet, and Vimeo embeds.
+  - Falls back to `BookmarkCard` for all other URLs, ensuring consistent design.
+
+- **Props:**
+
+  - `url: string` (required) — The URL to embed or preview.
+  - `className?: string` (optional) — Additional classes for custom styling.
+
+- **Design & Usage:**
+
+  - Use `<Embed url="..." />` anywhere you want to embed a link or media.
+  - No client JS required; all logic is server-side.
+  - If the URL is a YouTube, Tweet, or Vimeo link, renders the appropriate embed.
+  - For all other URLs, renders a `BookmarkCard` with your custom styling.
+  - Responsive and accessible by default.
+
+- **Example:**
+  ```astro
+  <Embed url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+  <Embed url="https://twitter.com/astro_build/status/1552351234567890123" />
+  <Embed url="https://vimeo.com/76979871" />
+  <Embed url="https://astro.build" /> <!-- Falls back to BookmarkCard -->
+  ```
 
 ### BookmarkCard.astro
 

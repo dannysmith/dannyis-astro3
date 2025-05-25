@@ -54,11 +54,11 @@
 
 ### 3.2 Universal Embed Component
 
-- [ ] Research embed providers and requirements
-- [ ] Select and implement embed library
-- [ ] Create provider-specific components
-- [ ] Implement fallback to BookmarkCard
-- [ ] Add loading states
-- [ ] Create error handling
-- [ ] Test with various embed types
-- [ ] Document usage in MDX
+- [x] Research embed providers and requirements
+- [x] Select and implement embed library
+- [x] Create provider-specific components
+- [x] Implement fallback to BookmarkCard
+- [x] Add loading states
+- [x] Create error handling
+- [x] Test with various embed types
+- [x] Document usage in MDX
