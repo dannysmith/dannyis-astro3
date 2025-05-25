@@ -6,11 +6,16 @@ const parser = new MarkdownIt();
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 export async function GET(context) {
-  const posts = await getCollection('blog', ({ data }) => {
-    return (import.meta.env.PROD ? data.draft !== true : true) && !data.styleguide;
-  });
+  const posts = (
+    await getCollection('blog', ({ data }) => {
+      return (import.meta.env.PROD ? data.draft !== true : true) && !data.styleguide;
+    })
+  ).map(post => ({ ...post, type: 'post' }));
 
-  const notes = await getCollection('notes', ({ data }) => !data.styleguide);
+  const notes = (await getCollection('notes', ({ data }) => !data.styleguide)).map(note => ({
+    ...note,
+    type: 'note',
+  }));
 
   let all = posts.concat(notes);
   all.sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
@@ -19,10 +24,10 @@ export async function GET(context) {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
-    items: all.map(post => ({
-      ...post.data,
-      link: `/writing/${post.id}/`,
-      content: sanitizeHtml(parser.render(typeof post.body == 'string' ? post.body : ''), {
+    items: all.map(item => ({
+      ...item.data,
+      link: item.type === 'note' ? `/notes/${item.id}/` : `/writing/${item.id}/`,
+      content: sanitizeHtml(parser.render(typeof item.body == 'string' ? item.body : ''), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
       }),
     })),
