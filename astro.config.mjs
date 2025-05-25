@@ -10,6 +10,11 @@ import { remarkReadingTime } from './remark-reading-time.mjs';
 export default defineConfig({
   site: 'https://danny.is',
   prefetch: true,
+  vite: {
+    optimizeDeps: {
+      exclude: ['@resvg/resvg-js'],
+    },
+  },
   image: {
     // Used for all Markdown images; not configurable per-image
     // Used for all `<Image />` and `<Picture />` components unless overridden with a prop
