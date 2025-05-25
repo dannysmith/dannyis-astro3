@@ -3,6 +3,7 @@ description: Main index of Cursor rules and guidelines
 globs: ['**/*']
 alwaysApply: true
 ---
+
 # Cursor Rules and Guidelines
 
 This document serves as an index for all cursor rules and guidelines for the personal website project.
@@ -11,7 +12,7 @@ This document serves as an index for all cursor rules and guidelines for the per
 
 ### Project Structure
 
-- **File**: `project-structure.md`
+- **File**: `project-structure.mdc`
 - **Description**: Defines the organization and architecture of the personal website built with Astro
 - **Key Topics**:
   - Directory structure
@@ -34,7 +35,7 @@ This document serves as an index for all cursor rules and guidelines for the per
 
 ### Styling Guide
 
-- **File**: `styling-guide.md`
+- **File**: `styling-guide.mdc`
 - **Description**: Guidelines for visual styling and CSS architecture
 - **Key Topics**:
   - Color system
@@ -45,7 +46,7 @@ This document serves as an index for all cursor rules and guidelines for the per
 
 ### Design and Brand Guidelines
 
-- **File**: `design-and-brand-guidelines.md`
+- **File**: `design-and-brand-guidelines.mdc`
 - **Description**: Comprehensive design philosophy, visual style, and brand identity guidelines
 - **Key Topics**:
   - Site purpose and philosophy
@@ -58,7 +59,7 @@ This document serves as an index for all cursor rules and guidelines for the per
 
 ### Astro Guidelines
 
-- **File**: `astro-guidelines.md`
+- **File**: `astro-guidelines.mdc`
 - **Description**: Specific guidelines for working with Astro features
 - **Key Topics**:
   - Core principles
@@ -71,7 +72,7 @@ This document serves as an index for all cursor rules and guidelines for the per
 
 ### Task Management
 
-- **File**: `task-list.md`
+- **File**: `task-list.mdc`
 - **Description**: Guidelines for creating and managing task lists
 - **Key Topics**:
   - Task list creation
@@ -81,7 +82,7 @@ This document serves as an index for all cursor rules and guidelines for the per
 
 ### Commit Messages
 
-- **File**: `commit-messages.md`
+- **File**: `commit-messages.mdc`
 - **Description**: Guidelines for writing clear and consistent commit messages
 - **Key Topics**:
   - Message format
@@ -131,6 +132,7 @@ This document serves as an index for all cursor rules and guidelines for the per
 The project includes three styleguide/test pages to ensure visual consistency and comprehensive coverage of all key components, markdown features, and prose styles:
 
 - **Main Styleguide:**
+
   - **Location:** `/src/pages/styleguide.astro`
   - **Purpose:** Exhaustive visual testbed for all reusable components (Astro/MDX).
   - **Usage:**
@@ -139,6 +141,7 @@ The project includes three styleguide/test pages to ensure visual consistency an
     - Routable at `/styleguide` (only linked in dev).
 
 - **Note Styleguide:**
+
   - **Location:** `/src/content/notes/note-styleguide.mdx`
   - **Purpose:** Representative test of all markdown, MDX, and prose features in a "note" context.
   - **Usage:**
@@ -156,6 +159,7 @@ The project includes three styleguide/test pages to ensure visual consistency an
 All styleguide files use `styleguide: true` in their frontmatter. Content collection queries and RSS feeds are configured to exclude these files from public indexes.
 
 **Best Practices:**
+
 - Keep styleguides up to date with new components and features.
 - Use realistic, varied content for visual QA.
 - Reference styleguides before launch to ensure visual and typographic consistency.

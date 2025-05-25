@@ -17,7 +17,7 @@ src/
 ├── components/        # Reusable Astro components
 │   ├── icons/         # Icons as SVGs
 ├── content/           # Content collections
-│   ├── articles/      # Long-form articles as MDX and md files
+│   ├── blog/          # Long-form articles as MDX and md files
 │   └── notes/         # Short-form content as MDX and md files
 ├── layouts/           # Page layouts
 │   ├── BlogPost.astro  # Article page layout
