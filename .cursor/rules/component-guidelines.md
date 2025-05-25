@@ -28,9 +28,8 @@ Define guidelines for developing and maintaining components in the personal webs
 1. **Content Display**
 
    - `NoteCard.astro` - Card component for displaying notes
-   - `BookmarkCard.astro` - Card component for displaying URL previews/bookmarks
-   - `Embed.astro` - Universal embed component for rich media and link previews
-   - `Notion.astro` - Component for Notion page references
+   - `BookmarkCard.astro` - Card component for displaying URL previews
+   - `Notion.astro` - Component for Notion page references with error handling and optional title override
    - `Callout.astro` - Component for highlighting important information
    - `Lightbox.astro` - Image lightbox component
    - `Pill.astro` - Small label/badge component for tags, categories, etc.
@@ -176,14 +175,19 @@ Define guidelines for developing and maintaining components in the personal webs
      withDefault?: boolean;
    }
 
-   // 3. Props destructuring
-   const { prop1, prop2 } = Astro.props;
+   // 3. Props destructuring with defaults
+   const { prop1, prop2, withDefault = true } = Astro.props;
 
-   // 4. Data fetching (if needed)
-   const data = await fetchData();
+   // 4. Data fetching with error handling (if needed)
+   try {
+     const data = await fetchData();
+   } catch (error) {
+     console.warn('Failed to fetch data:', error);
+     // Implement fallback behavior
+   }
    ---
 
-   <!-- 5. Template -->
+   <!-- 5. Template with accessibility attributes -->
    <div class="component">
      <!-- Content -->
    </div>
@@ -200,6 +204,29 @@ Define guidelines for developing and maintaining components in the personal webs
    </style>
    ```
 
+### Error Handling
+
+1. **Network Requests**
+
+   - Always wrap external API calls in try-catch blocks
+   - Provide meaningful fallback content
+   - Log warnings for debugging without breaking the build
+   - Example:
+     ```typescript
+     try {
+       const result = await externalAPI(url);
+       data = result.data;
+     } catch (error) {
+       console.warn(`Failed to fetch data from ${url}:`, error);
+       data = fallbackData;
+     }
+     ```
+
+2. **Graceful Degradation**
+   - Provide optional props for manual overrides
+   - Use sensible defaults
+   - Ensure components work even when external services fail
+
 ### Props Interface
 
 1. **TypeScript Definition**
@@ -209,15 +236,26 @@ Define guidelines for developing and maintaining components in the personal webs
      required: string;
      optional?: number;
      withDefault?: boolean;
+     title?: string; // Optional override for performance
    }
    ```
 
 2. **Default Values**
    ```typescript
-   const defaults = {
-     withDefault: true,
-   };
+   const { required, optional, withDefault = true, title } = Astro.props;
    ```
+
+### External Links
+
+1. **Security**
+
+   - Always use `target="_blank"` and `rel="noopener noreferrer"` for external links
+   - Validate URLs when possible
+
+2. **Accessibility**
+   - Add `aria-hidden="true"` to decorative icons
+   - Ensure proper focus management
+   - Use semantic HTML elements
 
 ### Styling
 
@@ -226,15 +264,45 @@ Define guidelines for developing and maintaining components in the personal webs
    - Define component-specific variables in `:root`
    - Use semantic variable names
    - Reference global theme variables
+   - Support dark mode with media queries
    - Example:
+
      ```css
      :root {
        --component-background: var(--color-bg-dark-200);
        --component-foreground: var(--c-white);
+       --component-hover-opacity: 0.8;
+     }
+
+     @media (prefers-color-scheme: dark) {
+       :root {
+         --component-background: var(--color-bg-light-200);
+         --component-foreground: var(--c-black);
+       }
      }
      ```
 
-2. **Responsive Design**
+2. **Modern CSS**
+
+   - Use `inline-flex` for better alignment control
+   - Implement smooth transitions for interactions
+   - Use `currentColor` to inherit text color
+   - Prefer `object-fit` for image sizing
+   - Example:
+
+     ```css
+     .component {
+       display: inline-flex;
+       align-items: baseline;
+       transition: opacity 0.2s ease;
+     }
+
+     .component:hover {
+       opacity: var(--component-hover-opacity);
+     }
+     ```
+
+3. **Responsive Design**
 
    - Use container queries when appropriate
    - Implement mobile-first layouts
@@ -251,7 +319,7 @@ Define guidelines for developing and maintaining components in the personal webs
      }
      ```
 
-3. **Layout Patterns**
+4. **Layout Patterns**
    - Use CSS Grid for complex layouts
    - Flexbox for alignment and spacing
    - Container queries for component-level responsiveness
@@ -284,9 +352,10 @@ Define guidelines for developing and maintaining components in the personal webs
 1. **Performance**
 
    - Minimize JavaScript
-   - Optimize images
+   - Optimize images with proper dimensions
    - Lazy load when appropriate
    - Monitor bundle size
+   - Provide manual overrides to skip expensive operations
 
 2. **Maintenance**
 
@@ -294,9 +363,11 @@ Define guidelines for developing and maintaining components in the personal webs
    - Include usage examples
    - Add prop validation
    - Handle edge cases
+   - Implement proper error handling
 
 3. **Documentation**
    - Purpose and usage
    - Props and types
    - Examples and demos
    - Accessibility notes
+   - Error handling behavior
