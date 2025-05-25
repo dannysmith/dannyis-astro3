@@ -18,8 +18,8 @@ export async function getStaticPaths() {
 export const GET: APIRoute = async ({ props }) => {
   const { article } = props as { article: any };
 
-  // Build canonical URL (adjust if your domain/structure changes)
-  const url = `${SITE_URL}/writing/${article.slug}`;
+  // Build canonical URL using article.id for the slug
+  const url = `${SITE_URL}/writing/${article.id}`;
 
   try {
     const ogImageBuffer = await generateOGImage(
