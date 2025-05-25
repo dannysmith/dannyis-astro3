@@ -5,5 +5,6 @@ import Grid from './Grid.astro';
 import Callout from './Callout.astro';
 import BookmarkCard from './BookmarkCard.astro';
 import Embed from './Embed.astro';
+import Loom from './Loom.astro';
 
-export { Notion, Grid, BookmarkCard, Embed, Callout };
+export { Notion, Grid, BookmarkCard, Embed, Callout, Loom };

@@ -1,6 +1,7 @@
 ---
 import { YouTube, Tweet, Vimeo } from 'astro-embed';
 import BookmarkCard from './BookmarkCard.astro';
+import Loom from './Loom.astro';
 
 export interface Props {
   url: string;
@@ -21,13 +22,19 @@ function getVimeoId(url: string) {
   const match = url.match(/vimeo\.com\/([0-9]+)/);
   return match ? match[1] : null;
 }
+function getLoomId(url: string) {
+  const match = url.match(/loom\.com\/(?:share|embed)\/([a-f0-9]+)/);
+  return match ? match[1] : null;
+}
 
 const youtubeId = getYouTubeId(url);
 const tweetId = getTweetId(url);
 const vimeoId = getVimeoId(url);
+const loomId = getLoomId(url);
 ---
 
 {youtubeId && <YouTube id={youtubeId} />}
 {!youtubeId && tweetId && <Tweet id={tweetId} />}
 {!youtubeId && !tweetId && vimeoId && <Vimeo id={vimeoId} />}
-{!youtubeId && !tweetId && !vimeoId && <BookmarkCard url={url} className={className} />}
+{!youtubeId && !tweetId && !vimeoId && loomId && <Loom id={loomId} />}
+{!youtubeId && !tweetId && !vimeoId && !loomId && <BookmarkCard url={url} className={className} />}

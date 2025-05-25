@@ -1,0 +1,28 @@
+---
+export interface Props {
+  id: string;
+  className?: string;
+}
+
+const { id, className = '' } = Astro.props;
+---
+
+<div class={`loom-embed ${className}`}>
+  <iframe
+    src={`https://www.loom.com/embed/${id}`}
+    frameborder="0"
+    allowfullscreen
+    title="Loom video"></iframe>
+</div>
+
+<style>
+  .loom-embed {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .loom-embed iframe {
+    width: 100%;
+    height: 100%;
+  }
+</style>
