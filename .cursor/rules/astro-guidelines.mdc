@@ -69,14 +69,14 @@ alwaysApply: true
 
 2. **Available Components**
    - `<Callout>` - For highlighting important information
-   - `<LovelyEmbed>` - For rich link previews
-   - `<NotionMention>` - For Notion page references
+   - `<BookmarkCard>` - For rich link previews and URL cards
+   - `<Notion>` - For Notion page references with automatic title fetching and optional manual override
 
 ## Content Collections
 
 1. **Articles**
 
-   - Use `src/content/articles/`
+   - Use `src/content/blog/`
    - Required frontmatter:
      ```yaml
      title: string
