@@ -21,12 +21,15 @@ const {
   platform,
   readingTime,
 } = Astro.props;
+
+// Build OG image path for this article
+const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} type="article" image={ogImage} />
     {platform && redirectURL && <meta http-equiv="refresh" content={'0;url=' + redirectURL} />}
   </head>
 
