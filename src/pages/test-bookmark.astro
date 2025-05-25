@@ -1,0 +1,101 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import BookmarkCard from '../components/BookmarkCard.astro';
+import Footer from '@components/Footer.astro';
+import MainNavigation from '@components/MainNavigation.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="BookmarkCard Test" description="Testing the new BookmarkCard component" />
+  </head>
+  <body>
+    <MainNavigation />
+    <main class="cq">
+      <h1>BookmarkCard Test</h1>
+
+      <div class="content prose">
+        <p>Testing the new BookmarkCard component with various URLs and container widths.</p>
+
+        <div class="test-section">
+          <h2>Test 1: Wide Container (Horizontal Layout)</h2>
+          <div style="width: 100%; max-width: 800px;">
+            <BookmarkCard
+              url="https://medium.com/thought-thinkers/how-the-walkman-taught-us-to-be-alone-d88b220293b7"
+            />
+          </div>
+        </div>
+
+        <div class="test-section">
+          <h2>Test 2: Medium Container</h2>
+          <div style="width: 100%; max-width: 450px;">
+            <BookmarkCard
+              url="https://medium.com/thought-thinkers/how-the-walkman-taught-us-to-be-alone-d88b220293b7"
+            />
+          </div>
+        </div>
+
+        <div class="test-section">
+          <h2>Test 3: Narrow Container (Should Stack)</h2>
+          <div style="width: 100%; max-width: 350px;">
+            <BookmarkCard
+              url="https://medium.com/thought-thinkers/how-the-walkman-taught-us-to-be-alone-d88b220293b7"
+            />
+          </div>
+        </div>
+
+        <div class="test-section">
+          <h2>Test 4: Very Narrow Container (Should Stack)</h2>
+          <div style="width: 100%; max-width: 300px;">
+            <BookmarkCard
+              url="https://medium.com/thought-thinkers/how-the-walkman-taught-us-to-be-alone-d88b220293b7"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <Footer />
+    <style>
+      :root {
+        --background-color: var(--c-beige-bg);
+      }
+      body {
+        background: var(--background-color);
+        display: grid;
+        grid-template-rows: auto min-content;
+      }
+
+      main {
+        padding: 1em;
+        width: 100%;
+        max-width: 80ch;
+        margin: 0 auto;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      main > * {
+        margin-top: 3rem;
+      }
+
+      .test-section {
+        margin: 2rem 0;
+        padding: 1rem;
+        border: 1px dashed #ccc;
+        border-radius: 8px;
+      }
+
+      .test-section h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        color: #666;
+      }
+    </style>
+  </body>
+</html>
