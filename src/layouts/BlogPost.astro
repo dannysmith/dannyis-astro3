@@ -78,6 +78,7 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
         --background-color: var(--c-beige-bg);
         --text-color: var(--color-grey-800);
         --spinner-overlay-color: var(--c-white);
+        --typography-detail-red-color: var(--color-red-700);
 
         /* Primary color used throughout */
         --article-primary-color: var(--c-primary);
@@ -312,7 +313,7 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
           margin-top: 0.5em;
           /* Ensure marker color for all lists */
           &::marker {
-            color: var(--color-red-700);
+            color: var(--typography-detail-red-color);
           }
         }
         .blog-article li:first-of-type {
@@ -337,7 +338,7 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
           font-size: 1.4ex;
           font-variation-settings: 'opsz' 10;
           font-weight: 500;
-          color: var(--color-red-700);
+          color: var(--typography-detail-red-color);
         }
 
         /* ----------- Task Lists ------------ */
@@ -363,14 +364,14 @@ const ogImage = `/writing/${Astro.params.slug}/og-image.png`;
         }
 
         .blog-article .task-list-item input:checked {
-          color: var(--article-primary-color);
+          color: var(--typography-detail-red-color);
           background: transparent;
         }
 
         .blog-article .task-list-item input:checked:before {
           content: '\2713';
           position: absolute;
-          top: -0.25em;
+          top: -0.1em;
           left: 0.05em;
           font-size: 0.6em;
           font-weight: 600;
