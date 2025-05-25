@@ -41,16 +41,16 @@
 
 ### 3.1 BookmarkCard Component (formerly URLCard)
 
-- [ ] Rename to BookmarkCard
-- [ ] Research and select metadata fetching solution
-- [ ] Design new card layout
-- [ ] Implement metadata extraction
-- [ ] Create fallback states for missing data
-- [ ] Add loading states
-- [ ] Implement responsive image handling
-- [ ] Add hover and interaction states
-- [ ] Test with various URL types
-- [ ] Add documentation to cursor files
+- [x] Rename to BookmarkCard
+- [x] Research and select metadata fetching solution
+- [x] Design new card layout
+- [x] Implement metadata extraction
+- [x] Create fallback states for missing data
+- [x] Add loading states
+- [x] Implement responsive image handling
+- [x] Add hover and interaction states
+- [x] Test with various URL types
+- [x] Add documentation to cursor files
 
 ### 3.2 Universal Embed Component
 
