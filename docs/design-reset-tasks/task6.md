@@ -1,6 +1,3 @@
-## Task: Migrate nice 404 Page from Old Jekyll Blog
+## Task: Better Numbered Lists in Articles
 
-Rebuild this with CSS grid. No changes to functionality.
-
-HTML: https://github.com/dannysmith/dannyis-jekyll/blob/master/404.html
-CSS: https://github.com/dannysmith/dannyis-jekyll/blob/master/_sass/page-404.scss
+Make ordered lists in articles render the list numbers in circles, as per https://practicaltypography.com/what-is-good-typography.html
