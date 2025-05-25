@@ -3,7 +3,6 @@ description: Guidelines for working with Astro in this project
 globs: ['**/*.astro', '**/*.mdx']
 alwaysApply: true
 ---
-
 # Astro Guidelines
 
 ## Core Principles
@@ -152,6 +151,12 @@ alwaysApply: true
    - Leverage `@astrojs/sitemap` integration
    - Keep URLs clean and descriptive
    - Implement proper redirects
+
+3. **OpenGraph Image Generation**
+   - OpenGraph images are automatically generated for articles and notes at build time.
+   - Images use article/note frontmatter (title etc.) for best results.
+   - No manual image upload is required for OpenGraph previews.
+   - To customize, edit the OpenGraph image generation logic in the codebase.
 
 ## Error Handling
 
