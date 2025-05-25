@@ -6,7 +6,7 @@ import FormattedDate from '@components/FormattedDate.astro';
 import Footer from '@components/Footer.astro';
 import MainNavigation from '@components/MainNavigation.astro';
 
-const notes = (await getCollection('notes')).sort(
+const notes = (await getCollection('notes', ({ data }) => !data.styleguide)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---

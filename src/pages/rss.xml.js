@@ -7,10 +7,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 export async function GET(context) {
   const posts = await getCollection('blog', ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true;
+    return (import.meta.env.PROD ? data.draft !== true : true) && !data.styleguide;
   });
 
-  const notes = await getCollection('notes');
+  const notes = await getCollection('notes', ({ data }) => !data.styleguide);
 
   let all = posts.concat(notes);
   all.sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
