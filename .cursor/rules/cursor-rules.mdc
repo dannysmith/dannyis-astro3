@@ -43,6 +43,19 @@ This document serves as an index for all cursor rules and guidelines for the per
   - CSS variables
   - Best practices
 
+### Design and Brand Guidelines
+
+- **File**: `design-and-brand-guidelines.md`
+- **Description**: Comprehensive design philosophy, visual style, and brand identity guidelines
+- **Key Topics**:
+  - Site purpose and philosophy
+  - Visual design philosophy
+  - Typography system
+  - Color system
+  - Layout principles
+  - Component design philosophy
+  - Brand expression
+
 ### Astro Guidelines
 
 - **File**: `astro-guidelines.md`

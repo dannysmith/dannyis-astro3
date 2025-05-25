@@ -17,6 +17,8 @@ alwaysApply: false
 7. Prefer CSS Grid over Flexbox unless flexbox is obviously simpler
 8. Think like a designer when writing CSS
 
+> **Note**: For comprehensive design philosophy, visual style, and brand guidelines, see `design-and-brand-guidelines.md`. This document focuses on technical CSS implementation.
+
 ## CSS Organization
 
 - Global styles in `src/styles/`
