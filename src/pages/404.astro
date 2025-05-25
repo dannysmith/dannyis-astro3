@@ -1,7 +1,6 @@
 ---
 import BaseHead from '@components/BaseHead.astro';
 import MainNavigation from '@components/MainNavigation.astro';
-import Footer from '@components/Footer.astro';
 ---
 
 <!doctype html>
@@ -14,81 +13,60 @@ import Footer from '@components/Footer.astro';
   </head>
   <body>
     <MainNavigation />
-    <main class="page-404">
-      <div class="error-content">
-        <h1 class="error-code">404</h1>
-        <h2 class="error-title">Page Not Found</h2>
-        <p class="error-message">The page you're looking for doesn't exist.</p>
-        <a href="/" class="home-link">Go Home</a>
+    <main>
+      <div class="page-404">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>
+          Ooops. What you're looking for isn't here. Try hitting the
+          <a href="/">home page</a>.
+        </p>
       </div>
     </main>
-    <Footer />
     <style>
       body {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        background-color: var(--c-beige-bg);
-        min-height: 100vh;
+        background-color: var(--background-color);
+        max-width: 100%;
+        overflow-x: hidden;
       }
-
       .page-404 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        min-height: 60vh;
-      }
+        position: relative;
+        min-height: 80vh;
+        min-width: 100%;
+        transform-origin: top center;
+        transform: rotate(-45deg) translateY(10vh) translateX(-10vh);
+        color: var(--color-black);
 
-      .error-content {
-        text-align: center;
-        max-width: 600px;
-      }
+        h1 {
+          font-size: 40vw;
+        }
 
-      .error-code {
-        font-family: var(--font-ui);
-        font-size: clamp(8rem, 20vw, 16rem);
-        font-weight: 900;
-        color: var(--c-black);
-        line-height: 0.8;
-        margin: 0;
-        letter-spacing: -0.05em;
-      }
+        h1::after {
+          display: block;
+          content: ' ';
+          background: var(--c-primary);
+          height: 4vw;
+          margin-top: -9.2vw;
+          width: 200%;
+        }
 
-      .error-title {
-        font-family: var(--font-ui);
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 700;
-        color: var(--c-black);
-        margin: 1rem 0;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-      }
+        h2 {
+          display: inline-block;
+          text-transform: uppercase;
+          letter-spacing: 0.3vw;
+          transform-origin: bottom right;
+          transform: rotate(90deg);
+          background: var(--color-yellow-500);
+          padding: 0.3vw 0.7vw;
+          font-size: 2vw;
+        }
 
-      .error-message {
-        font-family: var(--font-ui);
-        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-        font-weight: 500;
-        color: var(--c-gray-600);
-        margin: 2rem 0;
-        line-height: 1.4;
-      }
-
-      .home-link {
-        display: inline-block;
-        font-family: var(--font-ui);
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: var(--c-white);
-        background-color: var(--c-black);
-        padding: 1rem 2rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        transition: background-color 0.2s ease;
-      }
-
-      .home-link:hover {
-        background-color: var(--c-primary);
+        p {
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
+          font-weight: 300;
+          margin: 0 0 0 40vw;
+        }
       }
     </style>
   </body>

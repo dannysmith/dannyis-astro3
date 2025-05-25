@@ -132,6 +132,7 @@
   /* Colours for global stylesheet */
   --accent-color: var(--c-primary);
   --foreground-color: var(--c-black);
+  --background-color: var(--c-beige-bg);
 
   --abbr-underline-color: rgba(0, 0, 0, 0.15);
   --code-background-color: rgba(0, 0, 0, 0.05);
