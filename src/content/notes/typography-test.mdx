@@ -1,13 +1,113 @@
 ---
-title: Typography Test Note
+title: Component & Typography Test
 pubDate: 2024-03-19
-tags: ['typography', 'design', 'testing', 'css']
+tags: ['components', 'typography', 'design', 'testing', 'css']
 ---
-import { BookmarkCard } from '@components/components';
+import { BookmarkCard, Callout } from '@components/components';
 
-# Typography Test Note
+# Component & Typography Test
 
-This is a test note to showcase our new typography system. Let's go through all the elements we've styled.
+This is a test note to showcase our components and typography system. Let's go through all the elements we've styled.
+
+## Callout Component Tests
+
+### Basic Callouts with Icons
+
+<Callout icon="💡" type="blue" title="Information">
+  This is a blue callout with an information icon. Perfect for tips and helpful information with **bold text** and [links](https://example.com).
+</Callout>
+
+<Callout icon="⚠️" type="yellow" title="Warning">
+  This is a yellow warning callout. Use this to highlight important warnings or cautions. It can contain:
+
+  - Bullet points
+  - **Bold text**
+  - `inline code`
+  - [External links](https://example.com)
+</Callout>
+
+<Callout icon="❌" type="red" title="Error">
+  This is a red error callout. Use this for error messages or critical information.
+
+  > It can even contain blockquotes with additional context.
+</Callout>
+
+<Callout icon="✅" type="green" title="Success">
+  This is a green success callout. Perfect for confirmation messages and positive feedback.
+
+  ```javascript
+  // It can even contain code blocks!
+  const success = true;
+  console.log('Operation completed successfully');
+  ```
+</Callout>
+
+<Callout icon="🔥" type="orange" title="Hot Tip">
+  This is an orange callout. Great for highlighting important tips or featured content with _italic emphasis_.
+</Callout>
+
+<Callout icon="🎉" type="purple" title="New Feature">
+  This is a purple callout. Perfect for announcing new features or special content.
+</Callout>
+
+<Callout icon="📝" type="default" title="Note">
+  This is a default gray callout. Use this for general notes and neutral information.
+</Callout>
+
+### Callouts without Titles
+
+<Callout icon="💭" type="blue">
+  This callout has no title, just an icon and content with **markdown formatting** and [links](https://example.com).
+</Callout>
+
+<Callout icon="🚀" type="green">
+  Another titleless callout with:
+
+  1. Numbered lists
+  2. **Bold formatting**
+  3. `Code snippets`
+  4. [Link references](https://example.com)
+</Callout>
+
+### Callouts without Icons
+
+<Callout type="red" title="No Icon Error">
+  This callout has a title but no icon. The colored background still provides visual hierarchy while supporting **rich markdown content**.
+</Callout>
+
+<Callout type="blue">
+  This callout has neither title nor icon, just colored styling and content with _italic text_ and [links](https://example.com).
+</Callout>
+
+### Rich Content Callout
+
+<Callout icon="📚" type="blue" title="Comprehensive Example">
+  This callout demonstrates all the markdown features that work inside callouts:
+
+  **Text formatting**: We can use **bold**, _italic_, and `inline code`.
+
+  **Lists work great**:
+  - Unordered lists
+  - With [links](https://example.com)
+  - And **formatting**
+
+  **Numbered lists too**:
+  1. First item
+  2. Second item with `code`
+  3. Third item with _emphasis_
+
+  **Blockquotes**:
+  > This is a blockquote inside a callout. It maintains proper styling and can include **bold text** and [links](https://example.com).
+
+  **Code blocks**:
+  ```javascript
+  function example() {
+    return "Code blocks work perfectly!";
+  }
+  ```
+
+  **Links**: Both [external links](https://example.com) and internal references work seamlessly.
+</Callout>
 
 ## Headings
 
