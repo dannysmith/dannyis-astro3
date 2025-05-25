@@ -14,7 +14,6 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@astro-community/astro-embed-link-preview": "^0.2.2",
     "@astrojs/markdown-remark": "^6.3.2",
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/rss": "^4.0.11",
@@ -23,6 +22,7 @@
     "@fontsource-variable/fira-code": "^5.2.5",
     "@vercel/og": "^0.6.8",
     "astro": "^5.8.0",
+    "astro-embed": "^0.9.0",
     "markdown-it": "^14.1.0",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",

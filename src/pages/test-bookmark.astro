@@ -3,6 +3,7 @@ import BaseHead from '@components/BaseHead.astro';
 import BookmarkCard from '../components/BookmarkCard.astro';
 import Footer from '@components/Footer.astro';
 import MainNavigation from '@components/MainNavigation.astro';
+import Embed from '@components/Embed.astro';
 ---
 
 <!doctype html>
@@ -51,6 +52,39 @@ import MainNavigation from '@components/MainNavigation.astro';
             <BookmarkCard
               url="https://medium.com/thought-thinkers/how-the-walkman-taught-us-to-be-alone-d88b220293b7"
             />
+          </div>
+        </div>
+
+        <div class="test-section">
+          <h2>Embed Component: YouTube</h2>
+          <div style="width: 100%; max-width: 600px;">
+            <Embed url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+          </div>
+        </div>
+        <div class="test-section">
+          <h2>Embed Component: Tweet</h2>
+          <div style="width: 100%;">
+            <Embed url="https://twitter.com/astro_build/status/1552351234567890123" />
+          </div>
+        </div>
+        <div class="test-section">
+          <h2>Embed Component: Vimeo</h2>
+          <div style="width: 100%;">
+            <Embed url="https://vimeo.com/76979871" />
+          </div>
+        </div>
+        <div class="test-section">
+          <h2>Embed Component: Regular Article (Fallback)</h2>
+          <div style="width: 100%;">
+            <Embed
+              url="https://medium.com/thought-thinkers/how-the-walkman-taught-us-to-be-alone-d88b220293b7"
+            />
+          </div>
+        </div>
+        <div class="test-section">
+          <h2>Embed Component: Unsupported URL (Fallback)</h2>
+          <div style="width: 100%;">
+            <Embed url="https://example.com/this-url-should-not-embed" />
           </div>
         </div>
       </div>

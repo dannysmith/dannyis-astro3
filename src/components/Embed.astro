@@ -1,0 +1,33 @@
+---
+import { YouTube, Tweet, Vimeo } from 'astro-embed';
+import BookmarkCard from './BookmarkCard.astro';
+
+export interface Props {
+  url: string;
+  className?: string;
+}
+
+const { url, className = '' } = Astro.props;
+
+function getYouTubeId(url: string) {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
+  return match ? match[1] : null;
+}
+function getTweetId(url: string) {
+  const match = url.match(/twitter\.com\/[\w]+\/status\/([0-9]+)/);
+  return match ? match[1] : null;
+}
+function getVimeoId(url: string) {
+  const match = url.match(/vimeo\.com\/([0-9]+)/);
+  return match ? match[1] : null;
+}
+
+const youtubeId = getYouTubeId(url);
+const tweetId = getTweetId(url);
+const vimeoId = getVimeoId(url);
+---
+
+{youtubeId && <YouTube id={youtubeId} />}
+{!youtubeId && tweetId && <Tweet id={tweetId} />}
+{!youtubeId && !tweetId && vimeoId && <Vimeo id={vimeoId} />}
+{!youtubeId && !tweetId && !vimeoId && <BookmarkCard url={url} className={className} />}
