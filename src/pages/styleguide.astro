@@ -5,24 +5,90 @@ import Callout from '../components/Callout.astro';
 import Footer from '@components/Footer.astro';
 import MainNavigation from '@components/MainNavigation.astro';
 import Embed from '@components/Embed.astro';
+import Pill from '../components/Pill.astro';
+import Grid from '../components/Grid.astro';
+import Notion from '../components/Notion.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+// import Lightbox from '../components/Lightbox.astro'; // Uncomment if available
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead
-      title="Component Test Page"
-      description="Testing components including BookmarkCard and Callout"
+      title="Component & Styleguide"
+      description="Comprehensive styleguide and component testbed for all Astro components."
     />
   </head>
   <body>
     <MainNavigation />
     <main class="cq">
-      <h1>Component Test Page</h1>
-
+      <h1>Component & Styleguide</h1>
       <div class="content prose">
-        <p>Testing components with various configurations and container widths.</p>
+        <section class="intro-section">
+          <p>
+            <strong>Welcome!</strong> This page is a comprehensive styleguide and visual testbed for
+            all Astro components used in this project.
+          </p>
+          <ul>
+            <li>Use this page to check component appearance, variants, and responsive behavior.</li>
+            <li>
+              For context-specific typography and MDX component tests, see:
+              <ul>
+                <li><a href="/notes/note-styleguide/">Note Styleguide</a></li>
+                <li><a href="/articles/article-styleguide/">Article Styleguide</a></li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            <em>How to use this styleguide:</em> Review each section below for visual and functional
+            tests of every major component. Add new components here as they are created. Use the Note/Article
+            styleguides to check MDX and content-collection context.
+          </p>
+        </section>
 
+        <div class="test-section">
+          <h2>Pill Component</h2>
+          <Pill text="Default" />
+          <Pill text="Green" color="var(--color-green-600)" />
+          <Pill text="Yellow" color="var(--color-yellow-500)" textColor="var(--c-black)" />
+          <Pill text="Custom" color="#ff69b4" textColor="#fff" />
+        </div>
+
+        <div class="test-section">
+          <h2>Grid Component</h2>
+          <Grid columns={3} rows={2} gap="1rem">
+            <div style="background:#eee; padding:1rem;">Item 1</div>
+            <div style="background:#eee; padding:1rem;">Item 2</div>
+            <div style="background:#eee; padding:1rem;">Item 3</div>
+            <div style="background:#eee; padding:1rem;">Item 4</div>
+            <div style="background:#eee; padding:1rem;">Item 5</div>
+            <div style="background:#eee; padding:1rem;">Item 6</div>
+          </Grid>
+        </div>
+
+        <div class="test-section">
+          <h2>Notion Component</h2>
+          <Notion href="https://dannysmith.notion.site/Meetings-2c4bd8d7ba31427cb1294a008a9df21f" />
+          <Notion
+            href="https://dannysmith.notion.site/Meetings-2c4bd8d7ba31427cb1294a008a9df21f"
+            title="Manual Title Example"
+          />
+        </div>
+
+        <div class="test-section">
+          <h2>FormattedDate Component</h2>
+          <FormattedDate date={new Date()} />
+        </div>
+
+        <!-- Uncomment if Lightbox is available
+        <div class="test-section">
+          <h2>Lightbox Component</h2>
+          <Lightbox images={[{ src: '/images/example.jpg', alt: 'Example' }]} />
+        </div>
+        -->
+
+        <!-- Existing Callout, BookmarkCard, and Embed tests below -->
         <div class="test-section">
           <h2>Callout Component Tests</h2>
 
@@ -182,6 +248,14 @@ import Embed from '@components/Embed.astro';
 
       main > * {
         margin-top: 3rem;
+      }
+
+      .intro-section {
+        background: #f8f8f8;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
       }
 
       .test-section {
