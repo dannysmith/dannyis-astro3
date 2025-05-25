@@ -77,8 +77,6 @@ async function loadFonts(): Promise<Font[]> {
   // If no fonts loaded, provide a minimal fallback
   if (fonts.length === 0) {
     console.warn('No custom fonts loaded, using system defaults');
-  } else {
-    console.log(`Loaded ${fonts.length} League Spartan font variants`);
   }
 
   return fonts;
