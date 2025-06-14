@@ -1,0 +1,35 @@
+---
+description: Defines the criteria for when a task is ready to be worked on and when it is considered done.
+globs:
+alwaysApply: false
+---
+
+# Definition of Ready (DoR) & Definition of Done (DoD)
+
+## Purpose
+
+To ensure all tasks meet clear, consistent standards before work begins (Definition of Ready) and before they are considered complete (Definition of Done). This rule guides Cursor and contributors in maintaining quality, clarity, and accountability throughout the development process.
+
+## Status Definitions
+
+- **Ready:** A task is considered "Ready" when it meets all DoR checklist items below and can be picked up for active development.
+- **Done:** A task is considered "Done" when it meets all DoD checklist items below and is shippable, meeting all acceptance criteria.
+
+## Definition of Ready (DoR)
+
+A task is "Ready" when:
+
+- [ ] It has a clear PRD in `/docs/prds`.
+- [ ] (For non-trivial changes) It has been through the planning process outlined in [planning-process-overview.mdc](mdc:.cursor/rules/planning-process/planning-process-overview.mdc).
+
+## Definition of Done (DoD)
+
+A task is "Done" when:
+
+- [ ] Any relevant documentation in `docs/` has been updated.
+- [ ] All relevant Cursor rules have been updated with any new patterns, rules, or examples.
+- [ ] The codebase has been reviewed (by AI and/or human reviewers) for opportunities to refactor and simplify, with a focus on maintainability.
+- [ ] Any particularly complex logic has been explained with comments.
+- [ ] The application runs and is deployable.
+- [ ] All automated tests (unit, integration, E2E as applicable) are passing.
+- [ ] The [CHANGELOG.md](mdc:CHANGELOG.md) has been updated for user-facing or breaking changes, where appropriate.
