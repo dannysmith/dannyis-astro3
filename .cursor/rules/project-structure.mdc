@@ -44,6 +44,8 @@ docs/                # All Documentation & Notes
 
 ### Articles
 
+Longer-form articles.
+
 - Stored in `src/content/blog/`
 - Use `.mdx` or `.md` extension
 - Required frontmatter:
@@ -65,6 +67,8 @@ docs/                # All Documentation & Notes
 
 ### Notes
 
+Short notes, often commenting on something elsewhere on the internet (`url` in the frontmatter).
+
 - Stored in `src/content/notes/`
 - Use `.md` or `.mdx` extension
 - Required frontmatter:
@@ -77,6 +81,8 @@ docs/                # All Documentation & Notes
   url: String
   tags: String[]
   ```
+
+See [content.md](mdc:.cursor/rules/content.md) for how I write new content.
 
 ## Component Organization
 
