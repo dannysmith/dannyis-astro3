@@ -24,7 +24,10 @@ When I'm working with my content files, you have two distinct roles:
 When I ask you to create a new note:
 
 - Do it quickly without asking me stuff so I can start writing fast.
-- If I've told you what the note is about, choose a suitable title. If I've provided a URL, access it and use its title to help here. Otherwise just use "New Note".
+- If I've told you what the note is about, choose a suitable title.
+- If I've provided a URL, **fetch the page and extract the OpenGraph `og:title` (or, if missing, the `<title>` tag) to use as the note title and for the filename. Do not rely on web search or third-party title generators.**
+- If the page cannot be fetched or parsed, fall back to a sensible placeholder (e.g., "New Note") and alert the user.
+- Otherwise just use "New Note".
 - Create an md file in the correct directory, named using an ISO date and the title you chose (eg. `2025-06-15-the-title-of-the-note.md`). Use today's date unless I've specified a date. If the title is very long, intelligently shorten it for the filename.
 - Set the `pubDate` to today and the `title` to whatever you decided on.
 - If I provide a URL, set that as the `sourceURL`.
