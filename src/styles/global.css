@@ -228,9 +228,6 @@
     /* Ensure Common ligs are always on */
     font-variant-ligatures: common-ligatures;
 
-    /* Turn on single-storey `a` characters on Jost */
-    font-feature-settings: 'ss01' on;
-
     /* Smooth Scrolling */
     scroll-behavior: smooth;
 
